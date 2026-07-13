@@ -1,29 +1,8 @@
 import { Heart } from "lucide-react";
-import { useEffect, useState, useCallback, useMemo } from "react";
-import { debounce } from "@/lib/performance";
+import { useCallback } from "react";
 import "./footer.css";
 
 export function Footer() {
-  const [objectPosition, setObjectPosition] = useState("center -400px");
-
-  const handleResize = useCallback(() => {
-    if (window.innerWidth < 768) {
-      setObjectPosition("center -125px");
-    } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
-      setObjectPosition("center -230px");
-    } else {
-      setObjectPosition("center -380px");
-    }
-  }, []);
-
-  const debouncedResize = useMemo(() => debounce(handleResize, 150), [handleResize]);
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", debouncedResize, { passive: true });
-    return () => window.removeEventListener("resize", debouncedResize);
-  }, [handleResize, debouncedResize]);
-
   const scrollToSection = useCallback((href) => {
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -35,7 +14,7 @@ export function Footer() {
         <img
           src="/assets/img5.jpeg"
           alt="Footer Background"
-          style={{ objectFit: "cover", objectPosition, zIndex: 0, width: "100%", height: "100%" }}
+          style={{ objectFit: "cover", objectPosition: "center 50%", zIndex: 0, width: "100%", height: "100%" }}
           className="absolute inset-0 w-full h-full blur-[1px] opacity-60"
           loading="lazy"
           decoding="async"
@@ -43,8 +22,8 @@ export function Footer() {
         <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent dark:from-white/10 dark:via-transparent dark:to-transparent" />
         <div className="absolute -inset-1 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 blur-xl opacity-30 animate-pulse" />
       </div>
-      <div className="container px-4 py-12 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="container px-4 py-4 md:py-12 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
           <div
             className="group relative flex items-center gap-2 cursor-pointer transition-all duration-300 p-1.5 sm:pl-1.5 sm:pr-4 sm:py-1.5 rounded-full bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] overflow-hidden scale-90 md:origin-left hover:scale-[0.95]"
             onClick={() => scrollToSection("#home")}
@@ -80,13 +59,13 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col items-center gap-2 w-full md:w-auto mt-4 md:mt-0">
+          <div className="flex flex-col items-center gap-2 w-full md:w-auto">
             <div className="text-center text-[19px] text-white">
               <p>&copy; {new Date().getFullYear()} घर का स्वाद | All rights reserved.</p>
             </div>
           </div>
 
-          <div className="group relative flex items-center gap-1.5 px-4 py-2 mt-4 md:mt-0 rounded-full bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:scale-105 transition-all duration-300">
+          <div className="group relative flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:scale-105 transition-all duration-300">
             <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
             <div className="absolute inset-0 rounded-full bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 pointer-events-none" style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)' }} />
             
