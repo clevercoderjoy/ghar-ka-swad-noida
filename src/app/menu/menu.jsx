@@ -74,11 +74,6 @@ const menuItems = [
     dinner: { name: "5 Chapatis, Seasonal Veggie", img: "/assets/img13.png" },
   },
   {
-    day: "Sunday",
-    lunch: { name: "Fried Rice, Dal, Achar, Seasonal Veggie, Salad/Raita", img: "/assets/img8.png" },
-    dinner: { name: "8 Pooris, Paneer Veggie", img: "/assets/img9.png" },
-  },
-  {
     day: "Note",
     note: [
       "Menu may change based on availability of food items.",

@@ -111,7 +111,7 @@ export function Hero() {
             zIndex: 0,
           }}
           className="absolute inset-0 w-full h-full"
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/35 via-background/60 to-background/85" />
@@ -160,7 +160,7 @@ export function Hero() {
                     objectPosition: "center",
                   }}
                   className="rounded-full object-cover transition-all duration-300 ease-out group-hover:opacity-0 group-hover:scale-95"
-                  fetchpriority="high"
+                  fetchPriority="high"
                   decoding="async"
                 />
                 

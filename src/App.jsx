@@ -6,6 +6,7 @@ import smoothscroll from "smoothscroll-polyfill";
 import { Header } from "./app/header/header";
 import { Footer } from "./app/footer/footer";
 import { Hero } from "./app/hero/hero";
+import { OurStory } from "./app/our-story/our-story";
 import { WhyChooseUs } from "./app/why-choose-us/why-choose-us";
 import { Services } from "./app/services/services";
 import { Menu } from "./app/menu/menu";
@@ -21,6 +22,7 @@ function HomePage() {
       <Header />
       <main>
         <Hero />
+        <OurStory />
         <WhyChooseUs />
         <Services />
         <Menu />
