@@ -1,0 +1,9 @@
+/* Menu component specific styles */
+
+#menu {
+  position: relative;
+}
+
+.menu-card {
+  will-change: transform;
+}

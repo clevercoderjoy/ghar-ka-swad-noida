@@ -1,0 +1,9 @@
+/* Footer component specific styles */
+
+footer {
+  will-change: opacity;
+}
+
+footer a {
+  transition: color 0.2s ease;
+}

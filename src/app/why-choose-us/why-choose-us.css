@@ -1,0 +1,9 @@
+/* WhyChooseUs component specific styles */
+
+#why-us {
+  position: relative;
+}
+
+.benefit-card {
+  will-change: transform, shadow;
+}

@@ -1,0 +1,11 @@
+/* Hero component specific styles */
+
+#home {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Optional custom overrides for hero animations */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

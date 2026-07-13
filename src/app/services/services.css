@@ -1,0 +1,9 @@
+/* Services component specific styles */
+
+#services {
+  position: relative;
+}
+
+.service-card {
+  will-change: transform;
+}

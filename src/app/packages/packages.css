@@ -1,0 +1,9 @@
+/* Packages component specific styles */
+
+#packages {
+  position: relative;
+}
+
+.package-card {
+  will-change: transform;
+}
