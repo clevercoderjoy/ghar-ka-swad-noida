@@ -78,8 +78,8 @@ const menuItems = [
     note: [
       "Menu may change based on availability of food items.",
       "Special requests can be accommodated with prior notice. (Chargable)",
-      "We serve non-veg on special request but we don't cook it in our kitchen.",
-      "Festivals are off days.",
+      "Food cancellation after it goes out for delivery is fully chargable.",
+      "Sundays and Festivals are off days.",
       "We eat what we serve to our customers.",
       "Images are for illustration; actual food may vary."
     ]

@@ -148,16 +148,15 @@ const PackageCard = memo(function PackageCard({ pkg }) {
 
 const packages = [
   {
-    name: "1 Day Meal",
-    price: "₹75/- Meal",
-    originalPrice: "₹130/- Meal",
-    description: "Perfect for trying out our meal",
+    name: "1 Meal",
+    price: "₹200/- Meal",
+    originalPrice: null,
+    description: "Perfect for 1 time meal",
     features: [
       "Advanced Payment",
-      "Two meal a day",
+      "One meal a day",
       "Fresh preparation",
       "On-time delivery",
-      "Standard menu"
     ],
     popular: false
   },
