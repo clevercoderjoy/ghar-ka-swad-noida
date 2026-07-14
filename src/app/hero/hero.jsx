@@ -84,7 +84,7 @@ export function Hero() {
   };
 
   const handleCallNow = () => {
-    window.open('tel:+916202744741', '_self');
+    window.open('tel:+919266844741', '_self');
     setIsOrderModalOpen(false);
   };
 
@@ -183,7 +183,7 @@ export function Hero() {
 
           <div className="relative z-10 text-center space-y-3 sm:space-y-4 mt-auto mb-4 py-3">
             <div className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm hover:bg-primary/15 transition-all duration-200 hover:scale-105 mx-auto">
-              <span className="text-xs sm:text-sm md:text-base font-semibold text-primary/90 tracking-wide">
+              <span className="text-sm sm:text-base md:text-lg font-semibold text-primary/90 tracking-wide">
                 घर का खाना खाये, घर के स्वाद में खायें
               </span>
             </div>
@@ -205,17 +205,17 @@ export function Hero() {
 
               {/* Sliding Hover Bubble */}
               <div 
-                className={`absolute rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10
-                  ${hoverStyle.animate ? 'transition-all duration-500' : 'transition-opacity duration-300'}
-                `}
+                className="absolute rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10"
                 style={{ 
                   left: hoverStyle.left, 
                   top: hoverStyle.top,
                   width: hoverStyle.width, 
                   height: hoverStyle.height,
                   opacity: hoverStyle.opacity, 
-                  transform: hoverStyle.opacity ? 'scale(1)' : 'scale(0.8)',
-                  transitionTimingFunction: hoverStyle.animate ? 'cubic-bezier(0.34, 1.15, 0.64, 1)' : 'ease-out'
+                  transform: hoverStyle.opacity ? 'scale(1)' : 'scale(0.85)',
+                  transition: hoverStyle.animate
+                    ? 'left 350ms cubic-bezier(0.25, 1, 0.5, 1), width 350ms cubic-bezier(0.25, 1, 0.5, 1), height 350ms cubic-bezier(0.25, 1, 0.5, 1), top 350ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 300ms cubic-bezier(0.25, 1, 0.5, 1)'
+                    : 'opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 300ms cubic-bezier(0.25, 1, 0.5, 1)'
                 }}
               />
 
@@ -248,7 +248,7 @@ export function Hero() {
                   1000+
                 </div>
                 <div className="relative z-10 text-[10px] sm:text-xs md:text-sm text-white/80 font-medium tracking-wide">
-                  Happy Customers
+                  Happy Stomachs
                 </div>
               </div>
               <div className="relative overflow-hidden space-y-0.5 sm:space-y-1 text-center p-3 sm:p-4 rounded-3xl transition-all duration-300 hover:scale-105 bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] cursor-pointer flex flex-col items-center justify-center">
@@ -263,7 +263,7 @@ export function Hero() {
               <div className="relative overflow-hidden space-y-0.5 sm:space-y-1 text-center p-3 sm:p-4 rounded-3xl transition-all duration-300 hover:scale-105 bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] cursor-pointer flex flex-col items-center justify-center">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
                 <div className="relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#FC8019] drop-shadow-md">
-                  2+
+                  2.5+
                 </div>
                 <div className="relative z-10 text-[10px] sm:text-xs md:text-sm text-white/80 font-medium tracking-wide">
                   Years of Service
@@ -321,17 +321,17 @@ export function Hero() {
 
                     {/* Sliding Hover Bubble */}
                     <div 
-                      className={`absolute rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10
-                        ${modalHoverStyle.animate ? 'transition-all duration-500' : 'transition-opacity duration-300'}
-                      `}
+                      className="absolute rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10"
                       style={{ 
                         left: modalHoverStyle.left, 
                         top: modalHoverStyle.top,
                         width: modalHoverStyle.width, 
                         height: modalHoverStyle.height,
                         opacity: modalHoverStyle.opacity, 
-                        transform: modalHoverStyle.opacity ? 'scale(1)' : 'scale(0.8)',
-                        transitionTimingFunction: modalHoverStyle.animate ? 'cubic-bezier(0.34, 1.15, 0.64, 1)' : 'ease-out'
+                        transform: modalHoverStyle.opacity ? 'scale(1)' : 'scale(0.85)',
+                        transition: modalHoverStyle.animate
+                          ? 'left 350ms cubic-bezier(0.25, 1, 0.5, 1), width 350ms cubic-bezier(0.25, 1, 0.5, 1), height 350ms cubic-bezier(0.25, 1, 0.5, 1), top 350ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 300ms cubic-bezier(0.25, 1, 0.5, 1)'
+                          : 'opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 300ms cubic-bezier(0.25, 1, 0.5, 1)'
                       }}
                     />
 

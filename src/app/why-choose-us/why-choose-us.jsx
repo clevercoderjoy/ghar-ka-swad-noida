@@ -72,13 +72,12 @@ const BenefitCard = memo(function BenefitCard({ benefit }) {
         ref={cardRef}
         tabIndex={0}
         style={{
-          transformStyle: "preserve-3d",
           willChange: "transform",
         }}
         className={
           isMounted
-            ? "group relative h-full p-4 rounded-2xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-300 overflow-hidden focus:outline-none benefit-card"
-            : "group relative h-full p-4 rounded-2xl bg-primary/5 border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-300 overflow-hidden focus:outline-none benefit-card"
+            ? "group relative h-full p-4 rounded-2xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none benefit-card"
+            : "group relative h-full p-4 rounded-2xl bg-primary/5 border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none benefit-card"
         }
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -86,15 +85,16 @@ const BenefitCard = memo(function BenefitCard({ benefit }) {
         onBlur={handleBlur}
         aria-label={text}
       >
+        {/* Inner subtle highlight */}
         {isMounted && (
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" style={{ transform: "translateZ(20px)" }} />
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
         )}
 
+        {/* Liquid glass hover bubble */}
         {isMounted && (
           <div 
             className="absolute inset-0 rounded-2xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
             style={{
-              transform: "translateZ(10px)",
               transitionProperty: 'all',
               transitionDuration: '500ms',
               transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
@@ -102,15 +102,20 @@ const BenefitCard = memo(function BenefitCard({ benefit }) {
           />
         )}
 
-        <div className="relative z-10 flex items-center justify-start gap-3 w-full h-full px-2 sm:px-4" style={{ transform: "translateZ(40px)" }}>
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/30 group-hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/30 shadow-inner">
-            <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary drop-shadow-sm" />
+        {/* Outer glow blur backdrop */}
+        <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
+
+        <div className="relative z-10 flex items-center justify-start gap-3 w-full h-full px-2 sm:px-4">
+          <div className="w-8 h-8 rounded-xl bg-primary/20 flex items-center justify-center transition-colors duration-300 group-hover:bg-primary/30 backdrop-blur-sm border border-white/30 shadow-inner flex-shrink-0">
+            <Icon className="w-4 h-4 text-primary drop-shadow-sm transition-transform duration-200 group-hover:scale-110" />
           </div>
-          <p className="text-sm md:text-base text-foreground/90 leading-relaxed group-hover:text-white transition-colors duration-300 text-left">
+          <p className="text-sm md:text-base text-white/90 leading-relaxed group-hover:text-white transition-colors duration-200 text-left">
             {text}
           </p>
         </div>
 
+        {/* Bottom hover gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-2xl" />
       </div>
     </div>
   );
@@ -235,7 +240,7 @@ export function WhyChooseUs() {
                     </div>
                     <div className="space-y-2">
                       <div className="text-2xl md:text-3xl font-bold text-white">Homemade</div>
-                      <div className="text-xl text-white font-semibold">
+                      <div className="text-white font-semibold" style={{ fontSize: "22px" }}>
                         घर का खाना खाये, घर के स्वाद में खायें |
                       </div>
                     </div>

@@ -175,4 +175,57 @@ All colors MUST be HSL.
     animation: bounce 0.6s ease-in-out;
     will-change: transform;
   }
+
+  /* Toned down card background and border orange tints */
+  .service-card,
+  .contact-card,
+  .menu-card,
+  .package-card,
+  .benefit-card,
+  .story-card {
+    background-color: rgba(252, 128, 25, 0.02) !important;
+    border-color: rgba(252, 128, 25, 0.08) !important;
+    box-shadow: 
+      0 4px 30px rgba(0, 0, 0, 0.25), 
+      inset 0 1px 1px rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* Toned down hover glass bubbles inside cards */
+  .service-card .bg-primary\/15,
+  .contact-card .bg-primary\/15,
+  .menu-card .bg-primary\/15,
+  .package-card .bg-primary\/15,
+  .benefit-card .bg-primary\/15,
+  .story-card .bg-primary\/15 {
+    background-color: rgba(252, 128, 25, 0.05) !important;
+    border-color: rgba(252, 128, 25, 0.1) !important;
+  }
+
+  .service-card .border-primary\/25,
+  .contact-card .border-primary\/25,
+  .menu-card .border-primary\/25,
+  .package-card .border-primary\/25,
+  .benefit-card .border-primary\/25,
+  .story-card .border-primary\/25 {
+    border-color: rgba(252, 128, 25, 0.12) !important;
+  }
+
+  /* Toned down outer card glow on hover */
+  .service-card .blur-xl,
+  .contact-card .blur-xl,
+  .menu-card .blur-xl,
+  .package-card .blur-xl,
+  .benefit-card .blur-xl,
+  .story-card .blur-xl {
+    opacity: 0 !important;
+  }
+
+  .group:hover .service-card .blur-xl,
+  .group:hover .contact-card .blur-xl,
+  .group:hover .menu-card .blur-xl,
+  .group:hover .package-card .blur-xl,
+  .group:hover .benefit-card .blur-xl,
+  .group:hover .story-card .blur-xl {
+    opacity: 0.25 !important;
+  }
 }

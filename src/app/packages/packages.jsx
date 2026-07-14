@@ -56,7 +56,6 @@ const PackageCard = memo(function PackageCard({ pkg }) {
         ref={cardRef}
         tabIndex={0}
         style={{
-          transformStyle: "preserve-3d",
           willChange: "transform",
         }}
         className={`group relative h-full p-6 rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none package-card ${pkg.popular ? "border-primary/50 bg-primary/10" : ""}`}
@@ -67,13 +66,12 @@ const PackageCard = memo(function PackageCard({ pkg }) {
         aria-label={pkg.name}
       >
         {/* Inner subtle highlight */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" style={{ transform: "translateZ(20px)" }} />
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
         
         {/* Liquid glass hover bubble */}
         <div 
           className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
           style={{
-            transform: "translateZ(10px)",
             transitionProperty: 'all',
             transitionDuration: '500ms',
             transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
@@ -89,7 +87,7 @@ const PackageCard = memo(function PackageCard({ pkg }) {
           </div>
         )}
 
-        <div className="relative z-10 space-y-4 sm:space-y-5" style={{ transform: "translateZ(40px)" }}>
+        <div className="relative z-10 space-y-4 sm:space-y-5">
           <CardHeader className="space-y-4 pb-4">
             <CardTitle className="text-2xl text-center text-white">{pkg.name}</CardTitle>
             <div className="space-y-2">
@@ -133,9 +131,7 @@ const PackageCard = memo(function PackageCard({ pkg }) {
                   <div 
                     className="absolute inset-0 rounded-full bg-primary/15 backdrop-blur-md border border-primary/25 scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
                     style={{
-                      transitionProperty: 'all',
-                      transitionDuration: '500ms',
-                      transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
+                      transition: 'opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 350ms cubic-bezier(0.25, 1, 0.5, 1)'
                     }}
                   />
                 </>

@@ -57,7 +57,6 @@ const ServiceCard = memo(function ServiceCard({ service }) {
         ref={cardRef}
         tabIndex={0}
         style={{
-          transformStyle: "preserve-3d",
           willChange: "transform",
         }}
         className="group relative h-full p-6 rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none service-card"
@@ -68,13 +67,12 @@ const ServiceCard = memo(function ServiceCard({ service }) {
         aria-label={service.title}
       >
         {/* Inner subtle highlight */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" style={{ transform: "translateZ(20px)" }} />
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
         
         {/* Liquid glass hover bubble */}
         <div 
           className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
           style={{
-            transform: "translateZ(10px)",
             transitionProperty: 'all',
             transitionDuration: '500ms',
             transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
@@ -83,7 +81,7 @@ const ServiceCard = memo(function ServiceCard({ service }) {
 
         <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
         
-        <div className="relative z-10 space-y-4 sm:space-y-5" style={{ transform: "translateZ(40px)" }}>
+        <div className="relative z-10 space-y-4 sm:space-y-5">
           <div className="w-12 h-12 mx-auto rounded-2xl bg-primary/20 flex items-center justify-center transition-colors duration-300 group-hover:bg-primary/30 backdrop-blur-sm border border-white/30 shadow-inner">
             <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary drop-shadow-sm transition-transform duration-200 group-hover:scale-110" />
           </div>

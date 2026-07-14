@@ -208,15 +208,15 @@ export function Header() {
                 
                 {/* Sliding Hover Bubble */}
                 <div 
-                  className={`absolute top-2 bottom-2 rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10
-                    ${hoverStyle.animate ? 'transition-all duration-500' : 'transition-opacity duration-300'}
-                  `}
+                  className="absolute top-2 bottom-2 rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10"
                   style={{ 
                     left: hoverStyle.left, 
                     width: hoverStyle.width, 
                     opacity: hoverStyle.opacity, 
-                    transform: hoverStyle.opacity ? 'scale(1)' : 'scale(0.8)',
-                    transitionTimingFunction: hoverStyle.animate ? 'cubic-bezier(0.34, 1.15, 0.64, 1)' : 'ease-out'
+                    transform: hoverStyle.opacity ? 'scale(1)' : 'scale(0.85)',
+                    transition: hoverStyle.animate
+                      ? 'left 350ms cubic-bezier(0.25, 1, 0.5, 1), width 350ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 300ms cubic-bezier(0.25, 1, 0.5, 1)'
+                      : 'opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 300ms cubic-bezier(0.25, 1, 0.5, 1)'
                   }}
                 />
 
@@ -233,15 +233,15 @@ export function Header() {
 
               {/* Sliding Hover Bubble */}
               <div 
-                className={`absolute top-1 bottom-1 rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10
-                  ${rightHoverStyle.animate ? 'transition-all duration-500' : 'transition-opacity duration-300'}
-                `}
+                className="absolute top-1 bottom-1 rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10"
                 style={{ 
                   left: rightHoverStyle.left, 
                   width: rightHoverStyle.width, 
                   opacity: rightHoverStyle.opacity, 
-                  transform: rightHoverStyle.opacity ? 'scale(1)' : 'scale(0.8)',
-                  transitionTimingFunction: rightHoverStyle.animate ? 'cubic-bezier(0.34, 1.15, 0.64, 1)' : 'ease-out'
+                  transform: rightHoverStyle.opacity ? 'scale(1)' : 'scale(0.85)',
+                  transition: rightHoverStyle.animate
+                    ? 'left 350ms cubic-bezier(0.25, 1, 0.5, 1), width 350ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 300ms cubic-bezier(0.25, 1, 0.5, 1)'
+                    : 'opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 300ms cubic-bezier(0.25, 1, 0.5, 1)'
                 }}
               />
 

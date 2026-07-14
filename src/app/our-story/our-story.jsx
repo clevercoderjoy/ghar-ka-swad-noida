@@ -1,4 +1,4 @@
-import { Compass, Flame, TrendingUp, Globe } from "lucide-react";
+import { User, Flame, TrendingUp, MapPin } from "lucide-react";
 import { useRef, useState, useCallback, useEffect, useMemo, memo } from "react";
 
 function useCardTilt() {
@@ -61,10 +61,9 @@ const StoryCard = memo(function StoryCard({ title, text, icon: Icon }) {
         style={{
           transform: transform,
           transition: "transform 0.1s ease-out",
-          transformStyle: "preserve-3d",
           willChange: "transform",
         }}
-        className="group relative h-full rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none p-6 sm:p-8 flex flex-col justify-start"
+        className="group relative h-full rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none p-6 sm:p-8 flex flex-col justify-start story-card"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onFocus={handleFocus}
@@ -73,7 +72,7 @@ const StoryCard = memo(function StoryCard({ title, text, icon: Icon }) {
       >
         {/* Inner subtle highlight */}
         {isMounted && (
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" style={{ transform: "translateZ(20px)" }} />
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
         )}
 
         {/* Liquid glass hover bubble */}
@@ -81,7 +80,6 @@ const StoryCard = memo(function StoryCard({ title, text, icon: Icon }) {
           <div 
             className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
             style={{
-              transform: "translateZ(10px)",
               transitionProperty: 'all',
               transitionDuration: '500ms',
               transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
@@ -91,7 +89,7 @@ const StoryCard = memo(function StoryCard({ title, text, icon: Icon }) {
 
         <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
 
-        <div className="relative z-10 space-y-4 flex flex-col items-center text-center h-full justify-start" style={{ transform: "translateZ(40px)" }}>
+        <div className="relative z-10 space-y-4 flex flex-col items-center text-center h-full justify-start">
           <div className="w-12 h-12 rounded-2xl bg-primary/20 flex items-center justify-center transition-colors duration-300 group-hover:bg-primary/30 backdrop-blur-sm border border-white/30 shadow-inner flex-shrink-0">
             <Icon className="w-6 h-6 text-primary drop-shadow-sm transition-transform duration-200 group-hover:scale-110" />
           </div>
@@ -113,16 +111,16 @@ export function OurStory() {
   const storyCards = useMemo(() => [
     {
       title: "Our First Customer",
-      icon: Compass,
+      icon: User,
       text: (
         <>
-          It all started in January 2024 with a simple discussion in our home kitchen.
+          <span className="text-[#FC8019] font-bold">It all started in January 2024</span> with a simple discussion in our home kitchen.
           <br /><br />
-          QUESTIONS, CONFUSION, ANXIETY!
+          QUESTIONS, CONFUSION, ANXIETY, FEAR!
           <br /><br />
           Darbhanga's lack of homemade tiffin services market gave us cramps in our hearts, & got us thinking if it would ever work.
           <br /><br />
-          With trust in my guts, the support of my family, under my leadership, I started <span className="text-[#FC8019] font-bold">घर का स्वाद</span>
+          With trust in my guts, the support of my family, <span className="text-[#FC8019] font-bold">I started घर का स्वाद |</span>
         </>
       )
     },
@@ -131,27 +129,41 @@ export function OurStory() {
       icon: Flame,
       text: (
         <>
-          We advertised, door to door, office to office, pg to pg, hospital to hospital.
+          <span className="text-[#FC8019] font-bold">Hot Sun, Rain, Storm, Nothing stopped us.</span>
+          <br />
+          We went, door to door, office to office, pg to pg, hospital to hospital.
           <br /><br />
-          One conversation at a time. While focusing on top-notch quality, hygiene, and timely delivery, we built trust and served good tasty food.
+          Focusing on quality, hygiene, and timely delivery, we built trust and served food that was great.
           <br /><br />
-          One customer became five. Five became ten. Ten became hundreds. Word of mouth & endless hustle did the rest.
+          One to five. Five to ten. Ten to hundreds. Word of mouth & endless hustle kept winning more <span className="text-[#FC8019] font-bold">customers and their trust.</span>
         </>
       )
     },
     {
       title: "How Is It Going",
       icon: TrendingUp,
-      text: `Today, Ghar Ka Swad has become a trusted kitchen for hundreds of satisfied daily subscribers. We maintain a strict policy of transparency: we serve our customers the exact same meals that we eat ourselves.
-
-As we continue to grow, our core promise remains unchanged: delivering authentic, healthy, and hygienic Bihari-style home meals right to your doorstep, every single day.`
+      text: (
+        <>
+          <span className="text-[#FC8019] font-bold">Today, घर का स्वाद is 2.5+ years old</span> becoming Darbhanga's most trusted choices for truly homemade tiffin service.
+          <br /><br />
+          We are proudly serving hospitals, training centers, offices, corporate meetings, PGs, rest houses, and also cater bulk orders for events and parties as well.
+          <br /><br />
+          We are serving food, filling stomachs, <span className="text-[#FC8019] font-bold">wining hearts, and earning trust.</span>
+        </>
+      )
     },
     {
-      title: "Expanding Our Empire",
-      icon: Globe,
-      text: `Following our massive success and local love in Darbhanga, we are excited to expand our boundaries and bring the exact same warmth, hygiene, and authentic homemade taste to Noida.
-
-We are building a wider community of home-food lovers, proving that no matter where you are, you can always enjoy the true, comfort-filled flavor of home.`
+      title: "Hello, Noida!",
+      icon: MapPin,
+      text: (
+        <>
+          <span className="text-[#FC8019] font-bold">We are coming to Noida!</span>
+          <br /><br />
+          Not just an expansion—a promise. A promise to every student missing homemade food, every professional craving their husband's / wife's wholesome meal, and every family looking for a truly homemade food.
+          <br /><br />
+          It's Noida's turn to experience the taste that made Darbhanga fall in love with us. We won Darbhanga. <span className="text-[#FC8019] font-bold">We are coming to win Noida too.</span>
+        </>
+      )
     }
   ], []);
 

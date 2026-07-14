@@ -44,7 +44,7 @@ export function BroucherPage() {
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#FC8019] drop-shadow-md mb-2">घर का स्वाद</h1>
           <div className="relative flex justify-center mt-6 mb-6">
-            <span className="text-base font-semibold text-primary px-5 py-2 mb-2 mt-4 rounded-xl glass shadow-md border border-white/20 backdrop-blur-xl bg-white/10">
+            <span className="text-lg font-semibold text-primary px-5 py-2 mb-2 mt-4 rounded-xl glass shadow-md border border-white/20 backdrop-blur-xl bg-white/10">
               घर का खाना खाये, घर के स्वाद में खायें
             </span>
           </div>
@@ -152,7 +152,7 @@ export function BroucherPage() {
           <div className="flex flex-col items-center justify-center mb-5 w-full">
             <div className="flex flex-col items-center justify-center w-full max-w-md px-4">
               <span className="text-2xl font-extrabold text-[#FC8019] drop-shadow-md">घर का स्वाद</span>
-              <span className="text-md font-bold text-primary">+91-6202744741</span>
+              <span className="text-md font-bold text-primary">+91-9266844741</span>
             </div>
           </div>
 

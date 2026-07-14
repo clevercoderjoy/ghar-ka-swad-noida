@@ -9,8 +9,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    detail: "+91 6202744741",
-    action: "tel:+916202744741"
+    detail: "+91 9266844741",
+    action: "tel:+919266844741"
   },
   {
     icon: Headphones,
@@ -22,7 +22,7 @@ const contactInfo = [
     icon: FaWhatsapp,
     title: "Whatsapp",
     detail: "घर का स्वाद",
-    action: "https://wa.me/+916202744741"
+    action: "https://wa.me/+919266844741"
   },
   {
     icon: Clock,
@@ -86,7 +86,6 @@ function ContactCard({ info }) {
       ref={cardRef}
       tabIndex={0}
       style={{
-        transformStyle: "preserve-3d",
         willChange: "transform",
       }}
       className={
@@ -103,13 +102,12 @@ function ContactCard({ info }) {
       {isMounted && (
         <>
           {/* Inner subtle highlight */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" style={{ transform: "translateZ(20px)" }} />
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
           
           {/* Liquid glass hover bubble */}
           <div 
             className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
             style={{
-              transform: "translateZ(10px)",
               transitionProperty: 'all',
               transitionDuration: '500ms',
               transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
@@ -119,7 +117,7 @@ function ContactCard({ info }) {
           <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
         </>
       )}
-      <CardContent className="relative z-10 p-0 text-center space-y-4" style={{ transform: "translateZ(40px)" }}>
+      <CardContent className="relative z-10 p-0 text-center space-y-4">
         <div className="w-12 h-12 mx-auto rounded-2xl bg-primary/20 flex items-center justify-center transition-colors duration-300 group-hover:bg-primary/30 backdrop-blur-sm border border-white/30 shadow-inner">
           <info.icon className="w-6 h-6 text-primary drop-shadow-sm transition-transform duration-200 group-hover:scale-110" />
         </div>
@@ -176,6 +174,7 @@ function LiquidGlassCTA() {
   useEffect(() => { setIsMounted(true); }, []);
   
   const [btnHoverStyle, setBtnHoverStyle] = useState({ left: 0, top: 0, width: 0, height: 0, opacity: 0, animate: false });
+  const btnWrapperRef = useRef(null);
 
   const handleBtnMouseEnter = useCallback((e) => {
     const el = e.currentTarget;
@@ -192,6 +191,18 @@ function LiquidGlassCTA() {
   const handleBtnMouseLeave = useCallback(() => {
     setBtnHoverStyle(prev => ({ ...prev, opacity: 0, animate: false }));
   }, []);
+
+  const handleCardMouseMove = useCallback((e) => {
+    handleMouseMove(e);
+    if (btnWrapperRef.current && !btnWrapperRef.current.contains(e.target)) {
+      setBtnHoverStyle(prev => ({ ...prev, opacity: 0, animate: false }));
+    }
+  }, [handleMouseMove]);
+
+  const handleCardMouseLeave = useCallback((e) => {
+    handleMouseLeave(e);
+    setBtnHoverStyle(prev => ({ ...prev, opacity: 0, animate: false }));
+  }, [handleMouseLeave]);
   
   return (
     <div
@@ -200,26 +211,39 @@ function LiquidGlassCTA() {
       style={{
         transform: transform,
         transition: "transform 0.1s ease-out",
-        transformStyle: "preserve-3d",
         willChange: "transform",
       }}
       className={
         isMounted
-          ? "relative rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none"
-          : "relative rounded-3xl bg-white/5 border border-white/10 shadow-xl hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none"
+          ? "group relative rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-xl hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none contact-card"
+          : "group relative rounded-3xl bg-primary/5 border border-primary/15 shadow-xl hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none contact-card"
       }
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      onMouseMove={handleCardMouseMove}
+      onMouseLeave={handleCardMouseLeave}
       onFocus={handleFocus}
       onBlur={handleBlur}
       aria-label="CTA Card"
     >
       {isMounted && (
         <>
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-white/5 via-transparent to-transparent pointer-events-none" style={{ transform: "translateZ(20px)" }} />
+          {/* Inner subtle highlight */}
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
+          
+          {/* Liquid glass hover bubble */}
+          <div 
+            className="absolute inset-0 rounded-3xl bg-primary/15 border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+            style={{
+              transitionProperty: 'all',
+              transitionDuration: '500ms',
+              transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
+            }}
+          />
+
+          {/* Outer glow blur backdrop */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
         </>
       )}
-      <CardContent className="relative z-10 p-8 md:p-12 text-center space-y-3" style={{ transform: "translateZ(40px)" }}>
+      <CardContent className="relative z-10 p-8 md:p-12 text-center space-y-3">
         <h3 className="text-2xl md:text-3xl font-bold text-white">
           Start Your Delicious Journey with
           {" "}
@@ -229,8 +253,9 @@ function LiquidGlassCTA() {
           Join hundreds of satisfied customers who trust us for their daily meals.
         </p>
         
-        <div className="flex justify-center pt-6" style={{ transform: "translateZ(40px)" }}>
+        <div className="flex justify-center pt-6">
           <div 
+            ref={btnWrapperRef}
             className="relative flex items-center p-1.5 sm:p-2 rounded-full bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)]"
             onMouseLeave={handleBtnMouseLeave}
           >
@@ -239,23 +264,23 @@ function LiquidGlassCTA() {
 
             {/* Sliding Hover Bubble */}
             <div 
-              className={`absolute rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10
-                ${btnHoverStyle.animate ? 'transition-all duration-500' : 'transition-opacity duration-300'}
-              `}
+              className="absolute rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10"
               style={{ 
                 left: btnHoverStyle.left, 
                 top: btnHoverStyle.top,
                 width: btnHoverStyle.width, 
                 height: btnHoverStyle.height,
                 opacity: btnHoverStyle.opacity, 
-                transform: btnHoverStyle.opacity ? 'scale(1)' : 'scale(0.8)',
-                transitionTimingFunction: btnHoverStyle.animate ? 'cubic-bezier(0.34, 1.15, 0.64, 1)' : 'ease-out'
+                transform: btnHoverStyle.opacity ? 'scale(1)' : 'scale(0.85)',
+                transition: btnHoverStyle.animate 
+                  ? "left 350ms cubic-bezier(0.25, 1, 0.5, 1), width 350ms cubic-bezier(0.25, 1, 0.5, 1), height 350ms cubic-bezier(0.25, 1, 0.5, 1), top 350ms cubic-bezier(0.25, 1, 0.5, 1), opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 300ms cubic-bezier(0.25, 1, 0.5, 1)"
+                  : "opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 300ms cubic-bezier(0.25, 1, 0.5, 1)"
               }}
             />
 
             <button
               onMouseEnter={handleBtnMouseEnter}
-              onClick={() => window.location.href = 'tel:+916202744741'}
+              onClick={() => window.location.href = 'tel:+919266844741'}
               className="relative z-20 flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-white/90 font-semibold hover:text-white transition-colors duration-300"
             >
               <Phone className="h-4 sm:h-5 w-4 sm:w-5 drop-shadow-md text-[#FC8019]" />
@@ -264,7 +289,7 @@ function LiquidGlassCTA() {
             
             <button
               onMouseEnter={handleBtnMouseEnter}
-              onClick={() => window.open('https://wa.me/+916202744741', '_blank', 'noopener,noreferrer')}
+              onClick={() => window.open('https://wa.me/+919266844741', '_blank', 'noopener,noreferrer')}
               className="relative z-20 flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-white/90 font-semibold hover:text-white transition-colors duration-300"
             >
               <FaWhatsapp className="h-5 sm:h-6 w-5 sm:w-6 drop-shadow-md text-green-500" />
@@ -273,9 +298,6 @@ function LiquidGlassCTA() {
           </div>
         </div>
       </CardContent>
-      {isMounted && (
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-200 rounded-3xl" />
-      )}
     </div>
   );
 }
