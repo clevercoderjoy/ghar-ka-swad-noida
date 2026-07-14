@@ -1,6 +1,7 @@
 import { useEffect, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import smoothscroll from "smoothscroll-polyfill";
+import Lenis from "lenis";
 
 // Layouts and Sections
 import { Header } from "./app/header/header";
@@ -38,6 +39,44 @@ function App() {
   useEffect(() => {
     // Initialize smoothscroll polyfill for older browsers
     smoothscroll.polyfill();
+
+    // Initialize Lenis smooth scroll
+    const lenis = new Lenis({
+      lerp: 0.1,
+      smoothWheel: true,
+      wheelMultiplier: 1.2,
+      touchMultiplier: 1.5,
+      infinite: false,
+    });
+
+    let rafId;
+    function raf(time) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+
+    rafId = requestAnimationFrame(raf);
+
+    // Smooth anchor clicks
+    const handleAnchorClick = (e) => {
+      const target = e.target;
+      const anchor = target.closest("a");
+      if (anchor && anchor.hash && anchor.origin === window.location.origin) {
+        const targetElement = document.querySelector(anchor.hash);
+        if (targetElement) {
+          e.preventDefault();
+          lenis.scrollTo(targetElement);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+
+    return () => {
+      lenis.destroy();
+      cancelAnimationFrame(rafId);
+      document.removeEventListener("click", handleAnchorClick);
+    };
   }, []);
 
   return (
