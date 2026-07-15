@@ -51,14 +51,14 @@ const PackageCard = memo(function PackageCard({ pkg }) {
   } = useCardTilt();
 
   return (
-    <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0">
+    <div className="flex-1 flex flex-col group transition-all duration-700 ease-out opacity-100 translate-y-0">
       <div
         ref={cardRef}
         tabIndex={0}
         style={{
           willChange: "transform",
         }}
-        className={`group relative h-full p-6 rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none package-card ${pkg.popular ? "border-primary/50 bg-primary/10" : ""}`}
+        className={`group relative flex-1 min-h-[390px] flex flex-col justify-between p-6 rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none package-card ${pkg.popular ? "border-primary/50 bg-primary/10" : ""}`}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onFocus={handleFocus}
@@ -87,58 +87,59 @@ const PackageCard = memo(function PackageCard({ pkg }) {
           </div>
         )}
 
-        <div className="relative z-10 space-y-4 sm:space-y-5">
-          <CardHeader className="space-y-4 pb-4">
-            <CardTitle className="text-2xl text-center text-white">{pkg.name}</CardTitle>
-            <div className="space-y-2">
+        <div className="relative z-10 flex flex-col flex-1 justify-between h-full space-y-4">
+          {/* Header */}
+          <div className="space-y-2">
+            <h3 className="text-2xl font-bold text-center text-white">{pkg.name}</h3>
+            <div className="space-y-1">
               <div className="flex flex-col items-center justify-center">
-                <span className="text-3xl font-bold text-primary text-center">{pkg.price}</span>
+                {pkg.price && (
+                  <span className="text-3xl font-bold text-primary text-center">{pkg.price}</span>
+                )}
                 {pkg.originalPrice && (
-                  <div className="flex flex-row items-center gap-2 mt-1 mb-1">
+                  <div className="flex flex-row items-center gap-2 mt-0.5">
                     <span className="text-lg font-bold text-accent">Festive Offer</span>
                     <span className="text-lg font-semibold text-muted-foreground line-through">{pkg.originalPrice}</span>
                   </div>
                 )}
               </div>
-              <CardDescription className="text-base text-white text-center">{pkg.description}</CardDescription>
+              <p className="text-sm text-white/70 text-center leading-relaxed">{pkg.description}</p>
             </div>
-          </CardHeader>
-          <CardContent className="space-y-4 pb-4">
-            <ul className="space-y-3">
+          </div>
+
+          {/* Features */}
+          <div className="flex-grow flex flex-col justify-start py-2">
+            <ul className="space-y-2.5">
               {pkg.features.map((feature) => (
                 <li key={feature} className="flex items-start gap-3">
                   <div className="mt-1 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                     <Check className="w-3 h-3 text-primary" />
                   </div>
-                  <span className="text-sm text-foreground/90">{feature}</span>
+                  <span className={`text-sm ${feature === "We eat what we serve our customers" ? "text-primary font-semibold" : "text-foreground/90"}`}>{feature}</span>
                 </li>
               ))}
             </ul>
-          </CardContent>
-          <CardFooter>
+          </div>
+
+          {/* Footer / Button */}
+          <div className="pt-2">
             <Button
-              className={`group relative overflow-hidden w-full rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-none ${
-                pkg.popular 
-                  ? "bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white border border-white/20 shadow-lg"
-                  : "bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] text-white/90 hover:bg-transparent hover:text-white"
-              }`}
+              className="group relative overflow-hidden w-full rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-none bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] text-white/90 hover:bg-transparent hover:text-white"
               variant="ghost"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              {!pkg.popular && (
-                <>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
-                  <div 
-                    className="absolute inset-0 rounded-full bg-primary/15 backdrop-blur-md border border-primary/25 scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
-                    style={{
-                      transition: 'opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 350ms cubic-bezier(0.25, 1, 0.5, 1)'
-                    }}
-                  />
-                </>
-              )}
+              <>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
+                <div 
+                  className="absolute inset-0 rounded-full bg-primary/15 backdrop-blur-md border border-primary/25 scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+                  style={{
+                    transition: 'opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 350ms cubic-bezier(0.25, 1, 0.5, 1)'
+                  }}
+                />
+              </>
               <span className="relative z-10 tracking-wide">Get In Touch</span>
             </Button>
-          </CardFooter>
+          </div>
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl" />
       </div>
@@ -148,44 +149,62 @@ const PackageCard = memo(function PackageCard({ pkg }) {
 
 const packages = [
   {
-    name: "1 Meal",
+    name: "Single meal",
     price: "₹200/- Meal",
     originalPrice: null,
-    description: "Perfect for 1 time meal",
+    description: "1 meal, lunch or dinner for a day",
     features: [
-      "Advanced Payment",
-      "One meal a day",
-      "Fresh preparation",
+      "Advance Payment",
+      "Authentic Bihari-Style Meal",
+      "Perfect for First-Timers",
+      "Truly Home-Cooked",
+      "Portion size that satisfies",
+      "On-Time Delivery",
+    ],
+    popular: false
+  },
+  {
+    name: "Monthly Single",
+    price: "₹3200/-",
+    originalPrice: null,
+    description: "1 meal, lunch or dinner for a calendar month.",
+    features: [
+      "Subscription Based",
+      "Advance Payment",
+      "Truly home cooked one meal for a calendar month.",
+      "Made with Fresh Ingredients",
+      "Portion size that satisfies",
       "On-time delivery",
     ],
     popular: false
   },
   {
-    name: "Monthly Veg",
-    price: "₹3300/-",
-    originalPrice: "₹3600/-",
-    description: "Most popular among our vegetarian customers",
+    name: "Monthly Double",
+    price: "₹6200/-",
+    originalPrice: null,
+    description: "2 meals, lunch and dinner for a calendar month.",
     features: [
-      "Advanced Payment",
-      "30 days of delicious meals",
-      "Best value pricing",
+      "Subscription Based",
+      "Advance Payment",
+      "Truly home cooked two meal for a calendar month.",
+      "Made with Fresh Ingredients",
+      "Portion size that satisfies",
       "On-time delivery",
-      "Standard Menu",
-      "sweets 3 days a week",
-      "Weekend specials",
     ],
     popular: true
   },
   {
-    name: "Event Catering",
-    price: "Custom Quote",
-    description: "For your special occasions",
+    name: "Food Standards",
+    price: null,
+    originalPrice: null,
+    description: "For all our meals",
     features: [
-      "Customized menu",
-      "Any number of guests",
-      "Professional setup",
-      "Multiple cuisines",
-      "Dedicated service staff"
+      "Clean & hygienic kitchen & utensils",
+      "Fresh ingredients, washed before cooking",
+      "RO Water for Cooking",
+      "Minimal & fresh cooking oil used",
+      "Healthy meals for good health",
+      "We eat what we serve our customers",
     ],
     popular: false
   }
@@ -193,10 +212,10 @@ const packages = [
 
 export function Packages() {
   const packageCardsJSX = useMemo(() => {
-    return packages.map((pkg) => (
+    return packages.map((pkg, index) => (
       <div
-        key={pkg.name}
-        className={`transition-all duration-700 ease-out opacity-100 translate-y-0 ${pkg.popular ? "md:scale-102" : ""}`}
+        key={`${pkg.name}-${index}`}
+        className="transition-all duration-700 ease-out opacity-100 translate-y-0 flex flex-col flex-1"
         style={{ minWidth: 300, maxWidth: 360, width: "100%" }}
       >
         <PackageCard pkg={pkg} />
@@ -233,13 +252,13 @@ export function Packages() {
       <div className="container px-4 relative z-10">
         <div className="text-center space-y-4 mb-16 transition-all duration-700 ease-out opacity-100 translate-y-0">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#FC8019] drop-shadow-md">
-            Choose Your Meal Plan
+            Choose Your Meal Packages
           </h2>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
-            Flexible packages designed for every need and budget
+            Truly home-cooked premium meals on not so premium budget
           </p>
         </div>
-        <div className="flex justify-center items-center gap-8 max-w-full mx-auto flex-wrap md:flex-nowrap">
+        <div className="flex justify-center items-stretch gap-8 max-w-full mx-auto flex-wrap md:flex-nowrap">
           {packageCardsJSX}
         </div>
       </div>

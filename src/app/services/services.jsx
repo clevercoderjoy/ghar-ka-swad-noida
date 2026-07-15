@@ -111,8 +111,8 @@ const services = [
   },
   {
     icon: Clock,
-    title: "2 - Time tiffin",
-    description: "Choose your preferred meal combination - lunch or dinner. We deliver you all."
+    title: "2 - Time meals",
+    description: "Choose your preferred meal package - lunch, dinner or both. We've got you covered."
   },
   {
     icon: Heart,
