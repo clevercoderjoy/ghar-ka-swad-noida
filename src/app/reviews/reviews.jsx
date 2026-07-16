@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback, useMemo, memo } from "react";
+import { memo } from "react";
 import { Star, Quote } from "lucide-react";
 import "./reviews.css";
 
@@ -48,37 +48,26 @@ const reviews = [
 ];
 
 const ReviewCard = memo(function ReviewCard({ review, className }) {
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => { setIsMounted(true); }, []);
-
   if (review.isSpecial) {
     return (
-      <div className={`w-full flex flex-col group transition-all duration-300 ${className || ""}`}>
+      <div className={`w-full flex flex-col group ${className || ""}`}>
         <a
           href={review.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="reviews-card relative w-full h-[170px] flex flex-col justify-between p-4 rounded-2xl bg-[#FC8019]/10 backdrop-blur-xl border border-[#FC8019]/35 shadow-[0_4px_30px_rgba(252,128,25,0.1),inset_0_1px_1px_rgba(252,128,25,0.15)] hover:shadow-2xl focus:outline-none overflow-hidden text-center cursor-pointer select-none"
+          className="reviews-card relative w-full min-h-[170px] flex flex-col justify-between p-4 rounded-2xl bg-[#FC8019]/10 backdrop-blur-xl border border-[#FC8019]/35 shadow-[0_4px_30px_rgba(252,128,25,0.1),inset_0_1px_1px_rgba(252,128,25,0.15)] hover:shadow-2xl focus:outline-none text-center cursor-pointer select-none"
         >
-          {/* Inner subtle highlight */}
-          {isMounted && (
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#FC8019]/15 via-transparent to-transparent pointer-events-none" />
-          )}
+          {/* Always-visible inner highlight */}
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#FC8019]/15 via-transparent to-transparent pointer-events-none" />
 
-          {/* Liquid glass hover bubble */}
-          {isMounted && (
-            <div 
-              className="absolute inset-0 rounded-2xl bg-[#FC8019]/25 backdrop-blur-md border border-[#FC8019]/45 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
-              style={{
-                transitionProperty: 'all',
-                transitionDuration: '500ms',
-                transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
-              }}
-            />
-          )}
+          {/* Liquid glass hover bubble — pure CSS */}
+          <div
+            className="absolute inset-0 rounded-2xl bg-[#FC8019]/25 backdrop-blur-md border border-[#FC8019]/45 opacity-0 group-hover:opacity-100 scale-[0.85] group-hover:scale-100 pointer-events-none"
+            style={{ transition: 'transform 500ms cubic-bezier(0.34,1.15,0.64,1), opacity 500ms ease' }}
+          />
 
-          {/* Outer glow blur backdrop */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-[#FC8019]/25 via-accent/25 to-[#FC8019]/25 rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-200 pointer-events-none" />
+          {/* Outer glow */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-[#FC8019]/25 via-accent/25 to-[#FC8019]/25 rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none" />
 
           <div className="relative z-10 flex flex-col items-center justify-between h-full w-full">
             <div className="flex flex-col items-center gap-1">
@@ -94,9 +83,9 @@ const ReviewCard = memo(function ReviewCard({ review, className }) {
               {review.text}
             </p>
 
-            <div className="w-full bg-[#FC8019] hover:bg-[#e07016] text-white text-[11px] font-bold py-1.5 px-3 rounded-xl shadow-md transition-all duration-200 flex items-center justify-center gap-1">
+            <div className="w-full bg-[#FC8019] hover:bg-[#e07016] text-white text-[11px] font-bold py-1.5 px-3 rounded-xl shadow-md transition-colors duration-200 flex items-center justify-center gap-1">
               <span>Go to Google Reviews</span>
-              <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+              <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3zm-2 16H5V7h7V5H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7h-2v7z"/>
               </svg>
             </div>
@@ -107,28 +96,21 @@ const ReviewCard = memo(function ReviewCard({ review, className }) {
   }
 
   return (
-    <div className={`w-full flex flex-col group transition-all duration-300 ${className || ""}`}>
-      <div className="reviews-card relative w-full h-[170px] flex flex-col justify-between p-4 rounded-2xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl focus:outline-none overflow-hidden">
-        {/* Inner subtle highlight */}
-        {isMounted && (
-          <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
-        )}
+    <div className={`w-full flex flex-col group ${className || ""}`}>
+      <div className="reviews-card relative w-full h-full min-h-[170px] flex flex-col justify-between p-4 rounded-2xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl focus:outline-none">
 
-        {/* Liquid glass hover bubble */}
-        {isMounted && (
-          <div 
-            className="absolute inset-0 rounded-2xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
-            style={{
-              transitionProperty: 'all',
-              transitionDuration: '500ms',
-              transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
-            }}
-          />
-        )}
+        {/* Always-visible inner highlight */}
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
 
-        {/* Outer glow blur backdrop */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200 pointer-events-none" />
-        
+        {/* Liquid glass hover bubble — pure CSS */}
+        <div
+          className="absolute inset-0 rounded-2xl bg-primary/15 backdrop-blur-md border border-primary/25 opacity-0 group-hover:opacity-100 scale-[0.85] group-hover:scale-100 pointer-events-none"
+          style={{ transition: 'transform 500ms cubic-bezier(0.34,1.15,0.64,1), opacity 500ms ease' }}
+        />
+
+        {/* Outer glow */}
+        <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none" />
+
         <div className="relative z-10 flex flex-col flex-grow justify-between gap-2 h-full">
           <div>
             <div className="flex items-center justify-between mb-1.5">
@@ -139,11 +121,11 @@ const ReviewCard = memo(function ReviewCard({ review, className }) {
                 ))}
               </div>
             </div>
-            <p className="text-xs sm:text-[13px] lg:text-sm text-white/95 leading-relaxed text-left italic line-clamp-3">
-              "{review.text}"
+            <p className="text-xs sm:text-[13px] lg:text-sm text-white/95 leading-relaxed text-left italic">
+              &ldquo;{review.text}&rdquo;
             </p>
           </div>
-          
+
           <div className="border-t border-white/10 pt-2 mt-auto">
             <h4 className="text-sm sm:text-base font-bold text-white text-left">{review.name}</h4>
           </div>
@@ -157,9 +139,6 @@ const ReviewCard = memo(function ReviewCard({ review, className }) {
 });
 
 export function Reviews() {
-  // Split 8 reviews into 2 columns of 4 reviews each
-  const col1 = useMemo(() => reviews.slice(0, 4), []);
-  const col2 = useMemo(() => reviews.slice(4, 8), []);
 
   return (
     <section
@@ -202,44 +181,34 @@ export function Reviews() {
         {/* Split Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch max-w-[1536px] mx-auto w-full">
           {/* Left Side: Stats (Takes 3 cols on large screens, height decreased slightly) */}
-          <div className="flex flex-col justify-between text-left lg:col-span-3 bg-white/5 backdrop-blur-md border border-white/10 p-5 sm:p-6 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] lg:sticky lg:top-24 min-h-[500px] sm:min-h-[540px] w-full">
+          <div className="flex flex-col justify-between text-left lg:col-span-3 bg-white/5 backdrop-blur-md border border-white/10 p-5 sm:p-6 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] lg:sticky lg:top-24 min-h-[500px] sm:min-h-[540px] w-full overflow-hidden">
             <div className="flex flex-col gap-2 border-b border-white/10 pb-3 sm:pb-4">
-              <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FC8019] tracking-tight whitespace-nowrap">17,500 +</span>
-              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug whitespace-nowrap">Delicious Meals Delivered</span>
+              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight break-words">17,500 +</span>
+              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Delicious Meals Delivered</span>
             </div>
             <div className="flex flex-col gap-2 border-b border-white/10 pb-3 sm:pb-4">
-              <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FC8019] tracking-tight whitespace-nowrap">1,000 +</span>
-              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug whitespace-nowrap">Delighted Customers</span>
+              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight break-words">1,000 +</span>
+              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Delighted Customers</span>
             </div>
             <div className="flex flex-col gap-2 border-b border-white/10 pb-3 sm:pb-4">
-              <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FC8019] tracking-tight whitespace-nowrap">100 +</span>
-              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug whitespace-nowrap">Currently Active Subscribers</span>
+              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight break-words">100 +</span>
+              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Currently Active Subscribers</span>
             </div>
             <div className="flex flex-col gap-2 border-b border-white/10 pb-3 sm:pb-4">
-              <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FC8019] tracking-tight whitespace-nowrap">2.5 +</span>
-              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug whitespace-nowrap">Years of Trust Service</span>
+              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight break-words">2.5 +</span>
+              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Years of Trust Service</span>
             </div>
             <div className="flex flex-col gap-2">
-              <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FC8019] tracking-tight whitespace-nowrap">4.8 ★★★★</span>
-              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug whitespace-nowrap">Google Customer Ratings</span>
+              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight break-words">4.8 ★★★★</span>
+              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Google Customer Ratings</span>
             </div>
           </div>
 
-          {/* Right Side: Reviews 2 Columns Grid (Takes 9 cols on large screens, 4 items each) */}
-          <div className="lg:col-span-9 grid grid-cols-2 gap-4">
-            {/* Column 1 */}
-            <div className="flex flex-col gap-4">
-              {col1.map((review, index) => (
-                <ReviewCard key={`col1-${index}`} review={review} />
-              ))}
-            </div>
-
-            {/* Column 2 */}
-            <div className="flex flex-col gap-4">
-              {col2.map((review, index) => (
-                <ReviewCard key={`col2-${index}`} review={review} />
-              ))}
-            </div>
+          {/* Right Side: Reviews Flat Grid (Takes 9 cols on large screens) */}
+          <div className="lg:col-span-9 grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
+            {reviews.map((review, index) => (
+              <ReviewCard key={index} review={review} />
+            ))}
           </div>
         </div>
       </div>
