@@ -134,7 +134,7 @@ export function Services() {
       className="py-28 sm:py-36 md:py-56 relative overflow-hidden bg-cover bg-center bg-no-repeat"
     >
       <img
-        src="/assets/img2.jpg"
+        src="/assets/img18.jpg"
         alt="Services Background"
         style={{
           position: "absolute",

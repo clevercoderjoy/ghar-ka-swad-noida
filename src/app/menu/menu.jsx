@@ -79,9 +79,9 @@ const menuItems = [
       "Menu may change based on availability of food items.",
       "Special requests can be accommodated with prior notice. (Chargable)",
       "Food cancellation after it goes out for delivery is fully chargable.",
-      "Sundays and Festivals are off days.",
+      "Sundays and Festive days are off days.",
       "We eat what we serve to our customers.",
-      "Images are for illustration; actual food may vary."
+      "Images are for illustration, actual food may vary."
     ]
   },
 ];

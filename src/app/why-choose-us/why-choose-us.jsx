@@ -4,9 +4,9 @@ import "./why-choose-us.css";
 
 const benefits = [
   { text: "Freshly prepared daily with premium ingredients", Icon: Leaf },
-  { text: "Home-cooked taste that reminds you of your घर का खाना", Icon: Home },
+  { text: <>Home-cooked taste that reminds you of your <span className="text-[#FC8019] font-semibold">घर का खाना</span></>, Icon: Home },
   { text: "Hygienic preparation in a clean home kitchen", Icon: ShieldCheck },
-  { text: "Affordable pricing with monthly packages", Icon: IndianRupee },
+  { text: "Premium meals affordable packages", Icon: IndianRupee },
   { text: "Customizable meals for preferred meal combination", Icon: UtensilsCrossed },
   { text: "On-time delivery, every single day at your door step", Icon: Clock },
   { text: "Authentic local and traditional recipes", Icon: Flame },
@@ -183,7 +183,7 @@ export function WhyChooseUs() {
                 {" "}
                 <span className="text-primary font-semibold">घर का स्वाद</span>
                 {" "}
-                with warmth and care of our Bihar delivered at your doorstep.
+                cooked with warmth and care by <span className="text-primary font-semibold">me</span> delivered at your doorstep.
               </p>
             </div>
 
@@ -241,7 +241,7 @@ export function WhyChooseUs() {
                     <div className="space-y-2">
                       <div className="text-2xl md:text-3xl font-bold text-white">Homemade</div>
                       <div className="text-white font-semibold" style={{ fontSize: "22px" }}>
-                        घर का खाना खाये, घर के स्वाद में खायें |
+                        <span className="text-[#FC8019]">घर का खाना</span> खाये, <span className="text-[#FC8019]">घर के स्वाद</span> में खायें |
                       </div>
                     </div>
                   </div>

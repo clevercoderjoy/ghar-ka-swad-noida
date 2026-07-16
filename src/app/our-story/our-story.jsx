@@ -214,7 +214,7 @@ export function OurStory() {
             Our Story
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto px-4">
-            A culinary journey rooted in the heart of Bihar, crafted with love
+            How we started <span className="text-[#FC8019] font-semibold">vs</span> how is it going
           </p>
         </div>
 

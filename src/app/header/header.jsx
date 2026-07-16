@@ -8,7 +8,8 @@ const menuItems = [
   { label: "Home", href: "#home" },
   { label: "Our Story", href: "#our-story" },
   { label: "Why Us?", href: "#why-us" },
-  { label: "Services", href: "#services" },
+  { label: "Reviews", href: "#reviews" },
+  // { label: "Services", href: "#services" },
   { label: "Menu", href: "#menu" },
   { label: "Packages", href: "#packages" },
   { label: "Contact", href: "#contact" },
@@ -54,7 +55,7 @@ export function Header() {
   }, [throttledScroll]);
 
   useEffect(() => {
-    const sections = ["home", "our-story", "why-us", "services", "menu", "packages", "contact"];
+    const sections = ["home", "our-story", "why-us", "reviews", "services", "menu", "packages", "contact"];
     
     const handleScrollSpy = () => {
       const scrollPosition = window.scrollY + 200; // Offset for header trigger zone

@@ -10,6 +10,7 @@ import { Hero } from "./app/hero/hero";
 import { OurStory } from "./app/our-story/our-story";
 import { WhyChooseUs } from "./app/why-choose-us/why-choose-us";
 import { Services } from "./app/services/services";
+import { Reviews } from "./app/reviews/reviews";
 import { Menu } from "./app/menu/menu";
 import { Packages } from "./app/packages/packages";
 import { Contact } from "./app/contact/contact";
@@ -25,7 +26,8 @@ function HomePage() {
         <Hero />
         <OurStory />
         <WhyChooseUs />
-        <Services />
+        <Reviews />
+        {/* <Services /> */}
         <Menu />
         <Packages />
         <Contact />

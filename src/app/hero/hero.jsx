@@ -190,7 +190,7 @@ export function Hero() {
 
             <div className="text-center max-w-2xl mx-auto leading-relaxed font-medium space-y-1.5 sm:space-y-2 px-4 transition-all duration-700 ease-out opacity-100 translate-y-0">
               <p className="text-base sm:text-sm md:text-lg text-foreground tracking-wider">
-                The authentic home-cooked bihari cuisine.
+                Truly home-cooked authentic bihari cuisine.
               </p>
             </div>
           </div>
