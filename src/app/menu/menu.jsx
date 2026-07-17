@@ -45,33 +45,38 @@ function useCardTilt() {
 const menuItems = [
   {
     day: "Monday",
-    lunch: { name: "Dal, Rice, Seasonal Veggie, Salad, Achar", img: "/assets/img10.png" },
-    dinner: { name: "5 Chapatis, Sewai, Seasonal Sabji", img: "/assets/img11.png" },
+    lunch: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img10.png" },
+    dinner: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img11.png" },
   },
   {
     day: "Tuesday",
-    lunch: { name: "Dal, Rice, Aloo Bhujia, Chutney, Papad/Tarua, Achar, Salad", img: "/assets/img12.png" },
-    dinner: { name: "5 Chapatis, Dal Fry", img: "/assets/img13.png" },
+    lunch: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img12.png" },
+    dinner: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img13.png" },
   },
   {
     day: "Wednesday",
-    lunch: { name: "Dal, Rice, Achar, Seasonal Veggie, Salad", img: "/assets/img10.png" },
-    dinner: { name: "5 Chapatis, Seasonal Veggie, Bhujia/Chana Fry", img: "/assets/img13.png" },
+    lunch: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img10.png" },
+    dinner: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img13.png" },
   },
   {
     day: "Thursday",
-    lunch: { name: "Dal, Rice, Achar, Seasonal Veggie, Salad", img: "/assets/img10.png" },
-    dinner: { name: "Poori, Veggie, Kheer", img: "/assets/img14.png" },
+    lunch: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img10.png" },
+    dinner: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img14.png" },
   },
   {
     day: "Friday",
-    lunch: { name: "Dal Fry/Rajma, Jeera Rice, Bhujia, Salad, Achar", img: "/assets/img15.png" },
-    dinner: { name: "5 Chapatis, Seasonal Veggie", img: "/assets/img13.png" },
+    lunch: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img15.png" },
+    dinner: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img13.png" },
   },
   {
     day: "Saturday",
-    lunch: { name: "Veg-Khichdi, Achar, Chokha, Papad", img: "/assets/img16.png" },
-    dinner: { name: "5 Chapatis, Seasonal Veggie", img: "/assets/img13.png" },
+    lunch: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img16.png" },
+    dinner: { name: "Rice, 4 Chapatis, Dal of the Day, Seasonal Veggies, Salad", img: "/assets/img13.png" },
+  },
+  {
+    day: "Sunday",
+    isOff: true,
+    offText: "Sunday & Festive Days are off"
   },
   {
     day: "Note",
@@ -162,6 +167,64 @@ const MenuCard = memo(function MenuCard({ item }) {
                 <li key={idx}>{point}</li>
               ))}
             </ul>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl" />
+        </div>
+      </div>
+    );
+  }
+
+  if (item.isOff) {
+    return (
+      <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] h-full flex flex-col">
+        <div
+          ref={cardRef}
+          tabIndex={0}
+          style={{
+            willChange: "transform",
+          }}
+          className="group relative h-full rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          aria-label="Sunday off card"
+        >
+          {/* Inner subtle highlight */}
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
+          
+          {/* Liquid glass hover bubble */}
+          <div 
+            className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+            style={{
+              transitionProperty: 'all',
+              transitionDuration: '500ms',
+              transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
+            }}
+          />
+
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
+          
+          <div className="relative z-10 p-6 space-y-5 flex flex-col h-full">
+            <div className="text-center pb-4 border-b border-white/20 w-full">
+              <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
+                {item.day}
+              </h3>
+            </div>
+            
+            <div className="flex-grow flex flex-col items-center justify-start text-center space-y-12 pt-0">
+              <div className="w-16 h-16 rounded-full bg-[#FC8019]/10 border border-[#FC8019]/25 flex items-center justify-center -mt-2">
+                <Moon className="w-8 h-8 text-[#FC8019]" />
+              </div>
+              <div className="space-y-4 my-auto pt-4">
+                <p className="text-white text-xl font-bold tracking-wide">
+                  {item.offText}
+                </p>
+                <p className="text-white/60 text-sm max-w-[250px] mx-auto leading-relaxed">
+                  No deliveries are made on this day
+                </p>
+              </div>
+            </div>
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl" />
         </div>
@@ -278,7 +341,7 @@ export function Menu() {
             Our Veg Menu
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto px-4">
-            Fresh, homemade meals prepared daily with love and care
+            Fresh, Truly homemade meals prepared daily with love, care and less oil
           </p>
         </div>
 

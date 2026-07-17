@@ -143,7 +143,7 @@ export function Reviews() {
   return (
     <section
       id="reviews"
-      className="pt-16 sm:pt-20 md:pt-24 pb-48 sm:pb-60 md:pb-72 relative overflow-hidden bg-cover bg-center bg-no-repeat min-h-[95vh] flex flex-col justify-start"
+      className="relative overflow-hidden bg-cover bg-center bg-no-repeat min-h-[95vh] flex flex-col justify-center py-16 sm:py-20 md:py-24"
     >
       <img
         src="/assets/img19.jpg"
