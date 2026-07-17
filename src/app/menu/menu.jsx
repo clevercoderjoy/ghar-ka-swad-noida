@@ -340,8 +340,8 @@ export function Menu() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#FC8019] drop-shadow-md pb-3">
             Our Veg Menu
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto px-4">
-            Fresh, Truly homemade meals prepared daily with love, care and less oil
+          <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-none md:whitespace-nowrap mx-auto px-4">
+            Truly homemade meals freshly prepared with love, care and less oil
           </p>
         </div>
 
