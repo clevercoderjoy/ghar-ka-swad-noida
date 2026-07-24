@@ -53,7 +53,7 @@ const menuItems = [
         "Fresh Salad",
         "Seasonal Veg Curry"
       ], 
-      img: "/assets/img10.png" 
+      img: "/assets/img21.svg" 
     },
     dinner: { 
       name: [
@@ -75,7 +75,7 @@ const menuItems = [
         "Fresh Salad",
         "Seasonal Veg Curry"
       ], 
-      img: "/assets/img12.png" 
+      img: "/assets/img21.svg" 
     },
     dinner: { 
       name: [
@@ -85,7 +85,7 @@ const menuItems = [
         "Fresh Salad",
         "Seasonal Veg Curry"
       ], 
-      img: "/assets/img13.png" 
+      img: "/assets/img21.svg" 
     },
   },
   {
@@ -98,7 +98,7 @@ const menuItems = [
         "Fresh Salad",
         "Seasonal Veg Curry"
       ], 
-      img: "/assets/img10.png" 
+      img: "/assets/img21.svg" 
     },
     dinner: { 
       name: [
@@ -108,7 +108,7 @@ const menuItems = [
         "Fresh Salad",
         "Seasonal Veg Curry"
       ], 
-      img: "/assets/img13.png" 
+      img: "/assets/img21.svg" 
     },
   },
   {
@@ -121,7 +121,7 @@ const menuItems = [
         "Fresh Salad",
         "Seasonal Veg Curry"
       ], 
-      img: "/assets/img10.png" 
+      img: "/assets/img21.svg" 
     },
     dinner: { 
       name: [
@@ -131,7 +131,7 @@ const menuItems = [
         "Fresh Salad",
         "Seasonal Veg Curry"
       ], 
-      img: "/assets/img14.png" 
+      img: "/assets/img21.svg" 
     },
   },
   {
@@ -144,7 +144,7 @@ const menuItems = [
         "Fresh Salad",
         "Seasonal Veg Curry"
       ], 
-      img: "/assets/img15.png" 
+      img: "/assets/img21.svg" 
     },
     dinner: { 
       name: [
@@ -154,7 +154,7 @@ const menuItems = [
         "Fresh Salad",
         "Seasonal Veg Curry"
       ], 
-      img: "/assets/img13.png" 
+      img: "/assets/img21.svg" 
     },
   },
   {
@@ -167,7 +167,7 @@ const menuItems = [
         "Fresh Salad",
         "Seasonal Veg Curry"
       ], 
-      img: "/assets/img16.png" 
+      img: "/assets/img21.svg" 
     },
     dinner: { 
       name: [
@@ -177,7 +177,7 @@ const menuItems = [
         "Fresh Salad",
         "Seasonal Veg Curry"
       ], 
-      img: "/assets/img13.png" 
+      img: "/assets/img21.svg" 
     },
   },
   {
@@ -200,6 +200,14 @@ const menuItems = [
 ];
 
 const MealSection = memo(function MealSection({ type, meal, icon: Icon, bgColor, iconColor }) {
+  const isMondayDinner = meal.img === "/assets/img20.svg";
+  const imgScaleClass = isMondayDinner
+    ? "scale-[1.04] -translate-y-[3px]"
+    : "scale-[1.20] translate-y-[2px]";
+  const imgHoverClass = isMondayDinner
+    ? "hover:scale-[1.12]"
+    : "hover:scale-[1.30]";
+
   return (
     <div className="space-y-3">
       <div className="flex items-center gap-2">
@@ -213,7 +221,7 @@ const MealSection = memo(function MealSection({ type, meal, icon: Icon, bgColor,
           src={meal.img}
           alt={type}
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          className="object-cover scale-[1.04] -translate-y-[3px] hover:scale-110 transition-transform duration-500"
+          className={`object-cover ${imgScaleClass} ${imgHoverClass} transition-transform duration-500`}
           loading="lazy"
           decoding="async"
         />
