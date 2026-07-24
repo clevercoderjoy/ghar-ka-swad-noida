@@ -215,8 +215,7 @@ export function Packages() {
     return packages.map((pkg, index) => (
       <div
         key={`${pkg.name}-${index}`}
-        className="transition-all duration-700 ease-out opacity-100 translate-y-0 flex flex-col flex-1"
-        style={{ minWidth: 300, maxWidth: 360, width: "100%" }}
+        className="transition-all duration-700 ease-out opacity-100 translate-y-0 flex flex-col w-full max-w-[360px]"
       >
         <PackageCard pkg={pkg} />
       </div>
@@ -258,7 +257,7 @@ export function Packages() {
             Truly home-cooked premium meals on not so premium budget
           </p>
         </div>
-        <div className="flex justify-center items-stretch gap-8 max-w-full mx-auto flex-wrap md:flex-nowrap">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto justify-items-center w-full">
           {packageCardsJSX}
         </div>
       </div>

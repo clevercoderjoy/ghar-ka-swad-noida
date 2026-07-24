@@ -127,9 +127,9 @@ export function Hero() {
           
           <div className="relative z-10 text-center space-y-4 pt-2 sm:pt-4 flex flex-col items-center">
             {/* "Bihar ki Sanskriti" heading at the very top */}
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-none transition-all duration-700 ease-out opacity-100 translate-y-0 mb-1">
-                <span className="text-white">
-                  Bihar ki Sanskriti
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none transition-all duration-700 ease-out opacity-100 translate-y-0 mb-1">
+                <span className="text-white drop-shadow-lg">
+                  Ghar ka Swad
                 </span>
             </h2>
 
@@ -146,7 +146,7 @@ export function Hero() {
                 aria-label="Ghar Ka Swaad Logo"
               >
                 <img
-                  src="/assets/logo.svg"
+                  src="/logo.svg.svg"
                   alt="logo"
                   style={{
                     position: "absolute",
@@ -159,24 +159,22 @@ export function Hero() {
                     objectFit: "cover",
                     objectPosition: "center",
                   }}
-                  className="rounded-full object-cover transition-all duration-300 ease-out group-hover:opacity-0 group-hover:scale-95"
+                  className="rounded-full object-cover transition-all duration-300 ease-out"
                   fetchPriority="high"
                   decoding="async"
                 />
-                
-                {/* Centered 'के' watermark overlay */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-10">
-                  <span className="text-[100px] sm:text-[110px] md:text-[130px] lg:text-[145px] font-black text-[#FC8019] opacity-0 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:scale-105 flex items-center justify-center leading-none h-full w-full select-none pointer-events-none drop-shadow-2xl translate-y-[18px] sm:translate-y-[20px] md:translate-y-[24px] lg:translate-y-[27px]">
-                    के
-                  </span>
-                </div>
               </div>
             </div>
 
-            {/* Brand title "घर का स्वाद" */}
-            <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none transition-all duration-700 ease-out opacity-100 translate-y-0 mt-2">
+            {/* "by" text */}
+            <p className="text-base sm:text-lg md:text-xl font-bold italic text-white drop-shadow-md mt-4 leading-none">
+              by
+            </p>
+
+            {/* Brand title "Sanskriti Raj" */}
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-none transition-all duration-700 ease-out opacity-100 translate-y-0 mt-3 uppercase">
               <span className="text-[#FC8019] drop-shadow-md">
-                घर का स्वाद
+                Sanskriti Raj
               </span>
             </h1>
           </div>

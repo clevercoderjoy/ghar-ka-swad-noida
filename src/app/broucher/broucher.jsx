@@ -40,7 +40,7 @@ export function BroucherPage() {
       <div className="relative z-10 w-full flex flex-col items-center">
         <div className="flex flex-col items-center mb-4 mt-2 space-y-1">
           <div className="mb-3 flex items-center justify-center" style={{ width: 140, height: 140 }}>
-            <img src="/assets/logo.svg" alt="घर का स्वाद Logo" width={180} height={180} className="rounded-full" decoding="async" />
+            <img src="/logo.svg.svg" alt="घर का स्वाद Logo" width={180} height={180} className="rounded-full" decoding="async" />
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#FC8019] drop-shadow-md mb-2">घर का स्वाद</h1>
           <div className="relative flex justify-center mt-6 mb-6">
@@ -147,7 +147,7 @@ export function BroucherPage() {
         <div className="w-full max-w-2xl my-3 bg-white/10 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col items-center">
           <h2 className="text-xl font-bold mb-3 text-primary text-center">Get in Touch</h2>
 
-          <img src="/assets/logo.svg" alt="घर का स्वाद Logo" width={100} height={100} className="rounded-full mb-4" loading="lazy" decoding="async" />
+          <img src="/logo.svg.svg" alt="घर का स्वाद Logo" width={100} height={100} className="rounded-full mb-4" loading="lazy" decoding="async" />
 
           <div className="flex flex-col items-center justify-center mb-5 w-full">
             <div className="flex flex-col items-center justify-center w-full max-w-md px-4">

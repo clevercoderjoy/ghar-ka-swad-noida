@@ -23,45 +23,31 @@ export function Footer() {
         <div className="absolute -inset-1 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 blur-xl opacity-30 animate-pulse" />
       </div>
       <div className="container px-4 py-4 md:py-12 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
           <div
-            className="group relative flex items-center gap-2 cursor-pointer transition-all duration-300 p-1.5 sm:pl-1.5 sm:pr-4 sm:py-1.5 rounded-full bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] overflow-hidden scale-90 md:origin-left hover:scale-[0.95]"
+            className="flex items-center gap-2 p-0 h-10 pr-3.5 rounded-full bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:scale-105 transition-transform duration-200"
             onClick={() => scrollToSection("#home")}
           >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
-            <div 
-              className="absolute inset-0 rounded-full bg-primary/15 backdrop-blur-md border border-primary/25 scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
-              style={{
-                transitionProperty: 'all',
-                transitionDuration: '500ms',
-                transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
-              }}
-            />
             <img
-              src="/assets/logo.svg"
+              src="/logo.svg.svg"
               alt="घर का स्वाद Logo"
-              style={{ width: 56, height: 56 }}
-              className="rounded-full object-cover drop-shadow-md border border-white/10 relative z-10"
-              loading="lazy"
+              style={{ width: 40, height: 40 }}
+              className="rounded-full object-cover drop-shadow-md border border-white/10"
               decoding="async"
             />
-            <div className="flex relative z-10 flex-col justify-center items-start gap-[3px] select-none pr-2">
-              <span className="relative translate-y-[3px] text-[18px] font-semibold text-foreground/95 tracking-wide leading-none whitespace-nowrap">
-                {"Bihar\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"}<span style={{marginLeft: "7px"}}>i</span><span style={{marginLeft: "2px"}}> Sanskriti</span>
+            <div className="flex flex-col justify-center items-center select-none text-center gap-0 leading-tight pr-1">
+              <span className="text-[16px] font-bold text-white tracking-wide whitespace-nowrap">
+                Ghar ka Swad
               </span>
-              {/* K overlay sits between the two lines, completing 'Ki' and 'Ka' */}
-              <span className="absolute text-[48px] font-bold text-[#FC8019] drop-shadow-md leading-none pointer-events-none" style={{ left: '56px', top: 0, bottom: 0, margin: 'auto', height: '48px', display: 'flex', alignItems: 'center', paddingTop: '2px' }}>
-                K
-              </span>
-              <span className="text-[18px] font-bold text-foreground leading-none whitespace-nowrap ml-[29px]">
-                {"\u0918\u0930\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"}<span style={{marginLeft: "7px"}}>a {"\u0938\u094d\u0935\u093e\u0926"}</span>
+              <span className="text-[13px] font-black text-[#FC8019] tracking-wider uppercase whitespace-nowrap">
+                Sanskriti Raj
               </span>
             </div>
           </div>
 
-          <div className="flex flex-col items-center gap-2 w-full md:w-auto">
+          <div className="flex flex-col items-center gap-2 w-full lg:w-auto">
             <div className="text-center text-[19px] text-white">
-              <p>&copy; {new Date().getFullYear()} घर का स्वाद | All rights reserved.</p>
+              <p className="whitespace-nowrap">&copy; {new Date().getFullYear()} घर का स्वाद | All rights reserved.</p>
             </div>
           </div>
 

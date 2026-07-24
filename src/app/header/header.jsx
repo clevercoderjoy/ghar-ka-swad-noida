@@ -158,9 +158,9 @@ export function Header() {
         )}
 
         <div className="container px-4 relative z-10">
-          <div className="flex items-center justify-between gap-4 min-h-[76px] md:min-h-[88px]">
+          <div className="flex items-center justify-between gap-4 min-h-[64px] md:min-h-[72px]">
             <div
-              className="group relative flex items-center gap-2 cursor-pointer transition-all duration-300 p-1.5 sm:pl-1.5 sm:pr-4 sm:py-1.5 rounded-full bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] overflow-hidden"
+              className="group relative flex items-center gap-2 cursor-pointer transition-all duration-300 p-0 sm:pl-0 sm:pr-3.5 sm:py-0 h-12 rounded-full bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] overflow-hidden"
               onClick={() => scrollToSection("#home")}
             >
               <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
@@ -174,22 +174,18 @@ export function Header() {
                 }}
               />
               <img
-                src="/assets/logo.svg"
+                src="/logo.svg.svg"
                 alt="घर का स्वाद Logo"
-                style={{ width: 56, height: 56 }}
+                style={{ width: 48, height: 48 }}
                 className="rounded-full object-cover drop-shadow-md border border-white/10"
                 decoding="async"
               />
-              <div className="hidden sm:flex relative flex-col justify-center items-start gap-[3px] select-none">
-                <span className="relative translate-y-[3px] text-[18px] font-semibold text-foreground/95 tracking-wide leading-none whitespace-nowrap">
-                  {"Bihar\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"}<span style={{marginLeft: "7px"}}>i</span><span style={{marginLeft: "2px"}}> Sanskriti</span>
+              <div className="hidden sm:flex flex-col justify-center items-center select-none text-center gap-0 leading-tight pr-2">
+                <span className="text-[18px] font-extrabold text-white tracking-wide">
+                  Ghar ka Swad
                 </span>
-                {/* K overlay sits between the two lines, completing 'Ki' and 'Ka' */}
-                <span className="absolute text-[48px] font-bold text-[#FC8019] drop-shadow-md leading-none pointer-events-none" style={{ left: '56px', top: 0, bottom: 0, margin: 'auto', height: '48px', display: 'flex', alignItems: 'center', paddingTop: '2px' }}>
-                  K
-                </span>
-                <span className="text-[18px] font-bold text-foreground leading-none whitespace-nowrap ml-[29px]">
-                  {"\u0918\u0930\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"}<span style={{marginLeft: "7px"}}>a {"\u0938\u094d\u0935\u093e\u0926"}</span>
+                <span className="text-[13.5px] font-black text-[#FC8019] tracking-wider uppercase">
+                  Sanskriti Raj
                 </span>
               </div>
             </div>
