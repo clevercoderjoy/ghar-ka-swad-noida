@@ -160,7 +160,7 @@ export function Header() {
         <div className="container px-4 relative z-10">
           <div className="flex items-center justify-between gap-4 min-h-[64px] md:min-h-[72px]">
             <div
-              className="group relative flex items-center gap-2 cursor-pointer transition-all duration-300 p-0 sm:pl-0 sm:pr-3.5 sm:py-0 h-12 rounded-full bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] overflow-hidden"
+              className="group relative flex items-center gap-2 cursor-pointer transition-all duration-300 p-0 sm:pl-0 sm:pr-3.5 sm:py-0 h-12 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] overflow-hidden [transform:translateZ(0)]"
               onClick={() => scrollToSection("#home")}
             >
               <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
@@ -194,9 +194,9 @@ export function Header() {
             <nav className="hidden min-[1080px]:flex items-center">
               <div 
                 className="relative flex items-center gap-1 px-2 py-2 rounded-full
-                  bg-primary/5 backdrop-blur-xl
-                  border border-primary/15
-                  shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)]
+                  bg-black/35 backdrop-blur-md
+                  border border-white/20
+                  shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] [transform:translateZ(0)]
                 "
                 onMouseLeave={handleMouseLeave}
               >
@@ -222,7 +222,7 @@ export function Header() {
             </nav>
 
             <div 
-              className="relative flex items-center p-1 rounded-full bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)]"
+              className="relative flex items-center p-1 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] [transform:translateZ(0)]"
               onMouseLeave={handleRightMouseLeave}
             >
               {/* inner highlight */}

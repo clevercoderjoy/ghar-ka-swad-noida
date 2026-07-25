@@ -1,4 +1,5 @@
-import { UtensilsCrossed, Users, Clock, Heart } from "lucide-react";
+import { UtensilsCrossed, Users, Clock, Heart, Sparkles, Phone, Headphones } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import "./broucher.css";
 
 const vegMenu = [
@@ -12,12 +13,11 @@ const vegMenu = [
 ];
 
 const notes = [
-  "एडवांस पेमेंट |",
-  "खाने-पीने के सामान की उपलब्धता के अनुसार मेनू में बदलाव हो सकता है ।",
-  "स्पेशल रिक्वेस्ट के लिए पहले से बताना पड़ेगा । (Chargable).",
-  "स्पेशल रिक्वेस्ट पे नॉन-वेज भी सर्व करते हैं, पर वो हम अपने किचन में नहीं बनाते हैं ।",
-  "त्योहारों के दिन हमारी सेवाएं बंद रहती हैं ।",
-  "जो ग्राहक को खिलाते हैं वही भोजन हम भी खाते हैं ।",
+  "Menu may change based on availability of food items.",
+  "Special requests can be accommodated with prior notice. (Chargable)",
+  "Food cancellation after it goes out for delivery is fully chargable.",
+  "Sundays and Festive days are off days.",
+  "Extra chapaties ₹8/Piece",
 ];
 
 export function BroucherPage() {
@@ -32,9 +32,9 @@ export function BroucherPage() {
         decoding="async"
       />
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 blur-xl opacity-30" />
+        <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 opacity-30 pointer-events-none" />
       </div>
 
       <div className="relative z-10 w-full flex flex-col items-center">
@@ -71,15 +71,15 @@ export function BroucherPage() {
           </div>
         </div>
 
-        {/* Bento Grid — 4 columns */}
-        <div className="grid grid-cols-4 gap-3 w-full my-3 px-4">
+        {/* Bento Grid — 12 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-3 w-full my-3 px-4">
 
-          {/* ROW 1: 4 equal columns */}
+          {/* ROW 1: Why, Ratings, Food Standards, Note (4 compact cards) */}
 
           {/* Why घर का स्वाद */}
-          <div className="col-span-1 bg-white/10 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col">
-            <h2 className="text-lg font-bold mb-3 text-white text-center">Why <span className="text-primary">Ghar ka Swad</span>?</h2>
-            <ul className="space-y-2 flex-1">
+          <div className="col-span-1 md:col-span-3 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-3 text-white text-center">Why <span className="text-primary">घर का स्वाद</span> ?</h2>
+            <ul className="space-y-2 flex-1 flex flex-col justify-between pt-1">
               {[
                 "Freshly prepared daily with premium ingredients",
                 "Home-cooked taste that reminds you of your घर का खाना",
@@ -90,7 +90,7 @@ export function BroucherPage() {
                 "Authentic local and traditional recipes",
                 "No preservatives or artificial additives",
               ].map((point, idx) => (
-                <li key={idx} className="flex items-start gap-1.5 text-base text-white">
+                <li key={idx} className="flex items-start gap-1.5 text-sm sm:text-[14.5px] text-white font-semibold leading-tight">
                   <span className="text-primary mt-0.5 shrink-0">✦</span>
                   <span>{point}</span>
                 </li>
@@ -98,84 +98,311 @@ export function BroucherPage() {
             </ul>
           </div>
 
-          {/* Meal Plan */}
-          <div className="col-span-1 bg-white/10 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col">
-            <h2 className="text-lg font-bold mb-4 text-primary text-center">Meal Plan</h2>
-            <div className="flex flex-col gap-3 flex-1 justify-center">
-              <div className="flex flex-col items-center justify-center gap-1 bg-white/5 rounded-lg p-3">
-                <span className="text-sm font-bold text-foreground">1 Day Meal</span>
-                <span className="text-sm font-semibold text-primary">₹75/- Meal</span>
+          {/* Ratings & Trust */}
+          <div className="col-span-1 md:col-span-3 bg-black/15 rounded-xl p-3.5 backdrop-blur-md border border-white/20 flex flex-col items-center text-center">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-3 text-primary text-center">The trust we've earned</h2>
+            <div className="flex flex-col justify-between flex-1 space-y-2 w-full">
+              <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
+                <span className="text-lg sm:text-xl font-black text-primary block">20,000 +</span>
+                <span className="text-xs sm:text-sm text-white/95 font-semibold leading-tight">Delicious Meals Delivered</span>
               </div>
-              <div className="flex flex-col items-center justify-center gap-1 bg-white/5 rounded-lg p-3">
-                <span className="text-sm font-bold text-foreground">Monthly Veg</span>
-                <span className="text-sm font-semibold text-primary">₹3300/-</span>
+              <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
+                <span className="text-lg sm:text-xl font-black text-primary block">1,000 +</span>
+                <span className="text-xs sm:text-sm text-white/95 font-semibold leading-tight">Delighted Customers</span>
               </div>
-              <div className="flex flex-col items-center justify-center gap-1 bg-white/5 rounded-lg p-3">
-                <span className="text-sm font-bold text-foreground">Event Catering</span>
-                <span className="text-sm font-semibold text-primary">Custom Quote</span>
+              <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
+                <span className="text-lg sm:text-xl font-black text-primary block">100 +</span>
+                <span className="text-xs sm:text-sm text-white/95 font-semibold leading-tight">Currently Active Subscribers</span>
+              </div>
+              <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
+                <span className="text-lg sm:text-xl font-black text-primary block">2.5 +</span>
+                <span className="text-xs sm:text-sm text-white/95 font-semibold leading-tight">Years of Trust Service</span>
+              </div>
+              <div className="flex flex-col items-center justify-center">
+                <span className="text-lg sm:text-xl font-black text-primary block">4.8 ★★★★</span>
+                <span className="text-xs sm:text-sm text-white/95 font-semibold leading-tight">Google Customer Ratings</span>
               </div>
             </div>
           </div>
 
-          {/* Note */}
-          <div className="col-span-1 bg-white/10 rounded-xl p-4 backdrop-blur-md border border-white/20">
-            <h2 className="text-lg font-bold mb-3 text-primary text-center">Note</h2>
-            <ul className="list-disc pl-4 space-y-1 text-xs text-white">
-              {notes.map((note, idx) => (
-                <li key={idx}>{note}</li>
+          {/* Food Standards */}
+          <div className="col-span-1 md:col-span-3 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-3 text-primary text-center">Food Standards</h2>
+            <ul className="space-y-1.5 flex-1 flex flex-col justify-between pt-1">
+              {[
+                "Clean & hygienic kitchen & utensils",
+                "Fresh ingredients, washed before cooking",
+                "RO water for cooking",
+                "Minimal & fresh cooking oil used",
+                "No reheating or use of leftover food",
+                "Healthy meals for good health",
+                "Leak-proof, food-grade containers used",
+                "We eat what we serve our customers",
+              ].map((point, idx) => (
+                <li key={idx} className="flex items-start gap-2 text-base sm:text-[16px] text-white font-semibold leading-tight">
+                  <span className={point.startsWith("We eat") ? "text-primary font-bold" : ""}>{point}</span>
+                </li>
               ))}
             </ul>
           </div>
 
-          {/* Get in Touch */}
-          <div className="col-span-1 bg-white/10 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col items-center">
-            <h2 className="text-lg font-bold mb-3 text-primary text-center">Get in Touch</h2>
-            <img src="/logo.svg.svg" alt="घर का स्वाद Logo" width={60} height={60} className="rounded-full mb-2" loading="lazy" decoding="async" />
-            <span className="text-sm font-extrabold text-[#FC8019] drop-shadow-md">घर का स्वाद</span>
-            <span className="text-xs font-bold text-primary mb-3">+91-9266844741</span>
-            <div className="flex items-center justify-center w-full gap-2 flex-wrap">
-              <div className="flex flex-col items-center">
-                <img src="/assets/whatsapp.svg" alt="WhatsApp QR" width={65} height={65} className="rounded-lg border border-white/20 bg-white" loading="lazy" decoding="async" />
-                <span className="mt-1 text-xs text-white">WhatsApp</span>
+          {/* Note */}
+          <div className="col-span-1 md:col-span-3 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col">
+            <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 text-primary text-center">Note</h2>
+            <ul className="list-disc pl-5 space-y-3 text-base sm:text-[17px] text-white/95 pt-1 font-semibold leading-snug">
+              {notes.map((note, idx) => (
+                <li key={idx} className={note.includes("Extra chapaties") ? "text-primary font-bold" : ""}>
+                  {note}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ROW 2: Meal Plan & Get in Touch */}
+
+          {/* Menu */}
+          <div className="col-span-1 md:col-span-7 bg-black/15 rounded-xl p-4 sm:p-5 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-2xl sm:text-3xl font-extrabold mb-3 text-primary text-center">Menu</h2>
+            <div className="grid grid-cols-1 md:grid-cols-[3fr_2.3fr_2.7fr] gap-3 flex-1 items-stretch">
+              {/* Premium Meal */}
+              <div className="flex flex-col bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 hover:border-primary/30 transition-colors h-full">
+                <div className="text-center mb-2">
+                  <span className="text-base sm:text-lg font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1.5">Monday to Saturday</span>
+                  <h3 className="text-base sm:text-lg font-black text-white">Premium Meal</h3>
+                </div>
+                <div className="grid grid-cols-2 gap-y-2 gap-x-4 sm:gap-x-5 text-sm sm:text-[15.5px] text-white pt-1 font-semibold text-left justify-between">
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Dal of the Day</span>
+                  </div>
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Steamed Rice</span>
+                  </div>
+
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>4 Chapaties</span>
+                  </div>
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Fresh Salad</span>
+                  </div>
+
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Seasonal Curry</span>
+                  </div>
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Seasonal Veggie</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col items-center">
-                <img src="/assets/google.svg" alt="Google QR" width={65} height={65} className="rounded-lg border border-white/20 bg-white" loading="lazy" decoding="async" />
-                <span className="mt-1 text-xs text-white">Google</span>
+
+              {/* Budget Meal */}
+              <div className="flex flex-col bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 hover:border-primary/30 transition-colors h-full">
+                <div className="text-center mb-2">
+                  <span className="text-base sm:text-lg font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1.5">Monday to Saturday</span>
+                  <h3 className="text-base sm:text-lg font-black text-white">Budget Meal</h3>
+                </div>
+                <div className="flex flex-col gap-y-2 text-sm sm:text-[15.5px] text-white pt-1 font-semibold text-left">
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Dal of the Day + Rice / 4 Roti</span>
+                  </div>
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Seasonal Curry / Veggie</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex flex-col items-center">
-                <img src="/assets/gharkaswad.svg" alt="Website QR" width={65} height={65} className="rounded-lg border border-white/20 bg-white" loading="lazy" decoding="async" />
-                <span className="mt-1 text-xs text-white">Website</span>
+
+              {/* Monday Blues Special */}
+              <div className="flex flex-col bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 hover:border-primary/30 transition-colors h-full">
+                <div className="text-center mb-2">
+                  <span className="text-base sm:text-lg font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1.5">Special</span>
+                  <h3 className="text-base sm:text-lg font-black text-white">Monday Blues Special</h3>
+                </div>
+                <div className="grid grid-cols-2 gap-y-2 gap-x-2 text-sm sm:text-[15.5px] text-white pt-1 font-semibold text-left">
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Rajma Chawal</span>
+                  </div>
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Chole Chawal</span>
+                  </div>
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Kadhi Chawal</span>
+                  </div>
+                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Paneer Curry</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* ROW 2: Veg Menu full width */}
-          <div className="col-span-4 bg-white/10 rounded-xl p-4 backdrop-blur-md border border-white/20">
-            <h2 className="text-xl font-bold mb-4 text-primary text-center">Our Veg Menu</h2>
-            <table className="w-full border border-white/20 rounded-lg overflow-hidden text-sm bg-white/5">
-              <thead className="bg-primary/10">
-                <tr>
-                  <th className="p-2 border-b border-white/20 text-foreground">Day</th>
-                  <th className="p-2 border-b border-white/20 text-foreground">Lunch</th>
-                  <th className="p-2 border-b border-white/20 text-foreground">Dinner</th>
-                </tr>
-              </thead>
-              <tbody>
-                {vegMenu.map((item) => (
-                  <tr key={item.day} className="even:bg-white/5">
-                    <td className="p-2 border-b text-base border-white/20 font-semibold text-primary">{item.day}</td>
-                    <td className="p-2 border-b text-base border-white/20 text-white">{item.lunch}</td>
-                    <td className="p-2 border-b text-base border-white/20 text-white">{item.dinner}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          {/* Packages */}
+          <div className="col-span-1 md:col-span-5 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-3 text-primary text-center">Packages</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 flex-1 items-stretch">
+              {/* Premium Meal */}
+              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
+                <span className="text-xs sm:text-sm font-extrabold text-white">Premium Meal</span>
+                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹200/-</span>
+                <span className="text-[11px] text-white/80 font-medium leading-tight">Per Meal (Lunch/Dinner)</span>
+              </div>
+
+              {/* Premium Single */}
+              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
+                <span className="text-xs sm:text-sm font-extrabold text-white">Premium Single</span>
+                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹3,200/-</span>
+                <span className="text-[11px] text-white/80 font-medium leading-tight">1 Meal Daily / Month</span>
+              </div>
+
+              {/* Premium Double */}
+              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between border-primary/30 bg-primary/10">
+                <span className="text-xs sm:text-sm font-extrabold text-white">Premium Double</span>
+                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹6,200/-</span>
+                <span className="text-[11px] text-white/80 font-medium leading-tight">2 Meals Daily / Month</span>
+              </div>
+
+              {/* Budget Meal */}
+              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
+                <span className="text-xs sm:text-sm font-extrabold text-white">Budget Meal</span>
+                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹140/-</span>
+                <span className="text-[11px] text-white/80 font-medium leading-tight">Per Meal (Lunch/Dinner)</span>
+              </div>
+
+              {/* Budget Single */}
+              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
+                <span className="text-xs sm:text-sm font-extrabold text-white">Budget Single</span>
+                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹2,400/-</span>
+                <span className="text-[11px] text-white/80 font-medium leading-tight">1 Meal Daily / Month</span>
+              </div>
+
+              {/* Budget Double */}
+              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
+                <span className="text-xs sm:text-sm font-extrabold text-white">Budget Double</span>
+                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹4,500/-</span>
+                <span className="text-[11px] text-white/80 font-medium leading-tight">2 Meals Daily / Month</span>
+              </div>
+            </div>
+          </div>
+
+          {/* ROW 3: Get In Touch full width */}
+          <div className="col-span-1 md:col-span-12 bg-black/15 rounded-xl p-4 sm:p-5 backdrop-blur-md border border-white/20 flex flex-col">
+            <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 text-primary text-center">Get In Touch</h2>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch flex-1">
+              
+              {/* Left Side: 4 Contact Info Cards (2x2 grid) */}
+              <div className="md:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {/* Phone */}
+                <div className="flex items-center gap-3 bg-black/10 rounded-xl p-3 border border-white/10">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <span className="text-xs text-white/70 font-semibold">Phone</span>
+                    <a href="tel:+919266844741" className="text-sm sm:text-base font-bold text-white hover:text-primary transition-colors">+91 9266844741</a>
+                  </div>
+                </div>
+
+                {/* Whatsapp */}
+                <div className="flex items-center gap-3 bg-black/10 rounded-xl p-3 border border-white/10">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <FaWhatsapp className="w-5 h-5" />
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <span className="text-xs text-white/70 font-semibold">WhatsApp</span>
+                    <a href="https://wa.me/+919266844741" target="_blank" rel="noreferrer" className="text-sm sm:text-base font-bold text-white hover:text-primary transition-colors">+91 9266844741</a>
+                  </div>
+                </div>
+
+                {/* Support Hours */}
+                <div className="flex items-center gap-3 bg-black/10 rounded-xl p-3 border border-white/10">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <Headphones className="w-5 h-5" />
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <span className="text-xs text-white/70 font-semibold">Support Hours</span>
+                    <span className="text-sm sm:text-base font-bold text-white">9 AM - 9 PM Daily</span>
+                  </div>
+                </div>
+
+                {/* Delivery Hours */}
+                <div className="flex items-center gap-3 bg-black/10 rounded-xl p-3 border border-white/10">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <Clock className="w-5 h-5" />
+                  </div>
+                  <div className="flex flex-col text-left">
+                    <span className="text-xs text-white/70 font-semibold">Delivery Hours</span>
+                    <span className="text-sm sm:text-base font-bold text-white">9 AM - 9 PM Daily</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side: QR Codes */}
+              <div className="md:col-span-6 flex items-center justify-center sm:justify-evenly gap-3 sm:gap-4 bg-black/10 rounded-xl p-3.5 border border-white/10 h-full flex-wrap">
+                <div className="flex flex-col items-center">
+                  <img src="/assets/whatsapp.svg" alt="Scan to Call QR" width={85} height={85} className="rounded-lg border border-white/20 bg-white" loading="lazy" decoding="async" />
+                  <span className="mt-1.5 text-xs text-white font-semibold whitespace-nowrap">Scan to Call</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img src="/assets/whatsapp.svg" alt="WhatsApp QR" width={85} height={85} className="rounded-lg border border-white/20 bg-white" loading="lazy" decoding="async" />
+                  <span className="mt-1.5 text-xs text-white font-semibold whitespace-nowrap">WhatsApp QR</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img src="/assets/google.svg" alt="Google QR" width={85} height={85} className="rounded-lg border border-white/20 bg-white" loading="lazy" decoding="async" />
+                  <span className="mt-1.5 text-xs text-white font-semibold whitespace-nowrap">Google Review QR</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img src="/assets/gharkaswad.svg" alt="Website QR" width={85} height={85} className="rounded-lg border border-white/20 bg-white" loading="lazy" decoding="async" />
+                  <span className="mt-1.5 text-xs text-white font-semibold whitespace-nowrap">Website QR</span>
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>
 
-        <div className="text-base text-white text-center mb-3 mt-2">
-          © 2025 <span className="text-primary">घर का स्वाद</span> | All rights reserved.
+        {/* Footer Bar */}
+        <div className="relative w-full mt-4 mb-2 px-4 flex flex-col md:flex-row items-center justify-between gap-4 py-4 border-t border-white/10">
+          {/* Left: Logo Pill (far left) */}
+          <div className="flex items-center gap-2 p-0 h-10 pr-3.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] mt-1.5 [transform:translateZ(0)]">
+            <img
+              src="/logo.svg.svg"
+              alt="Ghar ka Swad Logo"
+              style={{ width: 40, height: 40 }}
+              className="rounded-full object-cover border border-white/10"
+              decoding="async"
+            />
+            <div className="flex flex-col justify-center items-center select-none text-center gap-0 leading-tight pr-1">
+              <span className="text-[15px] sm:text-[16px] font-bold text-white tracking-wide whitespace-nowrap">
+                Ghar ka Swad
+              </span>
+              <span className="text-[12px] sm:text-[13px] font-black text-[#FC8019] tracking-wider uppercase whitespace-nowrap">
+                Sanskriti Raj
+              </span>
+            </div>
+          </div>
+
+          {/* Center: Copyright (dead-centered horizontally & vertically) */}
+          <div className="md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 text-sm sm:text-base text-white text-center font-semibold whitespace-nowrap">
+            © 2026 <span className="text-primary font-bold">Ghar ka Swad</span> | All rights reserved
+          </div>
+
+          {/* Right: Made with love Pill (far right) */}
+          <div className="group relative flex items-center gap-1.5 h-10 px-4 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] mt-1.5 [transform:translateZ(0)]">
+            <span className="relative z-10 text-xs sm:text-sm text-white font-medium">Made with</span>
+            <Heart className="relative z-10 w-4 h-4 text-red-500 fill-red-500 border-red-500 animate-pulse" />
+            <span className="relative z-10 text-xs sm:text-sm text-white font-medium">by <a href="https://clevercoderjoy.bio.link/" target="_blank" rel="noopener noreferrer" className="text-[#FC8019] drop-shadow-md no-underline transition-colors font-bold">clevercoderjoy</a></span>
+          </div>
         </div>
       </div>
     </main>

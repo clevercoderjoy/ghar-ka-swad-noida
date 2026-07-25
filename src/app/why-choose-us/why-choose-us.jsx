@@ -74,11 +74,7 @@ const BenefitCard = memo(function BenefitCard({ benefit }) {
         style={{
           willChange: "transform",
         }}
-        className={
-          isMounted
-            ? "group relative h-full p-4 rounded-2xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none benefit-card"
-            : "group relative h-full p-4 rounded-2xl bg-primary/5 border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none benefit-card"
-        }
+        className="group relative h-full p-4 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none benefit-card [transform:translateZ(0)]"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onFocus={handleFocus}
@@ -161,9 +157,9 @@ export function WhyChooseUs() {
         decoding="async"
       />
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 blur-xl opacity-30 animate-pulse" />
       </div>
 
       <div className="container px-4 relative z-10">
@@ -207,7 +203,6 @@ export function WhyChooseUs() {
               aria-label="Homemade Quality & Authenticity Guaranteed"
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/20 via-transparent to-transparent" />
-              <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-50 group-hover:opacity-70 transition-opacity duration-200" />
 
               <div className="relative w-full h-full">
                 <div className="absolute inset-0 w-full h-full">
@@ -230,7 +225,8 @@ export function WhyChooseUs() {
                     loading="lazy"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-black/40 rounded-3xl backdrop-blur-[2px]" />
+                  <div className="absolute inset-0 bg-black/60 rounded-3xl backdrop-blur-[3px]" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 rounded-3xl pointer-events-none" />
                 </div>
 
                 <div className="absolute inset-0 flex items-center justify-center z-10">

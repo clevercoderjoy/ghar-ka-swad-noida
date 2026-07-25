@@ -195,7 +195,7 @@ const MenuCard = memo(function MenuCard({ item }) {
           style={{
             willChange: "transform",
           }}
-          className="group relative h-full rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
+          className="group relative h-full rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card [transform:translateZ(0)]"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -257,7 +257,7 @@ const MenuCard = memo(function MenuCard({ item }) {
           style={{
             willChange: "transform",
           }}
-          className="group relative h-[375px] rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
+          className="group relative h-[375px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card [transform:translateZ(0)]"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -311,7 +311,7 @@ const MenuCard = memo(function MenuCard({ item }) {
           style={{
             willChange: "transform",
           }}
-          className="group relative h-full min-h-[375px] rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
+          className="group relative h-full min-h-[375px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card [transform:translateZ(0)]"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -363,7 +363,7 @@ const MenuCard = memo(function MenuCard({ item }) {
           style={{
             willChange: "transform",
           }}
-          className="group relative h-[375px] rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
+          className="group relative h-[375px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card [transform:translateZ(0)]"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -418,7 +418,7 @@ const MenuCard = memo(function MenuCard({ item }) {
         style={{
           willChange: "transform",
         }}
-        className="group relative h-[450px] rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
+        className="group relative h-[450px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card [transform:translateZ(0)]"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onFocus={handleFocus}
@@ -508,7 +508,8 @@ export function Menu() {
       />
 
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 blur-xl opacity-30 animate-pulse" />
       </div>

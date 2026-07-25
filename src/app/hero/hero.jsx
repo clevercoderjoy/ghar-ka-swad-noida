@@ -114,7 +114,8 @@ export function Hero() {
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/35 via-background/60 to-background/85" />
+        <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 pointer-events-none" />
       </div>
 
       <div className="absolute inset-0 z-5 bg-white/0.5 backdrop-blur-[1px] border-0 shadow-2xl">
@@ -240,7 +241,7 @@ export function Hero() {
             </div>
 
             <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 max-w-2xl mx-auto px-2 transition-all duration-700 ease-out opacity-100 translate-y-0">
-              <div className="relative overflow-hidden space-y-0.5 sm:space-y-1 text-center p-3 sm:p-4 rounded-3xl transition-all duration-300 hover:scale-105 bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] cursor-pointer flex flex-col items-center justify-center">
+              <div className="relative overflow-hidden space-y-0.5 sm:space-y-1 text-center p-3 sm:p-4 rounded-3xl transition-all duration-300 hover:scale-105 bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] cursor-pointer flex flex-col items-center justify-center [transform:translateZ(0)]">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
                 <div className="relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#FC8019] drop-shadow-md">
                   1000+
@@ -249,7 +250,7 @@ export function Hero() {
                   Happy Stomachs
                 </div>
               </div>
-              <div className="relative overflow-hidden space-y-0.5 sm:space-y-1 text-center p-3 sm:p-4 rounded-3xl transition-all duration-300 hover:scale-105 bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] cursor-pointer flex flex-col items-center justify-center">
+              <div className="relative overflow-hidden space-y-0.5 sm:space-y-1 text-center p-3 sm:p-4 rounded-3xl transition-all duration-300 hover:scale-105 bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] cursor-pointer flex flex-col items-center justify-center [transform:translateZ(0)]">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
                 <div className="relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#FC8019] drop-shadow-md">
                   Daily
@@ -258,7 +259,7 @@ export function Hero() {
                   Fresh Meals
                 </div>
               </div>
-              <div className="relative overflow-hidden space-y-0.5 sm:space-y-1 text-center p-3 sm:p-4 rounded-3xl transition-all duration-300 hover:scale-105 bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] cursor-pointer flex flex-col items-center justify-center">
+              <div className="relative overflow-hidden space-y-0.5 sm:space-y-1 text-center p-3 sm:p-4 rounded-3xl transition-all duration-300 hover:scale-105 bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] cursor-pointer flex flex-col items-center justify-center [transform:translateZ(0)]">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
                 <div className="relative z-10 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#FC8019] drop-shadow-md">
                   2.5+

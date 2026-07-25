@@ -97,7 +97,7 @@ const ReviewCard = memo(function ReviewCard({ review, className }) {
 
   return (
     <div className={`w-full flex flex-col group ${className || ""}`}>
-      <div className="reviews-card relative w-full h-full min-h-[170px] flex flex-col justify-between p-4 rounded-2xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl focus:outline-none">
+      <div className="reviews-card relative w-full h-full min-h-[170px] flex flex-col justify-between p-4 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl focus:outline-none [transform:translateZ(0)]">
 
         {/* Always-visible inner highlight */}
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
@@ -164,8 +164,8 @@ export function Reviews() {
         loading="lazy"
         decoding="async"
       />
-      <div className="absolute inset-0 z-0 bg-black/45" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background pointer-events-none z-0" />
+      <div className="absolute inset-0 z-0 bg-black/55 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 pointer-events-none z-0" />
 
       <div className="w-full max-w-[1536px] px-4 md:px-8 relative z-10 mx-auto">
         {/* Header */}
@@ -180,26 +180,26 @@ export function Reviews() {
 
         {/* Split Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch max-w-[1536px] mx-auto w-full">
-          {/* Left Side: Stats (Takes 3 cols on large screens, height decreased slightly) */}
-          <div className="flex flex-col justify-between text-left lg:col-span-3 bg-white/5 backdrop-blur-md border border-white/10 p-5 sm:p-6 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] lg:sticky lg:top-24 min-h-[500px] sm:min-h-[540px] w-full overflow-hidden">
-            <div className="flex flex-col gap-2 border-b border-white/10 pb-3 sm:pb-4">
-              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight break-words">17,500 +</span>
+          {/* Left Side: Stats (Full width centered card with numbers on top) */}
+          <div className="flex flex-col justify-between text-center items-center lg:col-span-3 bg-white/5 backdrop-blur-md border border-white/10 p-5 sm:p-6 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,25,0.05)] lg:sticky lg:top-24 h-auto lg:min-h-[540px] w-full overflow-hidden gap-4 sm:gap-5 lg:gap-0">
+            <div className="flex flex-col items-center justify-center text-center w-full border-b border-white/10 pb-3 sm:pb-4 gap-1">
+              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight">20,000 +</span>
               <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Delicious Meals Delivered</span>
             </div>
-            <div className="flex flex-col gap-2 border-b border-white/10 pb-3 sm:pb-4">
-              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight break-words">1,000 +</span>
+            <div className="flex flex-col items-center justify-center text-center w-full border-b border-white/10 pb-3 sm:pb-4 gap-1">
+              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight">1,000 +</span>
               <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Delighted Customers</span>
             </div>
-            <div className="flex flex-col gap-2 border-b border-white/10 pb-3 sm:pb-4">
-              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight break-words">100 +</span>
+            <div className="flex flex-col items-center justify-center text-center w-full border-b border-white/10 pb-3 sm:pb-4 gap-1">
+              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight">100 +</span>
               <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Currently Active Subscribers</span>
             </div>
-            <div className="flex flex-col gap-2 border-b border-white/10 pb-3 sm:pb-4">
-              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight break-words">2.5 +</span>
+            <div className="flex flex-col items-center justify-center text-center w-full border-b border-white/10 pb-3 sm:pb-4 gap-1">
+              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight">2.5 +</span>
               <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Years of Trust Service</span>
             </div>
-            <div className="flex flex-col gap-2">
-              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight break-words">4.8 ★★★★</span>
+            <div className="flex flex-col items-center justify-center text-center w-full gap-1">
+              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight">4.8 ★★★★</span>
               <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Google Customer Ratings</span>
             </div>
           </div>

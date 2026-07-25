@@ -88,11 +88,7 @@ function ContactCard({ info }) {
       style={{
         willChange: "transform",
       }}
-      className={
-        isMounted
-          ? "group relative h-full p-6 rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none contact-card"
-          : "group relative h-full p-6 rounded-3xl bg-primary/5 border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none contact-card"
-      }
+      className="group relative h-full p-6 rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none contact-card [transform:translateZ(0)]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onFocus={handleFocus}
@@ -213,11 +209,7 @@ function LiquidGlassCTA() {
         transition: "transform 0.1s ease-out",
         willChange: "transform",
       }}
-      className={
-        isMounted
-          ? "group relative rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-xl hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none contact-card"
-          : "group relative rounded-3xl bg-primary/5 border border-primary/15 shadow-xl hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none contact-card"
-      }
+      className="group relative rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-xl hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none contact-card [transform:translateZ(0)]"
       onMouseMove={handleCardMouseMove}
       onMouseLeave={handleCardMouseLeave}
       onFocus={handleFocus}
@@ -321,12 +313,13 @@ export function Contact() {
             right: "0px",
             bottom: "0px",
           }}
-          className="absolute inset-0 w-full h-full blur-[1px] opacity-60"
+          className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
           decoding="async"
         />
+        <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent dark:from-white/10 dark:via-transparent dark:to-transparent" />
-        <div className="absolute -inset-1 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 blur-xl opacity-30 animate-pulse" />
       </div>
 
       <div className="container px-4 relative z-10">
