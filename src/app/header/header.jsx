@@ -250,6 +250,7 @@ export function Header() {
                 <MapPin className="h-4 w-4 text-[#FC8019] drop-shadow-md transition-transform duration-200" />
               </div>
               
+              {/* PDF Download button - temporarily commented out
               <Broucher 
                 href="/assets/ghar-ka-swad.pdf" 
                 label="PDF" 
@@ -258,6 +259,15 @@ export function Header() {
                 variant="nav"
                 onMouseEnter={handleRightMouseEnter}
               />
+              */}
+
+              <button
+                onClick={() => window.location.href = '/broucher'}
+                onMouseEnter={handleRightMouseEnter}
+                className="hidden min-[1080px]:flex items-center gap-2 px-4 py-2 rounded-lg border border-[#FC8019]/60 bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 hover:scale-105 active:scale-95 shadow-2xl text-white/90 font-medium text-sm"
+              >
+                Broucher
+              </button>
               
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

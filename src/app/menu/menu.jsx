@@ -1,4 +1,4 @@
-import { Sun, Moon, Sparkles } from "lucide-react";
+import { Sun, Moon, Sparkles, Check } from "lucide-react";
 import { useRef, useState, useCallback, useMemo, memo } from "react";
 import "./menu.css";
 
@@ -44,20 +44,64 @@ function useCardTilt() {
 
 const menuItems = [
   {
-    day: "Monday",
+    day: "Monday to Saturday",
+    thaliType: "Premium Meal",
     lunch: { 
       name: [
         "Dal of the Day",
         "Steamed Rice",
         "4 Chapaties",
         "Fresh Salad",
-        "Seasonal Veg Curry"
+        "Seasonal Curry",
+        "Seasonal Veggie"
+      ], 
+      img: "/assets/img22.svg" 
+    },
+    dinner: { 
+      name: [
+        "Dal of the Day",
+        "Steamed Rice",
+        "4 Chapaties",
+        "Fresh Salad",
+        "Seasonal Curry",
+        "Seasonal Veggie"
+      ], 
+      img: "/assets/img22.svg" 
+    },
+  },
+  {
+    day: "Monday to Saturday",
+    thaliType: "Budget Meal",
+    lunch: { 
+      name: [
+        "Dal of the Day\n+ Steamed Rice\nor 4 Chapaties",
+        "Seasonal Curry or Seasonal Veggie"
       ], 
       img: "/assets/img21.svg" 
     },
     dinner: { 
       name: [
-        "Rajma Chawal",
+        "Dal of the Day\n+ Steamed Rice\nor 4 Chapaties",
+        "Seasonal Curry or Seasonal Veggie"
+      ], 
+      img: "/assets/img21.svg" 
+    },
+  },
+  {
+    day: "Special",
+    thaliType: "Monday Blues Special",
+    lunch: { 
+      name: [
+        "Traditional Rajma Chawal",
+        "Punjabi Chole Chawal",
+        "Creamy Kadhi Chawal",
+        "Royal Paneer Curry"
+      ], 
+      img: "/assets/img20.svg" 
+    },
+    dinner: { 
+      name: [
+        "Traditional Rajma Chawal",
         "Punjabi Chole Chawal",
         "Creamy Kadhi Chawal",
         "Royal Paneer Curry"
@@ -66,126 +110,22 @@ const menuItems = [
     },
   },
   {
-    day: "Tuesday",
-    lunch: { 
-      name: [
-        "Dal of the Day",
-        "Steamed Rice",
-        "4 Chapaties",
-        "Fresh Salad",
-        "Seasonal Veg Curry"
-      ], 
-      img: "/assets/img21.svg" 
-    },
-    dinner: { 
-      name: [
-        "Dal of the Day",
-        "Steamed Rice",
-        "4 Chapaties",
-        "Fresh Salad",
-        "Seasonal Veg Curry"
-      ], 
-      img: "/assets/img21.svg" 
-    },
-  },
-  {
-    day: "Wednesday",
-    lunch: { 
-      name: [
-        "Dal of the Day",
-        "Steamed Rice",
-        "4 Chapaties",
-        "Fresh Salad",
-        "Seasonal Veg Curry"
-      ], 
-      img: "/assets/img21.svg" 
-    },
-    dinner: { 
-      name: [
-        "Dal of the Day",
-        "Steamed Rice",
-        "4 Chapaties",
-        "Fresh Salad",
-        "Seasonal Veg Curry"
-      ], 
-      img: "/assets/img21.svg" 
-    },
-  },
-  {
-    day: "Thursday",
-    lunch: { 
-      name: [
-        "Dal of the Day",
-        "Steamed Rice",
-        "4 Chapaties",
-        "Fresh Salad",
-        "Seasonal Veg Curry"
-      ], 
-      img: "/assets/img21.svg" 
-    },
-    dinner: { 
-      name: [
-        "Dal of the Day",
-        "Steamed Rice",
-        "4 Chapaties",
-        "Fresh Salad",
-        "Seasonal Veg Curry"
-      ], 
-      img: "/assets/img21.svg" 
-    },
-  },
-  {
-    day: "Friday",
-    lunch: { 
-      name: [
-        "Dal of the Day",
-        "Steamed Rice",
-        "4 Chapaties",
-        "Fresh Salad",
-        "Seasonal Veg Curry"
-      ], 
-      img: "/assets/img21.svg" 
-    },
-    dinner: { 
-      name: [
-        "Dal of the Day",
-        "Steamed Rice",
-        "4 Chapaties",
-        "Fresh Salad",
-        "Seasonal Veg Curry"
-      ], 
-      img: "/assets/img21.svg" 
-    },
-  },
-  {
-    day: "Saturday",
-    lunch: { 
-      name: [
-        "Dal of the Day",
-        "Steamed Rice",
-        "4 Chapaties",
-        "Fresh Salad",
-        "Seasonal Veg Curry"
-      ], 
-      img: "/assets/img21.svg" 
-    },
-    dinner: { 
-      name: [
-        "Dal of the Day",
-        "Steamed Rice",
-        "4 Chapaties",
-        "Fresh Salad",
-        "Seasonal Veg Curry"
-      ], 
-      img: "/assets/img21.svg" 
-    },
-  },
-  {
     day: "Sunday",
     isOff: true,
-    offText: "Sunday & Festive Days are off"
+    offText: "Sundays & Festive Days are off"
   },
-
+  {
+    day: "Food Standards",
+    isStandards: true,
+    standards: [
+      "Clean & hygienic kitchen & utensils",
+      "Fresh ingredients, washed before cooking",
+      "RO Water for Cooking",
+      "Minimal & fresh cooking oil used",
+      "Healthy meals for good health",
+      "We eat what we serve our customers",
+    ]
+  },
   {
     day: "Note",
     note: [
@@ -193,20 +133,14 @@ const menuItems = [
       "Special requests can be accommodated with prior notice. (Chargable)",
       "Food cancellation after it goes out for delivery is fully chargable.",
       "Sundays and Festive days are off days.",
-      "We eat what we serve to our customers.",
-      "Images are for illustration, actual food may vary."
+      "Extra chapaties ₹8/Piece"
     ]
   },
 ];
 
 const MealSection = memo(function MealSection({ type, meal, icon: Icon, bgColor, iconColor }) {
-  const isMondayDinner = meal.img === "/assets/img20.svg";
-  const imgScaleClass = isMondayDinner
-    ? "scale-[1.04] -translate-y-[3px]"
-    : "scale-[1.20] translate-y-[2px]";
-  const imgHoverClass = isMondayDinner
-    ? "hover:scale-[1.12]"
-    : "hover:scale-[1.30]";
+  const imgScaleClass = "scale-[1.20]";
+  const imgHoverClass = "hover:scale-[1.30]";
 
   return (
     <div className="space-y-3">
@@ -220,8 +154,8 @@ const MealSection = memo(function MealSection({ type, meal, icon: Icon, bgColor,
         <img
           src={meal.img}
           alt={type}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          className={`object-cover ${imgScaleClass} ${imgHoverClass} transition-transform duration-500`}
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+          className={`object-cover object-center ${imgScaleClass} ${imgHoverClass} transition-transform duration-200`}
           loading="lazy"
           decoding="async"
         />
@@ -250,7 +184,7 @@ const MenuCard = memo(function MenuCard({ item }) {
     handleBlur,
   } = useCardTilt();
 
-  if (item.day === "Note" && Array.isArray(item.note)) {
+  if (item.day === "Monday to Saturday" || item.day === "Special") {
     return (
       <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] h-full flex flex-col">
         <div
@@ -260,6 +194,122 @@ const MenuCard = memo(function MenuCard({ item }) {
             willChange: "transform",
           }}
           className="group relative h-full rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          aria-label="Monday to Saturday menu card"
+        >
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
+          <div 
+            className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+            style={{
+              transitionProperty: 'all',
+              transitionDuration: '500ms',
+              transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
+            }}
+          />
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
+          
+          <div className="relative z-10 pt-2 px-6 pb-5 space-y-3 flex flex-col h-full items-center">
+            <div className="text-center pb-2 border-b border-white/20 w-full">
+              <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
+                {item.day}
+              </h3>
+            </div>
+            
+            <div className="flex items-center gap-2 mt-1">
+              <div className="bg-orange-500/20 backdrop-blur-sm p-1.5 rounded-lg border border-white/10">
+                <Sparkles className="w-5 h-5 text-orange-400" />
+              </div>
+              <span className="font-semibold text-white text-base">{item.thaliType || "Premium Meal"}</span>
+            </div>
+
+            <div className="relative w-full h-[230px] flex-shrink-0 rounded-xl overflow-hidden border border-white/20 shadow-lg mt-2 mx-auto bg-[#FFEBD2]">
+              <img
+                src={item.lunch.img}
+                alt={item.thaliType || "Premium Meal"}
+                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+                className={`object-cover object-center ${item.day === "Special" ? "scale-[1.08] translate-y-[3px] hover:scale-[1.18]" : "scale-[1.11] translate-y-[3px] hover:scale-[1.21]"} transition-transform duration-200`}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <ul className="list-disc pl-4 text-white text-[16px] font-medium grid grid-cols-2 gap-x-2 gap-y-1.5 text-left mt-3 w-full">
+              {item.lunch.name.map((food, idx) => (
+                <li key={idx} className="leading-tight whitespace-pre-wrap">{food}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl" />
+        </div>
+      </div>
+    );
+  }  if (item.isStandards || item.day === "Food Standards") {
+    return (
+      <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] w-[350px] h-[375px] flex flex-col">
+        <div
+          ref={cardRef}
+          tabIndex={0}
+          style={{
+            willChange: "transform",
+          }}
+          className="group relative h-[375px] rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          aria-label="Food Standards card"
+        >
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
+          <div 
+            className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+            style={{
+              transitionProperty: 'all',
+              transitionDuration: '500ms',
+              transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
+            }}
+          />
+
+          <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
+          <div className="relative z-10 p-5 flex flex-col justify-between h-[375px]">
+            <div>
+              <div className="text-center pb-2 border-b border-white/20 w-full">
+                <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
+                  Food Standards
+                </h3>
+              </div>
+              <ul className="space-y-2.5 text-left w-full pt-3">
+                {item.standards.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5">
+                    <div className="mt-0.5 w-4.5 h-4.5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3.5 h-3.5 text-primary" />
+                    </div>
+                    <span className={`text-[15px] ${point === "We eat what we serve our customers" || point.startsWith("We eat") ? "text-primary font-bold" : "text-white/90 font-medium"}`}>
+                      {point}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl" />
+        </div>
+      </div>
+    );
+  }
+
+  if (item.day === "Note" && Array.isArray(item.note)) {
+    return (
+      <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] w-[350px] h-[375px] flex flex-col">
+        <div
+          ref={cardRef}
+          tabIndex={0}
+          style={{
+            willChange: "transform",
+          }}
+          className="group relative h-[375px] rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -280,69 +330,16 @@ const MenuCard = memo(function MenuCard({ item }) {
           />
 
           <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
-          <div className="relative z-10 pt-2 px-6 pb-5 space-y-2.5 flex flex-col items-center justify-center">
-            <div className="text-center pb-2 border-b border-white/20 w-full">
-              <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
-                Note
-              </h3>
-            </div>
-            <ul className="list-disc text-white/90 text-[17px] pl-6 space-y-1 text-left w-full">
-              {item.note.map((point, idx) => (
-                <li key={idx}>{point}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl" />
-        </div>
-      </div>
-    );
-  }
-
-  if (item.isSpecial) {
-    return (
-      <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] h-full flex flex-col">
-        <div
-          ref={cardRef}
-          tabIndex={0}
-          style={{
-            willChange: "transform",
-          }}
-          className="group relative h-full rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          aria-label="Special Menu card"
-        >
-          {/* Inner subtle highlight */}
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
-          
-          {/* Liquid glass hover bubble */}
-          <div 
-            className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
-            style={{
-              transitionProperty: 'all',
-              transitionDuration: '500ms',
-              transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
-            }}
-          />
-
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
-          
-          <div className="relative z-10 pt-2 px-6 pb-5 space-y-2.5 flex flex-col h-full">
-            <div className="text-center pb-2 border-b border-white/20 w-full">
-              <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
-                {item.day}
-              </h3>
-            </div>
-            
-            <div className="flex-grow flex flex-col items-center justify-start text-center space-y-8 pt-0">
-              <div className="w-16 h-16 rounded-full bg-[#FC8019]/10 border border-[#FC8019]/25 flex items-center justify-center -mt-2">
-                <Sparkles className="w-8 h-8 text-[#FC8019]" />
+          <div className="relative z-10 p-5 flex flex-col justify-between h-[375px]">
+            <div>
+              <div className="text-center pb-2 border-b border-white/20 w-full">
+                <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
+                  Note
+                </h3>
               </div>
-              <ul className="list-disc text-white/90 text-base font-medium space-y-2.5 text-left w-full pl-6 my-auto">
-                {item.items.map((food, idx) => (
-                  <li key={idx} className="leading-relaxed">{food}</li>
+              <ul className="list-disc text-white/90 text-[15px] pl-5 space-y-2 text-left w-full pt-3">
+                {item.note.map((point, idx) => (
+                  <li key={idx} className={point.includes("Extra chapaties") ? "text-primary font-bold" : ""}>{point}</li>
                 ))}
               </ul>
             </div>
@@ -353,16 +350,18 @@ const MenuCard = memo(function MenuCard({ item }) {
     );
   }
 
+
+
   if (item.isOff) {
     return (
-      <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] h-full flex flex-col">
+      <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] w-[350px] h-[375px] flex flex-col">
         <div
           ref={cardRef}
           tabIndex={0}
           style={{
             willChange: "transform",
           }}
-          className="group relative h-full rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
+          className="group relative h-[375px] rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -384,25 +383,23 @@ const MenuCard = memo(function MenuCard({ item }) {
 
           <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
           
-          <div className="relative z-10 pt-2 px-6 pb-5 space-y-2.5 flex flex-col h-full">
-            <div className="text-center pb-2 border-b border-white/20 w-full">
+          <div className="relative z-10 p-5 flex flex-col h-[375px]">
+            <div className="text-center pb-2 border-b border-white/20 w-full flex-shrink-0">
               <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
                 {item.day}
               </h3>
             </div>
-            
-            <div className="flex-grow flex flex-col items-center justify-start text-center space-y-8 pt-6">
-              <div className="w-16 h-16 rounded-full bg-[#FC8019]/10 border border-[#FC8019]/25 flex items-center justify-center mt-3">
-                <Moon className="w-8 h-8 text-[#FC8019]" />
+
+            <div className="flex items-center gap-2 mt-3 flex-shrink-0">
+              <div className="bg-orange-500/20 backdrop-blur-sm p-1.5 rounded-lg border border-white/10 flex-shrink-0">
+                <Moon className="w-5 h-5 text-orange-400" />
               </div>
-              <div className="space-y-4 my-auto pt-4">
-                <p className="text-white text-xl font-bold tracking-wide">
-                  {item.offText}
-                </p>
-                <p className="text-white/60 text-sm max-w-[250px] mx-auto leading-relaxed">
-                  No deliveries are made on this day
-                </p>
-              </div>
+              <span className="font-semibold text-white text-base">{item.offText}</span>
+            </div>
+
+            <div className="flex-1 flex flex-col justify-center items-center text-center space-y-2 w-full my-auto pb-2">
+              <p className="text-white/90 text-[16px] font-normal leading-relaxed">Cheat day for you, Rest day for us</p>
+              <p className="text-white/70 text-sm font-normal leading-relaxed">No deliveries are made on this day</p>
             </div>
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl" />
@@ -412,14 +409,14 @@ const MenuCard = memo(function MenuCard({ item }) {
   }
 
   return (
-    <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] h-full flex flex-col">
+    <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] w-[350px] h-[450px] flex flex-col">
       <div
         ref={cardRef}
         tabIndex={0}
         style={{
           willChange: "transform",
         }}
-        className="group relative h-full rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
+        className="group relative h-[450px] rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onFocus={handleFocus}
@@ -441,7 +438,7 @@ const MenuCard = memo(function MenuCard({ item }) {
 
         <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
 
-        <div className="relative z-10 pt-2 px-6 pb-5 space-y-2.5">
+        <div className="relative z-10 p-6 flex flex-col justify-between h-[450px]">
           <div className="text-center pb-2 border-b border-white/20">
             <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
               {item.day}
@@ -479,8 +476,8 @@ const MenuCard = memo(function MenuCard({ item }) {
 
 export function Menu() {
   const menuCardsJSX = useMemo(() => {
-    return menuItems.map((item) => (
-      <div className="flex-1 basis-[calc(33.333%-1.5rem)] max-w-[400px] min-w-[320px] h-[425px] flex" key={item.day}>
+    return menuItems.map((item, idx) => (
+      <div className="w-[350px] max-w-full h-auto flex flex-col" key={idx}>
         <MenuCard item={item} />
       </div>
     ));
@@ -524,7 +521,7 @@ export function Menu() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-stretch gap-6 sm:gap-8 max-w-[1600px] mx-auto">
+        <div className="flex flex-wrap justify-center items-start gap-6 sm:gap-8 max-w-[1600px] mx-auto">
           {menuCardsJSX}
         </div>
       </div>

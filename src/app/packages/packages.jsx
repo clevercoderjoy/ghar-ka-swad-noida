@@ -149,7 +149,7 @@ const PackageCard = memo(function PackageCard({ pkg }) {
 
 const packages = [
   {
-    name: "Single meal",
+    name: "Premium Meal",
     price: "₹200/- Meal",
     originalPrice: null,
     description: "1 meal, lunch or dinner for a day",
@@ -164,7 +164,7 @@ const packages = [
     popular: false
   },
   {
-    name: "Monthly Single",
+    name: "Premium Single",
     price: "₹3200/-",
     originalPrice: null,
     description: "1 meal, lunch or dinner for a calendar month.",
@@ -179,7 +179,7 @@ const packages = [
     popular: false
   },
   {
-    name: "Monthly Double",
+    name: "Premium Double",
     price: "₹6200/-",
     originalPrice: null,
     description: "2 meals, lunch and dinner for a calendar month.",
@@ -192,6 +192,51 @@ const packages = [
       "On-time delivery",
     ],
     popular: true
+  },
+  {
+    name: "Budget Meal",
+    price: "₹140/- Meal",
+    originalPrice: null,
+    description: "1 budget meal, lunch or dinner for a day",
+    features: [
+      "Advance Payment",
+      "Dal + Steamed Rice or 4 Chapaties",
+      "Seasonal Curry or Veggie",
+      "Truly Home-Cooked",
+      "Pocket-Friendly Price",
+      "On-Time Delivery",
+    ],
+    popular: false
+  },
+  {
+    name: "Budget Single",
+    price: "₹2400/-",
+    originalPrice: null,
+    description: "1 budget meal for a calendar month.",
+    features: [
+      "Subscription Based",
+      "Advance Payment",
+      "Truly home cooked 1 budget meal daily for a calendar month.",
+      "Dal + Rice/Roti + Sabzi",
+      "Economical Subscription",
+      "On-time delivery",
+    ],
+    popular: false
+  },
+  {
+    name: "Budget Double",
+    price: "₹4500/-",
+    originalPrice: null,
+    description: "2 budget meals, lunch and dinner for a calendar month.",
+    features: [
+      "Subscription Based",
+      "Advance Payment",
+      "Truly home cooked 2 budget meals daily for a calendar month.",
+      "Dal + Rice/Roti + Sabzi",
+      "Best Value for Students & Pros",
+      "On-time delivery",
+    ],
+    popular: false
   },
   {
     name: "Food Standards",
@@ -257,7 +302,7 @@ export function Packages() {
             Truly home-cooked premium meals on not so premium budget
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto justify-items-center w-full">
+        <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto w-full">
           {packageCardsJSX}
         </div>
       </div>
