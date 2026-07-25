@@ -120,9 +120,11 @@ const menuItems = [
     standards: [
       "Clean & hygienic kitchen & utensils",
       "Fresh ingredients, washed before cooking",
-      "RO Water for Cooking",
+      "RO water for cooking",
       "Minimal & fresh cooking oil used",
+      "No reheating or use of leftover food",
       "Healthy meals for good health",
+      "Leak-proof, food-grade containers used",
       "We eat what we serve our customers",
     ]
   },
@@ -286,7 +288,7 @@ const MenuCard = memo(function MenuCard({ item }) {
                     <div className="mt-0.5 w-4.5 h-4.5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
                       <Check className="w-3.5 h-3.5 text-primary" />
                     </div>
-                    <span className={`text-[15px] ${point === "We eat what we serve our customers" || point.startsWith("We eat") ? "text-primary font-bold" : "text-white/90 font-medium"}`}>
+                    <span className={`text-[14.5px] ${point === "We eat what we serve our customers" || point.startsWith("We eat") ? "text-primary font-bold" : "text-white/90 font-medium"}`}>
                       {point}
                     </span>
                   </li>
@@ -302,14 +304,14 @@ const MenuCard = memo(function MenuCard({ item }) {
 
   if (item.day === "Note" && Array.isArray(item.note)) {
     return (
-      <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] w-[350px] h-[375px] flex flex-col">
+      <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] w-[350px] h-auto min-h-[375px] flex flex-col">
         <div
           ref={cardRef}
           tabIndex={0}
           style={{
             willChange: "transform",
           }}
-          className="group relative h-[375px] rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
+          className="group relative h-full min-h-[375px] rounded-3xl bg-primary/5 backdrop-blur-xl border border-primary/15 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-shadow duration-100 overflow-hidden focus:outline-none menu-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -330,14 +332,14 @@ const MenuCard = memo(function MenuCard({ item }) {
           />
 
           <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
-          <div className="relative z-10 p-5 flex flex-col justify-between h-[375px]">
+          <div className="relative z-10 p-6 flex flex-col justify-between h-full min-h-[375px]">
             <div>
               <div className="text-center pb-2 border-b border-white/20 w-full">
                 <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
                   Note
                 </h3>
               </div>
-              <ul className="list-disc text-white/90 text-[15px] pl-5 space-y-2 text-left w-full pt-3">
+              <ul className="list-disc text-white/90 text-[16px] pl-6 space-y-2 text-left w-full pt-3">
                 {item.note.map((point, idx) => (
                   <li key={idx} className={point.includes("Extra chapaties") ? "text-primary font-bold" : ""}>{point}</li>
                 ))}

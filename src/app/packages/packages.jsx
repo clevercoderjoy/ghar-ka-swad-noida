@@ -237,21 +237,6 @@ const packages = [
       "On-time delivery",
     ],
     popular: false
-  },
-  {
-    name: "Food Standards",
-    price: null,
-    originalPrice: null,
-    description: "For all our meals",
-    features: [
-      "Clean & hygienic kitchen & utensils",
-      "Fresh ingredients, washed before cooking",
-      "RO Water for Cooking",
-      "Minimal & fresh cooking oil used",
-      "Healthy meals for good health",
-      "We eat what we serve our customers",
-    ],
-    popular: false
   }
 ];
 
