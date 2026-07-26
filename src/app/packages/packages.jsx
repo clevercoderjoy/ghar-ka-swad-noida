@@ -195,7 +195,7 @@ const packages = [
   },
   {
     name: "Budget Meal",
-    price: "₹140/- Meal",
+    price: "₹150/- Meal",
     originalPrice: null,
     description: "1 budget meal, lunch or dinner for a day",
     features: [
@@ -210,7 +210,7 @@ const packages = [
   },
   {
     name: "Budget Single",
-    price: "₹2400/-",
+    price: "₹2,900/-",
     originalPrice: null,
     description: "1 budget meal for a calendar month.",
     features: [
@@ -225,7 +225,7 @@ const packages = [
   },
   {
     name: "Budget Double",
-    price: "₹4500/-",
+    price: "₹5,600/-",
     originalPrice: null,
     description: "2 budget meals, lunch and dinner for a calendar month.",
     features: [

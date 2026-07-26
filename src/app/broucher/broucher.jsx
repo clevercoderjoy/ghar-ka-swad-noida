@@ -13,6 +13,7 @@ const vegMenu = [
 ];
 
 const notes = [
+  "Proudly serving Darbhanga, now open to Noida.",
   "Menu may change based on availability of food items.",
   "Special requests can be accommodated with prior notice. (Chargable)",
   "Food cancellation after it goes out for delivery is fully chargable.",
@@ -56,18 +57,18 @@ export function BroucherPage() {
         </div>
 
         {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-8 my-3 w-full px-4">
+        <div className="flex flex-wrap justify-center gap-10 sm:gap-14 my-4 w-full px-4">
           <div className="flex flex-col items-center">
-            <span className="text-2xl font-bold text-primary">1000+</span>
-            <span className="text-sm font-medium text-foreground">Happy Stomachs</span>
+            <span className="text-3xl sm:text-4xl font-black text-primary drop-shadow-md">1000+</span>
+            <span className="text-base sm:text-lg font-bold text-white tracking-wide">Happy Stomachs</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-2xl font-bold text-primary">Daily</span>
-            <span className="text-sm font-medium text-foreground">Fresh Meals</span>
+            <span className="text-3xl sm:text-4xl font-black text-primary drop-shadow-md">Daily</span>
+            <span className="text-base sm:text-lg font-bold text-white tracking-wide">Fresh Meals</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-2xl font-bold text-primary">2.5+</span>
-            <span className="text-sm font-medium text-foreground">Years of Service</span>
+            <span className="text-3xl sm:text-4xl font-black text-primary drop-shadow-md">2.5+</span>
+            <span className="text-base sm:text-lg font-bold text-white tracking-wide">Years of Service</span>
           </div>
         </div>
 
@@ -78,8 +79,8 @@ export function BroucherPage() {
 
           {/* Why घर का स्वाद */}
           <div className="col-span-1 md:col-span-3 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
-            <h2 className="text-xl sm:text-2xl font-extrabold mb-3 text-white text-center">Why <span className="text-primary">घर का स्वाद</span> ?</h2>
-            <ul className="space-y-2 flex-1 flex flex-col justify-between pt-1">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-2.5 text-white text-center">Why <span className="text-primary">घर का स्वाद</span> ?</h2>
+            <ul className="space-y-1.5 flex-1 flex flex-col justify-between pt-0.5">
               {[
                 "Freshly prepared daily with premium ingredients",
                 "Home-cooked taste that reminds you of your घर का खाना",
@@ -90,7 +91,7 @@ export function BroucherPage() {
                 "Authentic local and traditional recipes",
                 "No preservatives or artificial additives",
               ].map((point, idx) => (
-                <li key={idx} className="flex items-start gap-1.5 text-sm sm:text-[14.5px] text-white font-semibold leading-tight">
+                <li key={idx} className="flex items-start gap-1.5 text-base sm:text-[17px] text-white font-extrabold leading-snug">
                   <span className="text-primary mt-0.5 shrink-0">✦</span>
                   <span>{point}</span>
                 </li>
@@ -103,32 +104,32 @@ export function BroucherPage() {
             <h2 className="text-xl sm:text-2xl font-extrabold mb-3 text-primary text-center">The trust we've earned</h2>
             <div className="flex flex-col justify-between flex-1 space-y-2 w-full">
               <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
-                <span className="text-lg sm:text-xl font-black text-primary block">20,000 +</span>
-                <span className="text-xs sm:text-sm text-white/95 font-semibold leading-tight">Delicious Meals Delivered</span>
+                <span className="text-xl sm:text-2xl font-black text-primary block">20,000 +</span>
+                <span className="text-sm sm:text-base text-white/95 font-bold leading-tight">Delicious Meals Delivered</span>
               </div>
               <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
-                <span className="text-lg sm:text-xl font-black text-primary block">1,000 +</span>
-                <span className="text-xs sm:text-sm text-white/95 font-semibold leading-tight">Delighted Customers</span>
+                <span className="text-xl sm:text-2xl font-black text-primary block">1,000 +</span>
+                <span className="text-sm sm:text-base text-white/95 font-bold leading-tight">Delighted Customers</span>
               </div>
               <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
-                <span className="text-lg sm:text-xl font-black text-primary block">100 +</span>
-                <span className="text-xs sm:text-sm text-white/95 font-semibold leading-tight">Currently Active Subscribers</span>
+                <span className="text-xl sm:text-2xl font-black text-primary block">100 +</span>
+                <span className="text-sm sm:text-base text-white/95 font-bold leading-tight">Currently Active Subscribers</span>
               </div>
               <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
-                <span className="text-lg sm:text-xl font-black text-primary block">2.5 +</span>
-                <span className="text-xs sm:text-sm text-white/95 font-semibold leading-tight">Years of Trust Service</span>
+                <span className="text-xl sm:text-2xl font-black text-primary block">2.5 +</span>
+                <span className="text-sm sm:text-base text-white/95 font-bold leading-tight">Years of Trust Service</span>
               </div>
               <div className="flex flex-col items-center justify-center">
-                <span className="text-lg sm:text-xl font-black text-primary block">4.8 ★★★★</span>
-                <span className="text-xs sm:text-sm text-white/95 font-semibold leading-tight">Google Customer Ratings</span>
+                <span className="text-xl sm:text-2xl font-black text-primary block">4.8 ★★★★</span>
+                <span className="text-sm sm:text-base text-white/95 font-bold leading-tight">Google Verified Ratings</span>
               </div>
             </div>
           </div>
 
           {/* Food Standards */}
           <div className="col-span-1 md:col-span-3 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
-            <h2 className="text-xl sm:text-2xl font-extrabold mb-3 text-primary text-center">Food Standards</h2>
-            <ul className="space-y-1.5 flex-1 flex flex-col justify-between pt-1">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-2 text-primary text-center">Food Standards</h2>
+            <ul className="space-y-1 flex-1 flex flex-col justify-between pt-0.5">
               {[
                 "Clean & hygienic kitchen & utensils",
                 "Fresh ingredients, washed before cooking",
@@ -139,8 +140,8 @@ export function BroucherPage() {
                 "Leak-proof, food-grade containers used",
                 "We eat what we serve our customers",
               ].map((point, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-base sm:text-[16px] text-white font-semibold leading-tight">
-                  <span className={point.startsWith("We eat") ? "text-primary font-bold" : ""}>{point}</span>
+                <li key={idx} className="flex items-start gap-2 text-base sm:text-[18px] text-white font-extrabold leading-snug">
+                  <span className={point.startsWith("We eat") ? "text-primary font-black" : ""}>{point}</span>
                 </li>
               ))}
             </ul>
@@ -149,10 +150,16 @@ export function BroucherPage() {
           {/* Note */}
           <div className="col-span-1 md:col-span-3 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col">
             <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 text-primary text-center">Note</h2>
-            <ul className="list-disc pl-5 space-y-3 text-base sm:text-[17px] text-white/95 pt-1 font-semibold leading-snug">
+            <ul className="list-disc pl-5 space-y-3.5 text-lg sm:text-[20px] text-white pt-1 font-extrabold leading-snug">
               {notes.map((note, idx) => (
-                <li key={idx} className={note.includes("Extra chapaties") ? "text-primary font-bold" : ""}>
-                  {note}
+                <li key={idx} className={note.includes("Extra chapaties") ? "text-primary font-black" : ""}>
+                  {note.includes("Darbhanga") ? (
+                    <>
+                      Proudly serving <span className="text-[#FC8019] font-black">Darbhanga</span>, now open to <span className="text-[#FC8019] font-black">Noida</span>.
+                    </>
+                  ) : (
+                    note
+                  )}
                 </li>
               ))}
             </ul>
@@ -168,33 +175,33 @@ export function BroucherPage() {
               <div className="flex flex-col bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 hover:border-primary/30 transition-colors h-full">
                 <div className="text-center mb-2">
                   <span className="text-base sm:text-lg font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1.5">Monday to Saturday</span>
-                  <h3 className="text-base sm:text-lg font-black text-white">Premium Meal</h3>
+                  <h3 className="text-lg sm:text-xl font-black text-white">Premium Meal</h3>
                 </div>
-                <div className="grid grid-cols-2 gap-y-2 gap-x-4 sm:gap-x-5 text-sm sm:text-[15.5px] text-white pt-1 font-semibold text-left justify-between">
+                <div className="grid grid-cols-2 gap-y-2.5 gap-x-4 sm:gap-x-5 text-lg sm:text-[18.5px] text-white pt-1 font-extrabold text-left justify-between">
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Dal of the Day</span>
                   </div>
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Steamed Rice</span>
                   </div>
 
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>4 Chapaties</span>
                   </div>
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Fresh Salad</span>
                   </div>
 
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Seasonal Curry</span>
                   </div>
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Seasonal Veggie</span>
                   </div>
                 </div>
@@ -204,15 +211,15 @@ export function BroucherPage() {
               <div className="flex flex-col bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 hover:border-primary/30 transition-colors h-full">
                 <div className="text-center mb-2">
                   <span className="text-base sm:text-lg font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1.5">Monday to Saturday</span>
-                  <h3 className="text-base sm:text-lg font-black text-white">Budget Meal</h3>
+                  <h3 className="text-lg sm:text-xl font-black text-white">Budget Meal</h3>
                 </div>
-                <div className="flex flex-col gap-y-2 text-sm sm:text-[15.5px] text-white pt-1 font-semibold text-left">
+                <div className="flex flex-col gap-y-2.5 text-lg sm:text-[18.5px] text-white pt-1 font-extrabold text-left">
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Dal of the Day + Rice / 4 Roti</span>
                   </div>
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Seasonal Curry / Veggie</span>
                   </div>
                 </div>
@@ -222,23 +229,23 @@ export function BroucherPage() {
               <div className="flex flex-col bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 hover:border-primary/30 transition-colors h-full">
                 <div className="text-center mb-2">
                   <span className="text-base sm:text-lg font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1.5">Special</span>
-                  <h3 className="text-base sm:text-lg font-black text-white">Monday Blues Special</h3>
+                  <h3 className="text-lg sm:text-xl font-black text-white">Monday Blues Special</h3>
                 </div>
-                <div className="grid grid-cols-2 gap-y-2 gap-x-2 text-sm sm:text-[15.5px] text-white pt-1 font-semibold text-left">
+                <div className="grid grid-cols-2 gap-y-2.5 gap-x-2 text-lg sm:text-[18.5px] text-white pt-1 font-extrabold text-left">
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Rajma Chawal</span>
                   </div>
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Chole Chawal</span>
                   </div>
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Kadhi Chawal</span>
                   </div>
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Paneer Curry</span>
                   </div>
                 </div>
@@ -252,44 +259,47 @@ export function BroucherPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 flex-1 items-stretch">
               {/* Premium Meal */}
               <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-xs sm:text-sm font-extrabold text-white">Premium Meal</span>
-                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹200/-</span>
-                <span className="text-[11px] text-white/80 font-medium leading-tight">Per Meal (Lunch/Dinner)</span>
+                <span className="text-base sm:text-lg font-black text-white">Premium Meal</span>
+                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹200/-</span>
+                <span className="text-xs sm:text-sm text-white font-bold leading-tight">Per Meal (Lunch/Dinner)</span>
               </div>
 
               {/* Premium Single */}
               <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-xs sm:text-sm font-extrabold text-white">Premium Single</span>
-                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹3,200/-</span>
-                <span className="text-[11px] text-white/80 font-medium leading-tight">1 Meal Daily / Month</span>
+                <span className="text-base sm:text-lg font-black text-white">Premium Single</span>
+                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹3,200/-</span>
+                <span className="text-xs sm:text-sm text-white font-bold leading-tight">1 Meal Daily / Month</span>
               </div>
 
               {/* Premium Double */}
-              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between border-primary/30 bg-primary/10">
-                <span className="text-xs sm:text-sm font-extrabold text-white">Premium Double</span>
-                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹6,200/-</span>
-                <span className="text-[11px] text-white/80 font-medium leading-tight">2 Meals Daily / Month</span>
+              <div className="relative flex flex-col bg-black/10 rounded-lg p-2.5 border border-primary/40 hover:border-primary transition-colors text-center justify-between bg-primary/10 pt-3">
+                <div className="absolute -top-2.5 -right-1 bg-primary text-white text-[11px] font-black px-2.5 py-0.5 rounded-full shadow-md uppercase tracking-wider border border-white/20 whitespace-nowrap z-10 flex items-center justify-center text-center">
+                  Most Popular
+                </div>
+                <span className="text-base sm:text-lg font-black text-white">Premium Double</span>
+                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹6,200/-</span>
+                <span className="text-xs sm:text-sm text-white font-bold leading-tight">2 Meals Daily / Month</span>
               </div>
 
               {/* Budget Meal */}
               <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-xs sm:text-sm font-extrabold text-white">Budget Meal</span>
-                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹140/-</span>
-                <span className="text-[11px] text-white/80 font-medium leading-tight">Per Meal (Lunch/Dinner)</span>
+                <span className="text-base sm:text-lg font-black text-white">Budget Meal</span>
+                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹150/-</span>
+                <span className="text-xs sm:text-sm text-white font-bold leading-tight">Per Meal (Lunch/Dinner)</span>
               </div>
 
               {/* Budget Single */}
               <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-xs sm:text-sm font-extrabold text-white">Budget Single</span>
-                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹2,400/-</span>
-                <span className="text-[11px] text-white/80 font-medium leading-tight">1 Meal Daily / Month</span>
+                <span className="text-base sm:text-lg font-black text-white">Budget Single</span>
+                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹2,900/-</span>
+                <span className="text-xs sm:text-sm text-white font-bold leading-tight">1 Meal Daily / Month</span>
               </div>
 
               {/* Budget Double */}
               <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-xs sm:text-sm font-extrabold text-white">Budget Double</span>
-                <span className="text-sm sm:text-base font-black text-primary my-0.5">₹4,500/-</span>
-                <span className="text-[11px] text-white/80 font-medium leading-tight">2 Meals Daily / Month</span>
+                <span className="text-base sm:text-lg font-black text-white">Budget Double</span>
+                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹5,600/-</span>
+                <span className="text-xs sm:text-sm text-white font-bold leading-tight">2 Meals Daily / Month</span>
               </div>
             </div>
           </div>
@@ -300,70 +310,121 @@ export function BroucherPage() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch flex-1">
               
               {/* Left Side: 4 Contact Info Cards (2x2 grid) */}
-              <div className="md:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3 h-full items-stretch">
                 {/* Phone */}
-                <div className="flex items-center gap-3 bg-black/10 rounded-xl p-3 border border-white/10">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                    <Phone className="w-5 h-5" />
+                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
+                  <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <Phone className="w-5 sm:w-6 h-5 sm:h-6" />
                   </div>
-                  <div className="flex flex-col text-left">
-                    <span className="text-xs text-white/70 font-semibold">Phone</span>
-                    <a href="tel:+919266844741" className="text-sm sm:text-base font-bold text-white hover:text-primary transition-colors">+91 9266844741</a>
+                  <div className="flex flex-col text-left justify-center">
+                    <span className="text-xs sm:text-sm text-white/70 font-semibold">Phone</span>
+                    <a href="tel:+919266844741" className="text-base sm:text-lg font-extrabold text-white hover:text-primary transition-colors">+91 9266844741</a>
                   </div>
                 </div>
 
                 {/* Whatsapp */}
-                <div className="flex items-center gap-3 bg-black/10 rounded-xl p-3 border border-white/10">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                    <FaWhatsapp className="w-5 h-5" />
+                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
+                  <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <FaWhatsapp className="w-5 sm:w-6 h-5 sm:h-6" />
                   </div>
-                  <div className="flex flex-col text-left">
-                    <span className="text-xs text-white/70 font-semibold">WhatsApp</span>
-                    <a href="https://wa.me/+919266844741" target="_blank" rel="noreferrer" className="text-sm sm:text-base font-bold text-white hover:text-primary transition-colors">+91 9266844741</a>
+                  <div className="flex flex-col text-left justify-center">
+                    <span className="text-xs sm:text-sm text-white/70 font-semibold">WhatsApp</span>
+                    <a href="https://wa.me/+919266844741" target="_blank" rel="noreferrer" className="text-base sm:text-lg font-extrabold text-white hover:text-primary transition-colors">+91 9266844741</a>
                   </div>
                 </div>
 
                 {/* Support Hours */}
-                <div className="flex items-center gap-3 bg-black/10 rounded-xl p-3 border border-white/10">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                    <Headphones className="w-5 h-5" />
+                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
+                  <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <Headphones className="w-5 sm:w-6 h-5 sm:h-6" />
                   </div>
-                  <div className="flex flex-col text-left">
-                    <span className="text-xs text-white/70 font-semibold">Support Hours</span>
-                    <span className="text-sm sm:text-base font-bold text-white">9 AM - 9 PM Daily</span>
+                  <div className="flex flex-col text-left justify-center">
+                    <span className="text-xs sm:text-sm text-white/70 font-semibold">Support Hours</span>
+                    <span className="text-base sm:text-lg font-extrabold text-white">9 AM - 9 PM Daily</span>
                   </div>
                 </div>
 
                 {/* Delivery Hours */}
-                <div className="flex items-center gap-3 bg-black/10 rounded-xl p-3 border border-white/10">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                    <Clock className="w-5 h-5" />
+                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
+                  <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <Clock className="w-5 sm:w-6 h-5 sm:h-6" />
                   </div>
-                  <div className="flex flex-col text-left">
-                    <span className="text-xs text-white/70 font-semibold">Delivery Hours</span>
-                    <span className="text-sm sm:text-base font-bold text-white">9 AM - 9 PM Daily</span>
+                  <div className="flex flex-col text-left justify-center">
+                    <span className="text-xs sm:text-sm text-white/70 font-semibold">Delivery Hours</span>
+                    <span className="text-base sm:text-lg font-extrabold text-white">9 AM - 9 PM Daily</span>
                   </div>
                 </div>
               </div>
 
-              {/* Right Side: QR Codes */}
-              <div className="md:col-span-6 flex items-center justify-center sm:justify-evenly gap-3 sm:gap-4 bg-black/10 rounded-xl p-3.5 border border-white/10 h-full flex-wrap">
-                <div className="flex flex-col items-center">
-                  <img src="/assets/whatsapp.svg" alt="Scan to Call QR" width={85} height={85} className="rounded-lg border border-white/20 bg-white" loading="lazy" decoding="async" />
-                  <span className="mt-1.5 text-xs text-white font-semibold whitespace-nowrap">Scan to Call</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img src="/assets/whatsapp.svg" alt="WhatsApp QR" width={85} height={85} className="rounded-lg border border-white/20 bg-white" loading="lazy" decoding="async" />
-                  <span className="mt-1.5 text-xs text-white font-semibold whitespace-nowrap">WhatsApp QR</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img src="/assets/google.svg" alt="Google QR" width={85} height={85} className="rounded-lg border border-white/20 bg-white" loading="lazy" decoding="async" />
-                  <span className="mt-1.5 text-xs text-white font-semibold whitespace-nowrap">Google Review QR</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <img src="/assets/gharkaswad.svg" alt="Website QR" width={85} height={85} className="rounded-lg border border-white/20 bg-white" loading="lazy" decoding="async" />
-                  <span className="mt-1.5 text-xs text-white font-semibold whitespace-nowrap">Website QR</span>
-                </div>
+              {/* Right Side: QR Codes (Expanded Width & Height) */}
+              <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-2 bg-black/10 rounded-xl p-3 sm:p-4 border border-white/10 items-center justify-center justify-items-center h-full">
+                {/* 1. Website QR: Know More About Us */}
+                <a href="/assets/qr-web.svg" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
+                  <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
+                    <img
+                      src="/assets/qr-web.svg"
+                      alt="Know More About Us QR"
+                      width={200}
+                      height={200}
+                      style={{ imageRendering: "pixelated" }}
+                      className="w-full h-full object-cover scale-[1.22] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                  <span className="mt-2 text-sm sm:text-base text-white font-extrabold whitespace-nowrap text-center">Know More About Us</span>
+                </a>
+
+                {/* 2. Google Review QR: Find us on Google */}
+                <a href="/assets/qr-google.svg" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
+                  <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
+                    <img
+                      src="/assets/qr-google.svg"
+                      alt="Find us on Google QR"
+                      width={200}
+                      height={200}
+                      style={{ imageRendering: "pixelated" }}
+                      className="w-full h-full object-cover scale-[1.25] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                  <span className="mt-2 text-sm sm:text-base text-white font-extrabold whitespace-nowrap text-center">Find us on Google</span>
+                </a>
+
+                {/* 3. WhatsApp QR: Order on Whatsapp */}
+                <a href="/assets/qr-chat.svg" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
+                  <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
+                    <img
+                      src="/assets/qr-chat.svg"
+                      alt="Order on Whatsapp QR"
+                      width={200}
+                      height={200}
+                      style={{ imageRendering: "pixelated" }}
+                      className="w-full h-full object-cover scale-[1.25] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                  <span className="mt-2 text-sm sm:text-base text-white font-extrabold whitespace-nowrap text-center">Order on Whatsapp</span>
+                </a>
+
+                {/* 4. Call QR: Scan to Call */}
+                <a href="/assets/qr-call.svg" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
+                  <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
+                    <img
+                      src="/assets/qr-call.svg"
+                      alt="Scan to Call QR"
+                      width={200}
+                      height={200}
+                      style={{ imageRendering: "pixelated" }}
+                      className="w-full h-full object-cover scale-[1.25] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                  <span className="mt-2 text-sm sm:text-base text-white font-extrabold whitespace-nowrap text-center">Scan to Call</span>
+                </a>
               </div>
 
             </div>
@@ -374,34 +435,43 @@ export function BroucherPage() {
         {/* Footer Bar */}
         <div className="relative w-full mt-4 mb-2 px-4 flex flex-col md:flex-row items-center justify-between gap-4 py-4 border-t border-white/10">
           {/* Left: Logo Pill (far left) */}
-          <div className="flex items-center gap-2 p-0 h-10 pr-3.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] mt-1.5 [transform:translateZ(0)]">
+          <div className="group relative flex items-center gap-2.5 p-0 h-11 pr-4 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:scale-105 transition-all duration-300 overflow-hidden mt-1.5 [transform:translateZ(0)]">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
+            <div 
+              className="absolute inset-0 rounded-full bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+              style={{
+                transitionProperty: 'all',
+                transitionDuration: '500ms',
+                transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
+              }}
+            />
             <img
               src="/logo.svg.svg"
               alt="Ghar ka Swad Logo"
-              style={{ width: 40, height: 40 }}
-              className="rounded-full object-cover border border-white/10"
+              style={{ width: 44, height: 44 }}
+              className="relative z-10 rounded-full object-cover border border-white/10"
               decoding="async"
             />
-            <div className="flex flex-col justify-center items-center select-none text-center gap-0 leading-tight pr-1">
-              <span className="text-[15px] sm:text-[16px] font-bold text-white tracking-wide whitespace-nowrap">
+            <div className="relative z-10 flex flex-col justify-center items-center select-none text-center gap-0 leading-tight pr-1">
+              <span className="text-[16px] sm:text-[17px] font-bold text-white tracking-wide whitespace-nowrap">
                 Ghar ka Swad
               </span>
-              <span className="text-[12px] sm:text-[13px] font-black text-[#FC8019] tracking-wider uppercase whitespace-nowrap">
+              <span className="text-[13px] sm:text-[14px] font-black text-[#FC8019] tracking-wider uppercase whitespace-nowrap">
                 Sanskriti Raj
               </span>
             </div>
           </div>
 
           {/* Center: Copyright (dead-centered horizontally & vertically) */}
-          <div className="md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 text-sm sm:text-base text-white text-center font-semibold whitespace-nowrap">
-            © 2026 <span className="text-primary font-bold">Ghar ka Swad</span> | All rights reserved
+          <div className="md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 text-base sm:text-lg text-white text-center font-bold whitespace-nowrap">
+            © 2026 <span className="text-primary font-extrabold">Ghar ka Swad</span> | All rights reserved
           </div>
 
           {/* Right: Made with love Pill (far right) */}
-          <div className="group relative flex items-center gap-1.5 h-10 px-4 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] mt-1.5 [transform:translateZ(0)]">
-            <span className="relative z-10 text-xs sm:text-sm text-white font-medium">Made with</span>
-            <Heart className="relative z-10 w-4 h-4 text-red-500 fill-red-500 border-red-500 animate-pulse" />
-            <span className="relative z-10 text-xs sm:text-sm text-white font-medium">by <a href="https://clevercoderjoy.bio.link/" target="_blank" rel="noopener noreferrer" className="text-[#FC8019] drop-shadow-md no-underline transition-colors font-bold">clevercoderjoy</a></span>
+          <div className="group relative flex items-center gap-2 h-11 px-5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] mt-1.5 [transform:translateZ(0)]">
+            <span className="relative z-10 text-sm sm:text-base text-white font-semibold">Made with</span>
+            <Heart className="relative z-10 w-4.5 h-4.5 text-red-500 fill-red-500 border-red-500 animate-pulse" />
+            <span className="relative z-10 text-sm sm:text-base text-white font-semibold">by <a href="https://clevercoderjoy.bio.link/" target="_blank" rel="noopener noreferrer" className="text-[#FC8019] drop-shadow-md no-underline transition-colors font-extrabold">clevercoderjoy</a></span>
           </div>
         </div>
       </div>

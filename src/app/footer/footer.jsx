@@ -27,17 +27,26 @@ export function Footer() {
       <div className="container px-4 py-4 md:py-12 relative z-10">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
           <div
-            className="flex items-center gap-2 p-0 h-10 pr-3.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:scale-105 transition-transform duration-200 cursor-pointer [transform:translateZ(0)]"
+            className="group relative flex items-center gap-2 p-0 h-10 pr-3.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:scale-105 transition-all duration-300 cursor-pointer overflow-hidden [transform:translateZ(0)]"
             onClick={() => scrollToSection("#home")}
           >
+            <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
+            <div 
+              className="absolute inset-0 rounded-full bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+              style={{
+                transitionProperty: 'all',
+                transitionDuration: '500ms',
+                transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
+              }}
+            />
             <img
               src="/logo.svg.svg"
               alt="घर का स्वाद Logo"
               style={{ width: 40, height: 40 }}
-              className="rounded-full object-cover drop-shadow-md border border-white/10"
+              className="relative z-10 rounded-full object-cover drop-shadow-md border border-white/10"
               decoding="async"
             />
-            <div className="flex flex-col justify-center items-center select-none text-center gap-0 leading-tight pr-1">
+            <div className="relative z-10 flex flex-col justify-center items-center select-none text-center gap-0 leading-tight pr-1">
               <span className="text-[16px] font-bold text-white tracking-wide whitespace-nowrap">
                 Ghar ka Swad
               </span>

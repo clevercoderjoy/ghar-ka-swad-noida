@@ -200,7 +200,7 @@ export function Reviews() {
             </div>
             <div className="flex flex-col items-center justify-center text-center w-full gap-1">
               <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-[#FC8019] tracking-tight">4.8 ★★★★</span>
-              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Google Customer Ratings</span>
+              <span className="text-sm sm:text-base lg:text-lg text-white/95 font-medium leading-snug">Google Verified Ratings</span>
             </div>
           </div>
 
