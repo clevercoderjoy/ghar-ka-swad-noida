@@ -129,7 +129,7 @@ export const Broucher = ({
           disabled={isDownloading}
           className={
             variant === "nav"
-              ? `relative z-20 flex items-center w-auto h-10 justify-between rounded-full px-3 py-2 text-sm font-medium text-white focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${className}`
+              ? `relative z-20 flex items-center w-auto h-11 justify-between rounded-full px-4 py-2 text-base font-medium text-white focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${className}`
               : `group relative flex items-center w-auto h-10 justify-between rounded-full border border-primary/25 bg-primary/8 backdrop-blur-xl px-3 py-2 text-sm font-medium text-white focus:ring-0 focus:outline-none transition-all duration-300 shadow-[0_4px_20px_rgba(252,128,25,0.08),inset_0_1px_1px_rgba(252,128,25,0.12)] overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed ${className}`
           }
           aria-label={label}
@@ -150,7 +150,7 @@ export const Broucher = ({
               <>
                 {label}
                 <ExternalLink
-                  className="h-4 w-4 ml-1 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                  className="h-[18px] w-[18px] ml-1 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   aria-hidden="true"
                 />
               </>

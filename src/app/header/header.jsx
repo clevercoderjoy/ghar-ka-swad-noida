@@ -21,7 +21,7 @@ const NavItem = ({ item, isActive, isHome, onClick, onMouseEnter }) => {
     <button
       onMouseEnter={onMouseEnter}
       onClick={onClick}
-      className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 z-20 ${
+      className={`relative px-4 py-2 rounded-full text-base font-medium transition-all duration-300 z-20 ${
         showActive ? "text-white" : "text-white/70 hover:text-white"
       } active:scale-95`}
     >
@@ -166,10 +166,8 @@ export function Header() {
               <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
               {/* hover bubble */}
               <div 
-                className="absolute inset-0 rounded-full bg-primary/15 backdrop-blur-md border border-primary/25 scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+                className="absolute inset-0 rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 pointer-events-none" 
                 style={{
-                  transitionProperty: 'all',
-                  transitionDuration: '500ms',
                   transitionTimingFunction: 'cubic-bezier(0.34, 1.15, 0.64, 1)'
                 }}
               />
@@ -177,7 +175,7 @@ export function Header() {
                 src="/logo.svg.svg"
                 alt="घर का स्वाद Logo"
                 style={{ width: 48, height: 48 }}
-                className="rounded-full object-cover drop-shadow-md border border-white/10"
+                className="rounded-full object-cover border border-white/10"
                 decoding="async"
               />
               <div className="hidden sm:flex flex-col justify-center items-center select-none text-center gap-0 leading-tight pr-2">
@@ -222,7 +220,7 @@ export function Header() {
             </nav>
 
             <div 
-              className="relative flex items-center p-1 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] [transform:translateZ(0)]"
+              className="relative flex items-center p-1.5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] [transform:translateZ(0)]"
               onMouseLeave={handleRightMouseLeave}
             >
               {/* inner highlight */}
@@ -230,7 +228,7 @@ export function Header() {
 
               {/* Sliding Hover Bubble */}
               <div 
-                className="absolute top-1 bottom-1 rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10"
+                className="absolute top-1.5 bottom-1.5 rounded-full bg-primary/15 border border-primary/25 shadow-[inset_0_1px_1px_rgba(252,128,25,0.15)] backdrop-blur-md pointer-events-none z-10"
                 style={{ 
                   left: rightHoverStyle.left, 
                   width: rightHoverStyle.width, 
@@ -244,13 +242,12 @@ export function Header() {
 
               <div 
                 onMouseEnter={handleRightMouseEnter}
-                className="relative z-20 flex items-center justify-center gap-1.5 px-3.5 h-10 rounded-full transition-all duration-300 select-none cursor-default"
+                className="relative z-20 flex items-center justify-center gap-2 px-4 h-11 rounded-full transition-all duration-300 select-none cursor-default"
               >
-                <span className="text-sm font-medium text-white/90 tracking-wide group-hover:text-white transition-colors">Noida</span>
-                <MapPin className="h-4 w-4 text-[#FC8019] drop-shadow-md transition-transform duration-200" />
+                <span className="text-base font-medium text-white/90 tracking-wide group-hover:text-white transition-colors">Noida</span>
+                <MapPin className="h-[18px] w-[18px] text-[#FC8019] drop-shadow-md transition-transform duration-200" />
               </div>
               
-              {/* PDF Download button - temporarily commented out
               <Broucher 
                 href="/assets/ghar-ka-swad.pdf" 
                 label="PDF" 
@@ -259,8 +256,8 @@ export function Header() {
                 variant="nav"
                 onMouseEnter={handleRightMouseEnter}
               />
-              */}
 
+              {/* Broucher page button - temporarily commented out
               <button
                 onClick={() => window.location.href = '/broucher'}
                 onMouseEnter={handleRightMouseEnter}
@@ -268,6 +265,7 @@ export function Header() {
               >
                 Broucher
               </button>
+              */}
               
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

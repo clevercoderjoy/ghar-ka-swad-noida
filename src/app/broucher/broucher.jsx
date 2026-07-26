@@ -317,8 +317,8 @@ export function BroucherPage() {
                     <Phone className="w-5 sm:w-6 h-5 sm:h-6" />
                   </div>
                   <div className="flex flex-col text-left justify-center">
-                    <span className="text-xs sm:text-sm text-white/70 font-semibold">Phone</span>
-                    <a href="tel:+919266844741" className="text-base sm:text-lg font-extrabold text-white hover:text-primary transition-colors">+91 9266844741</a>
+                    <span className="text-sm sm:text-base text-white/70 font-semibold">Phone</span>
+                    <a href="tel:+919266844741" className="text-lg sm:text-xl font-extrabold text-white hover:text-primary transition-colors">+91 9266844741</a>
                   </div>
                 </div>
 
@@ -328,8 +328,8 @@ export function BroucherPage() {
                     <FaWhatsapp className="w-5 sm:w-6 h-5 sm:h-6" />
                   </div>
                   <div className="flex flex-col text-left justify-center">
-                    <span className="text-xs sm:text-sm text-white/70 font-semibold">WhatsApp</span>
-                    <a href="https://wa.me/+919266844741" target="_blank" rel="noreferrer" className="text-base sm:text-lg font-extrabold text-white hover:text-primary transition-colors">+91 9266844741</a>
+                    <span className="text-sm sm:text-base text-white/70 font-semibold">WhatsApp</span>
+                    <a href="https://wa.me/+919266844741" target="_blank" rel="noreferrer" className="text-lg sm:text-xl font-extrabold text-white hover:text-primary transition-colors">+91 9266844741</a>
                   </div>
                 </div>
 
@@ -339,8 +339,8 @@ export function BroucherPage() {
                     <Headphones className="w-5 sm:w-6 h-5 sm:h-6" />
                   </div>
                   <div className="flex flex-col text-left justify-center">
-                    <span className="text-xs sm:text-sm text-white/70 font-semibold">Support Hours</span>
-                    <span className="text-base sm:text-lg font-extrabold text-white">9 AM - 9 PM Daily</span>
+                    <span className="text-sm sm:text-base text-white/70 font-semibold">Support Hours</span>
+                    <span className="text-lg sm:text-xl font-extrabold text-white">9 AM - 9 PM Daily</span>
                   </div>
                 </div>
 
@@ -350,8 +350,8 @@ export function BroucherPage() {
                     <Clock className="w-5 sm:w-6 h-5 sm:h-6" />
                   </div>
                   <div className="flex flex-col text-left justify-center">
-                    <span className="text-xs sm:text-sm text-white/70 font-semibold">Delivery Hours</span>
-                    <span className="text-base sm:text-lg font-extrabold text-white">9 AM - 9 PM Daily</span>
+                    <span className="text-sm sm:text-base text-white/70 font-semibold">Delivery Hours</span>
+                    <span className="text-lg sm:text-xl font-extrabold text-white">9 AM - 9 PM Daily</span>
                   </div>
                 </div>
               </div>
