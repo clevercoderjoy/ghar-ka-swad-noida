@@ -20,3 +20,5 @@ If you are developing a production application, we recommend using TypeScript wi
 2- broucher me contact ka font inc
 3- broucher ka button change to pdf
 4- pdf should download exactly as it is
+5- fix rendering issues
+
