@@ -55,7 +55,7 @@ const ReviewCard = memo(function ReviewCard({ review, className }) {
           href={review.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="reviews-card relative w-full min-h-[170px] flex flex-col justify-between p-4 rounded-2xl bg-[#FC8019]/10 backdrop-blur-xl border border-[#FC8019]/35 shadow-[0_4px_30px_rgba(252,128,25,0.1),inset_0_1px_1px_rgba(252,128,25,0.15)] hover:shadow-2xl focus:outline-none text-center cursor-pointer select-none"
+          className="reviews-card relative w-full h-full min-h-[150px] flex flex-col justify-between p-4 rounded-2xl bg-[#FC8019]/10 backdrop-blur-xl border border-[#FC8019]/35 shadow-[0_4px_30px_rgba(252,128,25,0.1),inset_0_1px_1px_rgba(252,128,25,0.15)] hover:shadow-2xl focus:outline-none text-center cursor-pointer select-none"
         >
           {/* Always-visible inner highlight */}
           <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-[#FC8019]/15 via-transparent to-transparent pointer-events-none" />
@@ -79,7 +79,7 @@ const ReviewCard = memo(function ReviewCard({ review, className }) {
               </div>
             </div>
 
-            <p className="text-xs sm:text-[13px] text-white font-semibold leading-snug px-2">
+            <p className="text-sm sm:text-base text-white font-semibold leading-snug px-2">
               {review.text}
             </p>
 
@@ -97,14 +97,14 @@ const ReviewCard = memo(function ReviewCard({ review, className }) {
 
   return (
     <div className={`w-full flex flex-col group ${className || ""}`}>
-      <div className="reviews-card relative w-full h-full min-h-[170px] flex flex-col justify-between p-4 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl focus:outline-none [transform:translateZ(0)]">
+      <div className="reviews-card relative w-full h-full min-h-[150px] flex flex-col justify-between p-4 rounded-2xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl focus:outline-none">
 
         {/* Always-visible inner highlight */}
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
 
         {/* Liquid glass hover bubble — pure CSS */}
         <div
-          className="absolute inset-0 rounded-2xl bg-primary/15 backdrop-blur-md border border-primary/25 opacity-0 group-hover:opacity-100 scale-[0.85] group-hover:scale-100 pointer-events-none"
+          className="absolute inset-0 rounded-2xl bg-primary/15 border border-primary/25 opacity-0 group-hover:opacity-100 scale-[0.85] group-hover:scale-100 pointer-events-none"
           style={{ transition: 'transform 500ms cubic-bezier(0.34,1.15,0.64,1), opacity 500ms ease' }}
         />
 
@@ -121,7 +121,7 @@ const ReviewCard = memo(function ReviewCard({ review, className }) {
                 ))}
               </div>
             </div>
-            <p className="text-xs sm:text-[13px] lg:text-sm text-white/95 leading-relaxed text-left italic">
+            <p className="text-sm sm:text-[14px] lg:text-[15px] text-white/95 leading-relaxed text-left italic">
               &ldquo;{review.text}&rdquo;
             </p>
           </div>

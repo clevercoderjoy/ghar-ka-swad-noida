@@ -56,10 +56,7 @@ const ServiceCard = memo(function ServiceCard({ service }) {
       <div
         ref={cardRef}
         tabIndex={0}
-        style={{
-          willChange: "transform",
-        }}
-        className="group relative h-full p-6 rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none service-card [transform:translateZ(0)]"
+        className="group relative h-full p-6 rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none service-card"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onFocus={handleFocus}
@@ -71,7 +68,7 @@ const ServiceCard = memo(function ServiceCard({ service }) {
         
         {/* Liquid glass hover bubble */}
         <div 
-          className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+          className="absolute inset-0 rounded-3xl bg-primary/15 border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
           style={{
             transitionProperty: 'all',
             transitionDuration: '500ms',

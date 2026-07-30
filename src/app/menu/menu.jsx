@@ -88,8 +88,8 @@ const menuItems = [
     },
   },
   {
-    day: "Special",
-    thaliType: "Monday Blues Special",
+    day: "Monday Night Blues",
+    thaliType: "Special",
     lunch: { 
       name: [
         "Traditional Rajma Chawal",
@@ -186,16 +186,13 @@ const MenuCard = memo(function MenuCard({ item }) {
     handleBlur,
   } = useCardTilt();
 
-  if (item.day === "Monday to Saturday" || item.day === "Special") {
+  if (item.day === "Monday to Saturday" || item.day === "Special" || item.day === "Monday Night Blues") {
     return (
       <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] h-full flex flex-col">
         <div
           ref={cardRef}
           tabIndex={0}
-          style={{
-            willChange: "transform",
-          }}
-          className="group relative h-full rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card [transform:translateZ(0)]"
+          className="group relative h-full rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -204,7 +201,7 @@ const MenuCard = memo(function MenuCard({ item }) {
         >
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
           <div 
-            className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+            className="absolute inset-0 rounded-3xl bg-primary/15 border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
             style={{
               transitionProperty: 'all',
               transitionDuration: '500ms',
@@ -232,7 +229,7 @@ const MenuCard = memo(function MenuCard({ item }) {
                 src={item.lunch.img}
                 alt={item.thaliType || "Premium Meal"}
                 style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
-                className={`object-cover object-center ${item.day === "Special" ? "scale-[1.08] translate-y-[3px] hover:scale-[1.18]" : "scale-[1.11] translate-y-[3px] hover:scale-[1.21]"} transition-transform duration-200`}
+                className={`object-cover object-center ${item.day === "Special" || item.day === "Monday Night Blues" ? "scale-[1.08] translate-y-[3px] hover:scale-[1.18]" : "scale-[1.11] translate-y-[3px] hover:scale-[1.21]"} transition-transform duration-200`}
                 loading="lazy"
                 decoding="async"
               />
@@ -254,10 +251,7 @@ const MenuCard = memo(function MenuCard({ item }) {
         <div
           ref={cardRef}
           tabIndex={0}
-          style={{
-            willChange: "transform",
-          }}
-          className="group relative h-[375px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card [transform:translateZ(0)]"
+          className="group relative h-[375px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -266,7 +260,7 @@ const MenuCard = memo(function MenuCard({ item }) {
         >
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
           <div 
-            className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+            className="absolute inset-0 rounded-3xl bg-primary/15 border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
             style={{
               transitionProperty: 'all',
               transitionDuration: '500ms',
@@ -308,10 +302,7 @@ const MenuCard = memo(function MenuCard({ item }) {
         <div
           ref={cardRef}
           tabIndex={0}
-          style={{
-            willChange: "transform",
-          }}
-          className="group relative h-full min-h-[375px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card [transform:translateZ(0)]"
+          className="group relative h-full min-h-[375px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -323,7 +314,7 @@ const MenuCard = memo(function MenuCard({ item }) {
           
           {/* Liquid glass hover bubble */}
           <div 
-            className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+            className="absolute inset-0 rounded-3xl bg-primary/15 border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
             style={{
               transitionProperty: 'all',
               transitionDuration: '500ms',
@@ -360,10 +351,7 @@ const MenuCard = memo(function MenuCard({ item }) {
         <div
           ref={cardRef}
           tabIndex={0}
-          style={{
-            willChange: "transform",
-          }}
-          className="group relative h-[375px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card [transform:translateZ(0)]"
+          className="group relative h-[375px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -375,7 +363,7 @@ const MenuCard = memo(function MenuCard({ item }) {
           
           {/* Liquid glass hover bubble */}
           <div 
-            className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+            className="absolute inset-0 rounded-3xl bg-primary/15 border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
             style={{
               transitionProperty: 'all',
               transitionDuration: '500ms',
@@ -415,10 +403,7 @@ const MenuCard = memo(function MenuCard({ item }) {
       <div
         ref={cardRef}
         tabIndex={0}
-        style={{
-          willChange: "transform",
-        }}
-        className="group relative h-[450px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card [transform:translateZ(0)]"
+        className="group relative h-[450px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onFocus={handleFocus}
@@ -430,7 +415,7 @@ const MenuCard = memo(function MenuCard({ item }) {
         
         {/* Liquid glass hover bubble */}
         <div 
-          className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+          className="absolute inset-0 rounded-3xl bg-primary/15 border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
           style={{
             transitionProperty: 'all',
             transitionDuration: '500ms',

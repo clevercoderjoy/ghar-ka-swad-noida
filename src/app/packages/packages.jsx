@@ -55,10 +55,7 @@ const PackageCard = memo(function PackageCard({ pkg }) {
       <div
         ref={cardRef}
         tabIndex={0}
-        style={{
-          willChange: "transform",
-        }}
-        className={`group relative flex-1 min-h-[390px] flex flex-col justify-between p-6 rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none package-card [transform:translateZ(0)] ${pkg.popular ? "border-primary/50 bg-black/45" : ""}`}
+        className={`group relative flex-1 min-h-[390px] flex flex-col justify-between p-6 rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none package-card ${pkg.popular ? "border-primary/50 bg-black/45" : ""}`}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onFocus={handleFocus}
@@ -70,7 +67,7 @@ const PackageCard = memo(function PackageCard({ pkg }) {
         
         {/* Liquid glass hover bubble */}
         <div 
-          className="absolute inset-0 rounded-3xl bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+          className="absolute inset-0 rounded-3xl bg-primary/15 border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
           style={{
             transitionProperty: 'all',
             transitionDuration: '500ms',
@@ -131,7 +128,7 @@ const PackageCard = memo(function PackageCard({ pkg }) {
               <>
                 <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
                 <div 
-                  className="absolute inset-0 rounded-full bg-primary/15 backdrop-blur-md border border-primary/25 scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+                  className="absolute inset-0 rounded-full bg-primary/15 border border-primary/25 scale-75 opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
                   style={{
                     transition: 'opacity 300ms cubic-bezier(0.25, 1, 0.5, 1), transform 350ms cubic-bezier(0.25, 1, 0.5, 1)'
                   }}
@@ -149,7 +146,7 @@ const PackageCard = memo(function PackageCard({ pkg }) {
 
 const packages = [
   {
-    name: "Premium Meal",
+    name: "1 Premium Meal",
     price: "₹200/- Meal",
     originalPrice: null,
     description: "1 meal, lunch or dinner for a day",
@@ -194,7 +191,7 @@ const packages = [
     popular: true
   },
   {
-    name: "Budget Meal",
+    name: "1 Budget Meal",
     price: "₹150/- Meal",
     originalPrice: null,
     description: "1 budget meal, lunch or dinner for a day",

@@ -27,7 +27,7 @@ export function BroucherPage() {
       <img
         src="/assets/img.png"
         alt="Hero Background"
-        style={{ objectFit: "cover", objectPosition: "center center", zIndex: 0, width: "100%", height: "100%" }}
+        style={{ objectFit: "cover", objectPosition: "center top", zIndex: 0, width: "100%", height: "100%" }}
         className="absolute inset-0 w-full h-full pointer-events-none select-none"
         fetchpriority="high"
         decoding="async"
@@ -225,11 +225,11 @@ export function BroucherPage() {
                 </div>
               </div>
 
-              {/* Monday Blues Special */}
+              {/* Monday Night Blues */}
               <div className="flex flex-col bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 hover:border-primary/30 transition-colors h-full">
                 <div className="text-center mb-2">
-                  <span className="text-base sm:text-lg font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1.5">Special</span>
-                  <h3 className="text-lg sm:text-xl font-black text-white">Monday Blues Special</h3>
+                  <span className="text-base sm:text-lg font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1.5">Monday Night Blues</span>
+                  <h3 className="text-lg sm:text-xl font-black text-white">Special</h3>
                 </div>
                 <div className="grid grid-cols-2 gap-y-2.5 gap-x-2 text-lg sm:text-[18.5px] text-white pt-1 font-extrabold text-left">
                   <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
@@ -259,7 +259,7 @@ export function BroucherPage() {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 flex-1 items-stretch">
               {/* Premium Meal */}
               <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-base sm:text-lg font-black text-white">Premium Meal</span>
+                <span className="text-base sm:text-lg font-black text-white">1 Premium Meal</span>
                 <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹200/-</span>
                 <span className="text-xs sm:text-sm text-white font-bold leading-tight">Per Meal (Lunch/Dinner)</span>
               </div>
@@ -283,7 +283,7 @@ export function BroucherPage() {
 
               {/* Budget Meal */}
               <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-base sm:text-lg font-black text-white">Budget Meal</span>
+                <span className="text-base sm:text-lg font-black text-white">1 Budget Meal</span>
                 <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹150/-</span>
                 <span className="text-xs sm:text-sm text-white font-bold leading-tight">Per Meal (Lunch/Dinner)</span>
               </div>
@@ -313,45 +313,45 @@ export function BroucherPage() {
               <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3 h-full items-stretch">
                 {/* Phone */}
                 <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
-                  <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                    <Phone className="w-5 sm:w-6 h-5 sm:h-6" />
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <Phone className="w-6 sm:w-7 h-6 sm:h-7" />
                   </div>
                   <div className="flex flex-col text-left justify-center">
-                    <span className="text-sm sm:text-base text-white/70 font-semibold">Phone</span>
-                    <a href="tel:+919266844741" className="text-lg sm:text-xl font-extrabold text-white hover:text-primary transition-colors">+91 9266844741</a>
+                    <span className="text-base sm:text-lg text-white/80 font-bold">Phone</span>
+                    <a href="tel:+919266844741" className="text-xl sm:text-2xl font-black text-white hover:text-primary transition-colors">+91 9266844741</a>
                   </div>
                 </div>
 
                 {/* Whatsapp */}
                 <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
-                  <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                    <FaWhatsapp className="w-5 sm:w-6 h-5 sm:h-6" />
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <FaWhatsapp className="w-6 sm:w-7 h-6 sm:h-7" />
                   </div>
                   <div className="flex flex-col text-left justify-center">
-                    <span className="text-sm sm:text-base text-white/70 font-semibold">WhatsApp</span>
-                    <a href="https://wa.me/+919266844741" target="_blank" rel="noreferrer" className="text-lg sm:text-xl font-extrabold text-white hover:text-primary transition-colors">+91 9266844741</a>
+                    <span className="text-base sm:text-lg text-white/80 font-bold">WhatsApp</span>
+                    <a href="https://wa.me/+919266844741" target="_blank" rel="noreferrer" className="text-xl sm:text-2xl font-black text-white hover:text-primary transition-colors">+91 9266844741</a>
                   </div>
                 </div>
 
                 {/* Support Hours */}
                 <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
-                  <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                    <Headphones className="w-5 sm:w-6 h-5 sm:h-6" />
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <Headphones className="w-6 sm:w-7 h-6 sm:h-7" />
                   </div>
                   <div className="flex flex-col text-left justify-center">
-                    <span className="text-sm sm:text-base text-white/70 font-semibold">Support Hours</span>
-                    <span className="text-lg sm:text-xl font-extrabold text-white">9 AM - 9 PM Daily</span>
+                    <span className="text-base sm:text-lg text-white/80 font-bold">Support Hours</span>
+                    <span className="text-xl sm:text-2xl font-black text-white">9 AM - 9 PM Daily</span>
                   </div>
                 </div>
 
                 {/* Delivery Hours */}
                 <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
-                  <div className="w-11 h-11 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
-                    <Clock className="w-5 sm:w-6 h-5 sm:h-6" />
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
+                    <Clock className="w-6 sm:w-7 h-6 sm:h-7" />
                   </div>
                   <div className="flex flex-col text-left justify-center">
-                    <span className="text-sm sm:text-base text-white/70 font-semibold">Delivery Hours</span>
-                    <span className="text-lg sm:text-xl font-extrabold text-white">9 AM - 9 PM Daily</span>
+                    <span className="text-base sm:text-lg text-white/80 font-bold">Delivery Hours</span>
+                    <span className="text-xl sm:text-2xl font-black text-white">9 AM - 9 PM Daily</span>
                   </div>
                 </div>
               </div>
@@ -359,7 +359,7 @@ export function BroucherPage() {
               {/* Right Side: QR Codes (Expanded Width & Height) */}
               <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-2 bg-black/10 rounded-xl p-3 sm:p-4 border border-white/10 items-center justify-center justify-items-center h-full">
                 {/* 1. Website QR: Know More About Us */}
-                <a href="/assets/qr-web.svg" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
+                <a href="https://gks-sr-nodia.netlify.app/" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
                   <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
                     <img
                       src="/assets/qr-web.svg"
@@ -376,7 +376,7 @@ export function BroucherPage() {
                 </a>
 
                 {/* 2. Google Review QR: Find us on Google */}
-                <a href="/assets/qr-google.svg" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
+                <a href="https://share.google/r0eOTOo74xxTEOvTy" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
                   <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
                     <img
                       src="/assets/qr-google.svg"
@@ -393,7 +393,7 @@ export function BroucherPage() {
                 </a>
 
                 {/* 3. WhatsApp QR: Order on Whatsapp */}
-                <a href="/assets/qr-chat.svg" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
+                <a href="https://wa.me/+919266844741" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
                   <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
                     <img
                       src="/assets/qr-chat.svg"
@@ -410,7 +410,7 @@ export function BroucherPage() {
                 </a>
 
                 {/* 4. Call QR: Scan to Call */}
-                <a href="/assets/qr-call.svg" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
+                <a href="tel:+919266844741" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
                   <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
                     <img
                       src="/assets/qr-call.svg"
@@ -435,10 +435,10 @@ export function BroucherPage() {
         {/* Footer Bar */}
         <div className="relative w-full mt-4 mb-2 px-4 flex flex-col md:flex-row items-center justify-between gap-4 py-4 border-t border-white/10">
           {/* Left: Logo Pill (far left) */}
-          <div className="group relative flex items-center gap-2.5 p-0 h-11 pr-4 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:scale-105 transition-all duration-300 overflow-hidden mt-1.5 [transform:translateZ(0)]">
+          <div className="group relative flex items-center gap-2.5 p-0 h-11 pr-4 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:scale-105 transition-all duration-300 overflow-hidden mt-1.5">
             <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
             <div 
-              className="absolute inset-0 rounded-full bg-primary/15 backdrop-blur-md border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
+              className="absolute inset-0 rounded-full bg-primary/15 border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
               style={{
                 transitionProperty: 'all',
                 transitionDuration: '500ms',
@@ -468,7 +468,7 @@ export function BroucherPage() {
           </div>
 
           {/* Right: Made with love Pill (far right) */}
-          <div className="group relative flex items-center gap-2 h-11 px-5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] mt-1.5 [transform:translateZ(0)]">
+          <div className="group relative flex items-center gap-2 h-11 px-5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] mt-1.5">
             <span className="relative z-10 text-sm sm:text-base text-white font-semibold">Made with</span>
             <Heart className="relative z-10 w-4.5 h-4.5 text-red-500 fill-red-500 border-red-500 animate-pulse" />
             <span className="relative z-10 text-sm sm:text-base text-white font-semibold">by <a href="https://clevercoderjoy.bio.link/" target="_blank" rel="noopener noreferrer" className="text-[#FC8019] drop-shadow-md no-underline transition-colors font-extrabold">clevercoderjoy</a></span>

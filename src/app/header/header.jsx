@@ -21,7 +21,7 @@ const NavItem = ({ item, isActive, isHome, onClick, onMouseEnter }) => {
     <button
       onMouseEnter={onMouseEnter}
       onClick={onClick}
-      className={`relative px-4 py-2 rounded-full text-base font-medium transition-all duration-300 z-20 ${
+      className={`relative px-3.5 py-1.5 rounded-full text-sm font-semibold transition-all duration-300 z-20 ${
         showActive ? "text-white" : "text-white/70 hover:text-white"
       } active:scale-95`}
     >
@@ -160,7 +160,7 @@ export function Header() {
         <div className="container px-4 relative z-10">
           <div className="flex items-center justify-between gap-4 min-h-[64px] md:min-h-[72px]">
             <div
-              className="group relative flex items-center gap-2 cursor-pointer transition-all duration-300 p-0 sm:pl-0 sm:pr-3.5 sm:py-0 h-12 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] overflow-hidden [transform:translateZ(0)]"
+              className="group relative flex items-center gap-2 cursor-pointer transition-all duration-300 p-0 sm:pl-0 sm:pr-3 sm:py-0 h-10 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] overflow-hidden [transform:translateZ(0)]"
               onClick={() => scrollToSection("#home")}
             >
               <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
@@ -174,15 +174,15 @@ export function Header() {
               <img
                 src="/logo.svg.svg"
                 alt="घर का स्वाद Logo"
-                style={{ width: 48, height: 48 }}
+                style={{ width: 40, height: 40 }}
                 className="rounded-full object-cover border border-white/10"
                 decoding="async"
               />
-              <div className="hidden sm:flex flex-col justify-center items-center select-none text-center gap-0 leading-tight pr-2">
-                <span className="text-[18px] font-extrabold text-white tracking-wide">
+              <div className="hidden sm:flex flex-col justify-center items-center select-none text-center gap-0 leading-tight pr-1.5">
+                <span className="text-[14.5px] font-extrabold text-white tracking-wide">
                   Ghar ka Swad
                 </span>
-                <span className="text-[13.5px] font-black text-[#FC8019] tracking-wider uppercase">
+                <span className="text-[11px] font-black text-[#FC8019] tracking-wider uppercase">
                   Sanskriti Raj
                 </span>
               </div>
@@ -242,17 +242,17 @@ export function Header() {
 
               <div 
                 onMouseEnter={handleRightMouseEnter}
-                className="relative z-20 flex items-center justify-center gap-2 px-4 h-11 rounded-full transition-all duration-300 select-none cursor-default"
+                className="relative z-20 flex items-center justify-center gap-1.5 px-3.5 h-9 rounded-full transition-all duration-300 select-none cursor-default"
               >
-                <span className="text-base font-medium text-white/90 tracking-wide group-hover:text-white transition-colors">Noida</span>
-                <MapPin className="h-[18px] w-[18px] text-[#FC8019] drop-shadow-md transition-transform duration-200" />
+                <span className="text-sm font-medium text-white/90 tracking-wide group-hover:text-white transition-colors">Noida</span>
+                <MapPin className="h-4 w-4 text-[#FC8019] drop-shadow-md transition-transform duration-200" />
               </div>
               
               <Broucher 
-                href="/assets/ghar-ka-swad.pdf" 
+                href="/assets/pdf.pdf" 
                 label="PDF" 
                 download 
-                downloadName="ghar-ka-swad.pdf" 
+                downloadName="pdf.pdf" 
                 variant="nav"
                 onMouseEnter={handleRightMouseEnter}
               />
