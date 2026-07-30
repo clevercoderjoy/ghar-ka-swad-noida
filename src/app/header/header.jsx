@@ -269,7 +269,6 @@ export function Header() {
               
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                onMouseEnter={handleRightMouseEnter}
                 className="relative z-20 min-[1080px]:hidden p-2.5 rounded-full transition-all duration-300"
               >
                 {mobileMenuOpen ? (
@@ -283,7 +282,7 @@ export function Header() {
         </div>
       </header>
 
-      <div className="fixed inset-0 z-50 lg:hidden pointer-events-none select-none">
+      <div className="fixed inset-0 z-50 min-[1080px]:hidden pointer-events-none select-none">
         <div
           className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
           onClick={() => setMobileMenuOpen(false)}

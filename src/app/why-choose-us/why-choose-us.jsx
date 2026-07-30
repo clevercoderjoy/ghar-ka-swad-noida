@@ -160,7 +160,7 @@ export function WhyChooseUs() {
       </div>
 
       <div className="container px-4 relative z-10">
-        <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:gap-16 items-center justify-between">
+        <div className="flex flex-col-reverse xl:grid xl:grid-cols-2 xl:gap-16 items-center justify-between">
           <div className="space-y-8 transition-all duration-700 ease-out opacity-100 translate-x-0">
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white">
@@ -185,7 +185,7 @@ export function WhyChooseUs() {
             </div>
           </div>
 
-          <div className="relative group mb-8 lg:mb-0 transition-all duration-700 ease-out opacity-100 scale-100">
+          <div className="hidden xl:block relative group mb-8 xl:mb-0 transition-all duration-700 ease-out opacity-100 scale-100">
             <div
               ref={visualCardRef}
               tabIndex={0}
