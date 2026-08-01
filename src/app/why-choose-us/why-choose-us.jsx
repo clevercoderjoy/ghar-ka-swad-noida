@@ -8,7 +8,7 @@ const benefits = [
   { text: "Hygienic preparation in a clean home kitchen", Icon: ShieldCheck },
   { text: "Premium meals affordable packages", Icon: IndianRupee },
   { text: "Customizable meals for preferred meal combination", Icon: UtensilsCrossed },
-  { text: "On-time delivery, every single day at your door step", Icon: Clock },
+  { text: "On-time delivery, but timings may vary slightly due to traffic or weather conditions.", Icon: Clock },
   { text: "Authentic local and traditional recipes", Icon: Flame },
   { text: "No preservatives or artificial additives", Icon: Ban }
 ];

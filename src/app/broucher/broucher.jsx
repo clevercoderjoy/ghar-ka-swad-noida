@@ -15,15 +15,40 @@ const vegMenu = [
 const notes = [
   "Proudly serving Darbhanga, now open to Noida.",
   "Menu may change based on availability of food items.",
+  "Advance payment is required for all subscription plans.",
   "Special requests can be accommodated with prior notice. (Chargable)",
   "Food cancellation after it goes out for delivery is fully chargable.",
-  "Sundays and Festive days are off days.",
   "Extra chapaties ₹8/Piece",
 ];
 
 export function BroucherPage() {
   return (
     <main className="relative min-h-screen w-full flex flex-col items-center justify-start py-4 px-1 bg-background text-foreground overflow-x-hidden">
+      <style dangerouslySetInnerHTML={{__html: `
+        @media print {
+          body, html, main {
+            background: #0c0804 !important;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            color-scheme: dark !important;
+          }
+          /* Replace backdrop blurs with high contrast solids for clean print */
+          .backdrop-blur-md {
+            backdrop-filter: none !important;
+            background-color: rgba(18, 12, 6, 0.97) !important;
+          }
+          /* Prevent page breaks inside cards */
+          .rounded-xl, .rounded-3xl, .rounded-lg, .menu-card {
+            page-break-inside: avoid !important;
+            break-inside: avoid !important;
+          }
+          /* Keep text clean and crisp */
+          span, h1, h2, h3, li, p {
+            text-rendering: optimizeLegibility !important;
+            -webkit-font-smoothing: antialiased !important;
+          }
+        }
+      `}} />
       <img
         src="/assets/img.png"
         alt="Hero Background"
@@ -78,20 +103,20 @@ export function BroucherPage() {
           {/* ROW 1: Why, Ratings, Food Standards, Note (4 compact cards) */}
 
           {/* Why घर का स्वाद */}
-          <div className="col-span-1 md:col-span-3 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
-            <h2 className="text-xl sm:text-2xl font-extrabold mb-2.5 text-white text-center">Why <span className="text-primary">घर का स्वाद</span> ?</h2>
-            <ul className="space-y-1.5 flex-1 flex flex-col justify-between pt-0.5">
+          <div className="col-span-1 md:col-span-4 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-2xl sm:text-[27px] font-extrabold mb-2.5 text-white text-center">Why <span className="text-primary">घर का स्वाद</span> ?</h2>
+            <ul className="space-y-1 flex-1 flex flex-col justify-between pt-0.5">
               {[
                 "Freshly prepared daily with premium ingredients",
                 "Home-cooked taste that reminds you of your घर का खाना",
                 "Hygienic preparation in a clean home kitchen",
                 "Premium meals affordable packages",
                 "Customizable meals for preferred meal combination",
-                "On-time delivery, every single day at your door step",
+                "On-time delivery, but timings may vary slightly due to traffic or weather conditions.",
                 "Authentic local and traditional recipes",
                 "No preservatives or artificial additives",
               ].map((point, idx) => (
-                <li key={idx} className="flex items-start gap-1.5 text-base sm:text-[17px] text-white font-extrabold leading-snug">
+                <li key={idx} className="flex items-start gap-1.5 text-[17px] sm:text-[18.5px] text-white font-medium leading-snug">
                   <span className="text-primary mt-0.5 shrink-0">✦</span>
                   <span>{point}</span>
                 </li>
@@ -99,36 +124,9 @@ export function BroucherPage() {
             </ul>
           </div>
 
-          {/* Ratings & Trust */}
-          <div className="col-span-1 md:col-span-3 bg-black/15 rounded-xl p-3.5 backdrop-blur-md border border-white/20 flex flex-col items-center text-center">
-            <h2 className="text-xl sm:text-2xl font-extrabold mb-3 text-primary text-center">The trust we've earned</h2>
-            <div className="flex flex-col justify-between flex-1 space-y-2 w-full">
-              <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
-                <span className="text-xl sm:text-2xl font-black text-primary block">20,000 +</span>
-                <span className="text-sm sm:text-base text-white/95 font-bold leading-tight">Delicious Meals Delivered</span>
-              </div>
-              <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
-                <span className="text-xl sm:text-2xl font-black text-primary block">1,000 +</span>
-                <span className="text-sm sm:text-base text-white/95 font-bold leading-tight">Delighted Customers</span>
-              </div>
-              <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
-                <span className="text-xl sm:text-2xl font-black text-primary block">100 +</span>
-                <span className="text-sm sm:text-base text-white/95 font-bold leading-tight">Currently Active Subscribers</span>
-              </div>
-              <div className="border-b border-white/10 pb-2 flex flex-col items-center justify-center">
-                <span className="text-xl sm:text-2xl font-black text-primary block">2.5 +</span>
-                <span className="text-sm sm:text-base text-white/95 font-bold leading-tight">Years of Trust Service</span>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <span className="text-xl sm:text-2xl font-black text-primary block">4.8 ★★★★</span>
-                <span className="text-sm sm:text-base text-white/95 font-bold leading-tight">Google Verified Ratings</span>
-              </div>
-            </div>
-          </div>
-
           {/* Food Standards */}
-          <div className="col-span-1 md:col-span-3 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
-            <h2 className="text-xl sm:text-2xl font-extrabold mb-2 text-primary text-center">Food Standards</h2>
+          <div className="col-span-1 md:col-span-4 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-2xl sm:text-[27px] font-extrabold mb-2 text-primary text-center">Food Standards</h2>
             <ul className="space-y-1 flex-1 flex flex-col justify-between pt-0.5">
               {[
                 "Clean & hygienic kitchen & utensils",
@@ -140,7 +138,8 @@ export function BroucherPage() {
                 "Leak-proof, food-grade containers used",
                 "We eat what we serve our customers",
               ].map((point, idx) => (
-                <li key={idx} className="flex items-start gap-2 text-base sm:text-[18px] text-white font-extrabold leading-snug">
+                <li key={idx} className="flex items-start gap-1.5 text-[17px] sm:text-[18.5px] text-white font-medium leading-snug">
+                  <span className="text-primary mt-0.5 shrink-0">✦</span>
                   <span className={point.startsWith("We eat") ? "text-primary font-black" : ""}>{point}</span>
                 </li>
               ))}
@@ -148,18 +147,67 @@ export function BroucherPage() {
           </div>
 
           {/* Note */}
-          <div className="col-span-1 md:col-span-3 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col">
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 text-primary text-center">Note</h2>
-            <ul className="list-disc pl-5 space-y-3.5 text-lg sm:text-[20px] text-white pt-1 font-extrabold leading-snug">
+          <div className="col-span-1 md:col-span-4 bg-black/15 rounded-xl pt-2 px-4 pb-4 backdrop-blur-md border border-white/20 flex flex-col justify-start">
+            <h2 className="text-[26px] sm:text-[32px] font-extrabold mb-1 text-primary text-center">Note</h2>
+            <ul className="space-y-1.5 text-lg sm:text-[20px] text-white pt-0.5 font-medium leading-snug">
               {notes.map((note, idx) => (
-                <li key={idx} className={note.includes("Extra chapaties") ? "text-primary font-black" : ""}>
-                  {note.includes("Darbhanga") ? (
-                    <>
-                      Proudly serving <span className="text-[#FC8019] font-black">Darbhanga</span>, now open to <span className="text-[#FC8019] font-black">Noida</span>.
-                    </>
-                  ) : (
-                    note
-                  )}
+                <li key={idx} className="flex items-start gap-1.5 justify-start text-left">
+                  <span className="text-primary mt-1 shrink-0">✦</span>
+                  <span className={note.includes("Extra chapaties") ? "text-primary font-bold" : ""}>
+                    {note.includes("Darbhanga") ? (
+                      <>
+                        Proudly serving <span className="text-[#FC8019] font-bold">Darbhanga</span>, now open to <span className="text-[#FC8019] font-bold">Noida</span>.
+                      </>
+                    ) : (
+                      note
+                    )}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Ratings & Trust */}
+          <div className="col-span-1 md:col-span-7 bg-black/15 rounded-xl py-2 px-4 backdrop-blur-md border border-white/20 flex flex-col items-center text-center justify-between">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-2.5 text-primary text-center">The trust we've earned</h2>
+            <div className="flex flex-row flex-wrap justify-between items-center gap-4 w-full flex-1">
+              <div className="flex-1 min-w-[120px] pb-1.5 flex flex-col items-center justify-center">
+                <span className="text-2xl sm:text-[28px] font-black text-primary block leading-none">20,000 +</span>
+                <span className="text-[14.5px] sm:text-base text-white/95 font-bold leading-tight mt-1">Delicious Meals Delivered</span>
+              </div>
+              <div className="flex-1 min-w-[120px] pb-1.5 flex flex-col items-center justify-center">
+                <span className="text-2xl sm:text-[28px] font-black text-primary block leading-none">1,000 +</span>
+                <span className="text-[14.5px] sm:text-base text-white/95 font-bold leading-tight mt-1">Delighted Customers</span>
+              </div>
+              <div className="flex-1 min-w-[120px] pb-1.5 flex flex-col items-center justify-center">
+                <span className="text-2xl sm:text-[28px] font-black text-primary block leading-none">100 +</span>
+                <span className="text-[14.5px] sm:text-base text-white/95 font-bold leading-tight mt-1">Currently Active Subscribers</span>
+              </div>
+              <div className="flex-1 min-w-[120px] pb-1.5 flex flex-col items-center justify-center">
+                <span className="text-2xl sm:text-[28px] font-black text-primary block leading-none">2.5 +</span>
+                <span className="text-[14.5px] sm:text-base text-white/95 font-bold leading-tight mt-1">Years of Trust Service</span>
+              </div>
+              <div className="flex-1 min-w-[120px] pb-1.5 flex flex-col items-center justify-center">
+                <span className="text-2xl sm:text-[28px] font-black text-primary block leading-none">4.8 ★★★★</span>
+                <span className="text-[14.5px] sm:text-base text-white/95 font-bold leading-tight mt-1">Google Verified Ratings</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Non Serviceable Days */}
+          <div className="col-span-1 md:col-span-5 bg-black/15 rounded-xl py-2 px-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-1 text-primary text-center">Non Serviceable Days</h2>
+            <ul className="space-y-1.5 text-white/90 text-[16px] sm:text-[17.5px] text-left w-full pt-0.5 font-medium">
+              {[
+                "Cheat day for you, Rest day for us",
+                "Sundays off",
+                "Major Festive Days are off",
+                "Monthly subscription pricing already excludes Sundays & major festive holidays.",
+                "No deliveries are made on this day"
+              ].map((point, idx) => (
+                <li key={idx} className="flex items-start gap-1.5 leading-snug">
+                  <span className="text-primary mt-1 shrink-0 text-xs">✦</span>
+                  <span>{point}</span>
                 </li>
               ))}
             </ul>
@@ -168,85 +216,87 @@ export function BroucherPage() {
           {/* ROW 2: Meal Plan & Get in Touch */}
 
           {/* Menu */}
-          <div className="col-span-1 md:col-span-7 bg-black/15 rounded-xl p-4 sm:p-5 backdrop-blur-md border border-white/20 flex flex-col justify-between">
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-3 text-primary text-center">Menu</h2>
+          <div className="col-span-1 md:col-span-7 bg-black/15 rounded-xl pt-1.5 px-4 pb-2.5 sm:pt-1.5 sm:px-5 sm:pb-3.5 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-2xl sm:text-3xl font-extrabold mb-1.5 text-primary text-center">Menu</h2>
             <div className="grid grid-cols-1 md:grid-cols-[3fr_2.3fr_2.7fr] gap-3 flex-1 items-stretch">
               {/* Premium Meal */}
-              <div className="flex flex-col bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 hover:border-primary/30 transition-colors h-full">
-                <div className="text-center mb-2">
-                  <span className="text-base sm:text-lg font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1.5">Monday to Saturday</span>
-                  <h3 className="text-lg sm:text-xl font-black text-white">Premium Meal</h3>
+              <div className="flex flex-col bg-black/10 rounded-xl pt-2 px-3 pb-3 sm:pt-2.5 sm:px-3.5 sm:pb-3.5 border border-white/10 hover:border-primary/30 transition-colors h-[180px]">
+                <div className="text-center mb-1">
+                  <span className="text-[19px] sm:text-[21px] font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1">Monday to Saturday</span>
+                  <h3 className="text-[21px] sm:text-[23px] font-black text-white mt-0.5">Premium Meal</h3>
                 </div>
-                <div className="grid grid-cols-2 gap-y-2.5 gap-x-4 sm:gap-x-5 text-lg sm:text-[18.5px] text-white pt-1 font-extrabold text-left justify-between">
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                <div className="grid grid-cols-2 gap-y-2 gap-x-2 text-[13.5px] sm:text-[15.5px] text-white pt-0.5 font-extrabold text-left justify-between w-full">
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
                     <span>Dal of the Day</span>
                   </div>
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
                     <span>Steamed Rice</span>
                   </div>
-
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
                     <span>4 Chapaties</span>
                   </div>
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
-                    <span>Fresh Salad</span>
-                  </div>
-
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
                     <span>Seasonal Curry</span>
                   </div>
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
                     <span>Seasonal Veggie</span>
+                  </div>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Fresh Salad</span>
                   </div>
                 </div>
               </div>
 
               {/* Budget Meal */}
-              <div className="flex flex-col bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 hover:border-primary/30 transition-colors h-full">
-                <div className="text-center mb-2">
-                  <span className="text-base sm:text-lg font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1.5">Monday to Saturday</span>
-                  <h3 className="text-lg sm:text-xl font-black text-white">Budget Meal</h3>
+              <div className="flex flex-col bg-black/10 rounded-xl pt-2 px-3 pb-3 sm:pt-2.5 sm:px-3.5 sm:pb-3.5 border border-white/10 hover:border-primary/30 transition-colors h-[180px]">
+                <div className="text-center mb-1">
+                  <span className="text-[19px] sm:text-[21px] font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1">Monday to Saturday</span>
+                  <h3 className="text-[21px] sm:text-[23px] font-black text-white mt-0.5">Budget Meal</h3>
                 </div>
-                <div className="flex flex-col gap-y-2.5 text-lg sm:text-[18.5px] text-white pt-1 font-extrabold text-left">
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                <div className="flex flex-col gap-y-2 text-[14px] sm:text-[16px] text-white pt-0.5 font-extrabold pl-1.5 w-full">
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
                     <span>Dal of the Day + Rice / 4 Roti</span>
                   </div>
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
                     <span>Seasonal Curry / Veggie</span>
                   </div>
                 </div>
               </div>
 
               {/* Monday Night Blues */}
-              <div className="flex flex-col bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 hover:border-primary/30 transition-colors h-full">
-                <div className="text-center mb-2">
-                  <span className="text-base sm:text-lg font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1.5">Monday Night Blues</span>
-                  <h3 className="text-lg sm:text-xl font-black text-white">Special</h3>
+              <div className="flex flex-col bg-black/10 rounded-xl pt-2 px-3 pb-3 sm:pt-2.5 sm:px-3.5 sm:pb-3.5 border border-white/10 hover:border-primary/30 transition-colors h-[180px]">
+                <div className="text-center mb-1">
+                  <span className="text-[19px] sm:text-[21px] font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1">Monday Night Blues</span>
+                  <h3 className="text-[21px] sm:text-[23px] font-black text-white mt-0.5">Special</h3>
                 </div>
-                <div className="grid grid-cols-2 gap-y-2.5 gap-x-2 text-lg sm:text-[18.5px] text-white pt-1 font-extrabold text-left">
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                <div className="grid grid-cols-2 gap-y-2 gap-x-2 text-[13.5px] sm:text-[15.5px] text-white pt-0.5 font-extrabold text-left justify-between w-full">
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
                     <span>Rajma Chawal</span>
                   </div>
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
                     <span>Chole Chawal</span>
                   </div>
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
                     <span>Kadhi Chawal</span>
                   </div>
-                  <div className="flex items-start gap-1.5 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
                     <span>Paneer Curry</span>
+                  </div>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span>Veg Biryani</span>
                   </div>
                 </div>
               </div>
@@ -254,65 +304,65 @@ export function BroucherPage() {
           </div>
 
           {/* Packages */}
-          <div className="col-span-1 md:col-span-5 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
-            <h2 className="text-xl sm:text-2xl font-extrabold mb-3 text-primary text-center">Packages</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 flex-1 items-stretch">
+          <div className="col-span-1 md:col-span-5 bg-black/15 rounded-xl pt-1.5 px-4 pb-2.5 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-1.5 text-primary text-center">Packages</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 flex-1 items-stretch">
               {/* Premium Meal */}
-              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-base sm:text-lg font-black text-white">1 Premium Meal</span>
-                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹200/-</span>
-                <span className="text-xs sm:text-sm text-white font-bold leading-tight">Per Meal (Lunch/Dinner)</span>
+              <div className="flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
+                <span className="text-sm sm:text-base font-black text-white">1 Premium Meal</span>
+                <span className="text-base sm:text-lg font-black text-primary my-0">₹200/-</span>
+                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">(Lunch/Dinner)</span>
               </div>
 
               {/* Premium Single */}
-              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-base sm:text-lg font-black text-white">Premium Single</span>
-                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹3,200/-</span>
-                <span className="text-xs sm:text-sm text-white font-bold leading-tight">1 Meal Daily / Month</span>
+              <div className="flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
+                <span className="text-sm sm:text-base font-black text-white">Premium Single</span>
+                <span className="text-base sm:text-lg font-black text-primary my-0">₹3,200/-</span>
+                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">1 Meal Daily / 30 Days</span>
               </div>
 
               {/* Premium Double */}
-              <div className="relative flex flex-col bg-black/10 rounded-lg p-2.5 border border-primary/40 hover:border-primary transition-colors text-center justify-between bg-primary/10 pt-3">
-                <div className="absolute -top-2.5 -right-1 bg-primary text-white text-[11px] font-black px-2.5 py-0.5 rounded-full shadow-md uppercase tracking-wider border border-white/20 whitespace-nowrap z-10 flex items-center justify-center text-center">
+              <div className="relative flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-primary/40 hover:border-primary transition-colors text-center justify-between bg-primary/10 pt-1.5">
+                <div className="absolute -top-2 -right-1 bg-primary text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow-md uppercase tracking-wider border border-white/20 whitespace-nowrap z-10 flex items-center justify-center text-center">
                   Most Popular
                 </div>
-                <span className="text-base sm:text-lg font-black text-white">Premium Double</span>
-                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹6,200/-</span>
-                <span className="text-xs sm:text-sm text-white font-bold leading-tight">2 Meals Daily / Month</span>
+                <span className="text-sm sm:text-base font-black text-white">Premium Double</span>
+                <span className="text-base sm:text-lg font-black text-primary my-0">₹6,200/-</span>
+                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">2 Meals Daily / 30 Days</span>
               </div>
 
               {/* Budget Meal */}
-              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-base sm:text-lg font-black text-white">1 Budget Meal</span>
-                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹150/-</span>
-                <span className="text-xs sm:text-sm text-white font-bold leading-tight">Per Meal (Lunch/Dinner)</span>
+              <div className="flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
+                <span className="text-sm sm:text-base font-black text-white">1 Budget Meal</span>
+                <span className="text-base sm:text-lg font-black text-primary my-0">₹150/-</span>
+                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">(Lunch/Dinner)</span>
               </div>
 
               {/* Budget Single */}
-              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-base sm:text-lg font-black text-white">Budget Single</span>
-                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹2,900/-</span>
-                <span className="text-xs sm:text-sm text-white font-bold leading-tight">1 Meal Daily / Month</span>
+              <div className="flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
+                <span className="text-sm sm:text-base font-black text-white">Budget Single</span>
+                <span className="text-base sm:text-lg font-black text-primary my-0">₹2,900/-</span>
+                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">1 Meal Daily / 30 Days</span>
               </div>
 
               {/* Budget Double */}
-              <div className="flex flex-col bg-black/10 rounded-lg p-2.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-base sm:text-lg font-black text-white">Budget Double</span>
-                <span className="text-lg sm:text-xl font-black text-primary my-0.5">₹5,600/-</span>
-                <span className="text-xs sm:text-sm text-white font-bold leading-tight">2 Meals Daily / Month</span>
+              <div className="flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
+                <span className="text-sm sm:text-base font-black text-white">Budget Double</span>
+                <span className="text-base sm:text-lg font-black text-primary my-0">₹5,600/-</span>
+                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">2 Meals Daily / 30 Days</span>
               </div>
             </div>
           </div>
 
           {/* ROW 3: Get In Touch full width */}
-          <div className="col-span-1 md:col-span-12 bg-black/15 rounded-xl p-4 sm:p-5 backdrop-blur-md border border-white/20 flex flex-col">
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 text-primary text-center">Get In Touch</h2>
+          <div className="col-span-1 md:col-span-12 bg-black/15 rounded-xl py-3 px-4 backdrop-blur-md border border-white/20 flex flex-col">
+            <h2 className="text-2xl sm:text-3xl font-extrabold mb-3 text-primary text-center">Get In Touch</h2>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch flex-1">
               
               {/* Left Side: 4 Contact Info Cards (2x2 grid) */}
               <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-3 h-full items-stretch">
                 {/* Phone */}
-                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
+                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl py-2.5 px-3 border border-white/10 h-full">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
                     <Phone className="w-6 sm:w-7 h-6 sm:h-7" />
                   </div>
@@ -323,7 +373,7 @@ export function BroucherPage() {
                 </div>
 
                 {/* Whatsapp */}
-                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
+                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl py-2.5 px-3 border border-white/10 h-full">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
                     <FaWhatsapp className="w-6 sm:w-7 h-6 sm:h-7" />
                   </div>
@@ -334,7 +384,7 @@ export function BroucherPage() {
                 </div>
 
                 {/* Support Hours */}
-                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
+                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl py-2.5 px-3 border border-white/10 h-full">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
                     <Headphones className="w-6 sm:w-7 h-6 sm:h-7" />
                   </div>
@@ -345,7 +395,7 @@ export function BroucherPage() {
                 </div>
 
                 {/* Delivery Hours */}
-                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl p-3.5 sm:p-4 border border-white/10 h-full">
+                <div className="flex items-center justify-center gap-3.5 bg-black/10 rounded-xl py-2.5 px-3 border border-white/10 h-full">
                   <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary shrink-0">
                     <Clock className="w-6 sm:w-7 h-6 sm:h-7" />
                   </div>
@@ -357,17 +407,17 @@ export function BroucherPage() {
               </div>
 
               {/* Right Side: QR Codes (Expanded Width & Height) */}
-              <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-2 bg-black/10 rounded-xl p-3 sm:p-4 border border-white/10 items-center justify-center justify-items-center h-full">
+              <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-2 bg-black/10 rounded-xl p-3 border border-white/10 items-center justify-center justify-items-center h-full">
                 {/* 1. Website QR: Know More About Us */}
-                <a href="https://gks-sr-nodia.netlify.app/" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
-                  <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
+                <a href="https://gkssr-noida.netlify.app/" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[170px]">
+                  <div className="w-[160px] h-[160px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
                     <img
                       src="/assets/qr-web.svg"
                       alt="Know More About Us QR"
-                      width={200}
-                      height={200}
+                      width={160}
+                      height={160}
                       style={{ imageRendering: "pixelated" }}
-                      className="w-full h-full object-cover scale-[1.22] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
+                      className="w-full h-full object-cover scale-[1.10] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
                       loading="eager"
                       decoding="async"
                     />
@@ -376,15 +426,15 @@ export function BroucherPage() {
                 </a>
 
                 {/* 2. Google Review QR: Find us on Google */}
-                <a href="https://share.google/r0eOTOo74xxTEOvTy" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
-                  <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
+                <a href="https://share.google/r0eOTOo74xxTEOvTy" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[170px]">
+                  <div className="w-[160px] h-[160px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
                     <img
                       src="/assets/qr-google.svg"
                       alt="Find us on Google QR"
-                      width={200}
-                      height={200}
+                      width={160}
+                      height={160}
                       style={{ imageRendering: "pixelated" }}
-                      className="w-full h-full object-cover scale-[1.25] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
+                      className="w-full h-full object-cover scale-[1.06] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
                       loading="eager"
                       decoding="async"
                     />
@@ -393,15 +443,15 @@ export function BroucherPage() {
                 </a>
 
                 {/* 3. WhatsApp QR: Order on Whatsapp */}
-                <a href="https://wa.me/+919266844741" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
-                  <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
+                <a href="https://wa.me/+919266844741" target="_blank" rel="noreferrer" className="flex flex-col items-center no-underline w-full max-w-[170px]">
+                  <div className="w-[160px] h-[160px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
                     <img
                       src="/assets/qr-chat.svg"
                       alt="Order on Whatsapp QR"
-                      width={200}
-                      height={200}
+                      width={160}
+                      height={160}
                       style={{ imageRendering: "pixelated" }}
-                      className="w-full h-full object-cover scale-[1.25] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
+                      className="w-full h-full object-cover scale-[1.09] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
                       loading="eager"
                       decoding="async"
                     />
@@ -410,15 +460,15 @@ export function BroucherPage() {
                 </a>
 
                 {/* 4. Call QR: Scan to Call */}
-                <a href="tel:+919266844741" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center no-underline w-full max-w-[210px]">
-                  <div className="w-[200px] h-[200px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
+                <a href="tel:+919266844741" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center no-underline w-full max-w-[170px]">
+                  <div className="w-[160px] h-[160px] bg-white p-0 rounded-xl shadow-lg border border-gray-200 flex items-center justify-center overflow-hidden">
                     <img
                       src="/assets/qr-call.svg"
                       alt="Scan to Call QR"
-                      width={200}
-                      height={200}
+                      width={160}
+                      height={160}
                       style={{ imageRendering: "pixelated" }}
-                      className="w-full h-full object-cover scale-[1.25] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
+                      className="w-full h-full object-cover scale-[0.95] transform [image-rendering:crisp-edges] [image-rendering:pixelated]"
                       loading="eager"
                       decoding="async"
                     />
@@ -433,9 +483,9 @@ export function BroucherPage() {
         </div>
 
         {/* Footer Bar */}
-        <div className="relative w-full mt-4 mb-2 px-4 flex flex-col md:flex-row items-center justify-between gap-4 py-4 border-t border-white/10">
+        <div className="relative w-full mt-1.5 mb-1 px-4 flex flex-col md:flex-row items-center justify-between gap-4 pt-3.5 pb-0.5 border-t border-white/10">
           {/* Left: Logo Pill (far left) */}
-          <div className="group relative flex items-center gap-2.5 p-0 h-11 pr-4 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:scale-105 transition-all duration-300 overflow-hidden mt-1.5">
+          <div className="group relative flex items-center gap-2.5 p-0 h-11 pr-4 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:scale-105 transition-all duration-300 overflow-hidden">
             <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary/8 via-transparent to-transparent pointer-events-none" />
             <div 
               className="absolute inset-0 rounded-full bg-primary/15 border border-primary/25 scale-[0.85] opacity-0 group-hover:scale-100 group-hover:opacity-100 pointer-events-none" 
@@ -463,12 +513,12 @@ export function BroucherPage() {
           </div>
 
           {/* Center: Copyright (dead-centered horizontally & vertically) */}
-          <div className="md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 text-base sm:text-lg text-white text-center font-bold whitespace-nowrap">
+          <div className="md:absolute md:left-1/2 md:top-[55%] md:-translate-x-1/2 md:-translate-y-1/2 text-base sm:text-lg text-white text-center font-bold whitespace-nowrap">
             © 2026 <span className="text-primary font-extrabold">Ghar ka Swad</span> | All rights reserved
           </div>
 
           {/* Right: Made with love Pill (far right) */}
-          <div className="group relative flex items-center gap-2 h-11 px-5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] mt-1.5">
+          <div className="group relative flex items-center gap-2 h-11 px-5 rounded-full bg-black/35 backdrop-blur-md border border-white/20 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)]">
             <span className="relative z-10 text-sm sm:text-base text-white font-semibold">Made with</span>
             <Heart className="relative z-10 w-4.5 h-4.5 text-red-500 fill-red-500 border-red-500 animate-pulse" />
             <span className="relative z-10 text-sm sm:text-base text-white font-semibold">by <a href="https://clevercoderjoy.bio.link/" target="_blank" rel="noopener noreferrer" className="text-[#FC8019] drop-shadow-md no-underline transition-colors font-extrabold">clevercoderjoy</a></span>

@@ -74,14 +74,14 @@ const menuItems = [
     thaliType: "Budget Meal",
     lunch: { 
       name: [
-        "Dal of the Day\n+ Steamed Rice\nor 4 Chapaties",
+        "Dal of the Day + Steamed Rice or 4 Chapaties",
         "Seasonal Curry or Seasonal Veggie"
       ], 
       img: "/assets/img21.svg" 
     },
     dinner: { 
       name: [
-        "Dal of the Day\n+ Steamed Rice\nor 4 Chapaties",
+        "Dal of the Day + Steamed Rice or 4 Chapaties",
         "Seasonal Curry or Seasonal Veggie"
       ], 
       img: "/assets/img21.svg" 
@@ -95,7 +95,8 @@ const menuItems = [
         "Traditional Rajma Chawal",
         "Punjabi Chole Chawal",
         "Creamy Kadhi Chawal",
-        "Royal Paneer Curry"
+        "Royal Paneer Curry",
+        "Signature Veg Biryani"
       ], 
       img: "/assets/img20.svg" 
     },
@@ -104,15 +105,15 @@ const menuItems = [
         "Traditional Rajma Chawal",
         "Punjabi Chole Chawal",
         "Creamy Kadhi Chawal",
-        "Royal Paneer Curry"
+        "Royal Paneer Curry",
+        "Signature Veg Biryani"
       ], 
       img: "/assets/img20.svg" 
     },
   },
   {
-    day: "Sunday",
+    day: "Non Serviceable Days",
     isOff: true,
-    offText: "Sundays & Festive Days are off"
   },
   {
     day: "Food Standards",
@@ -131,10 +132,11 @@ const menuItems = [
   {
     day: "Note",
     note: [
+      "Proudly serving Darbhanga, now open to Noida.",
       "Menu may change based on availability of food items.",
+      "Advance payment is required for all subscription plans.",
       "Special requests can be accommodated with prior notice. (Chargable)",
       "Food cancellation after it goes out for delivery is fully chargable.",
-      "Sundays and Festive days are off days.",
       "Extra chapaties ₹8/Piece"
     ]
   },
@@ -237,7 +239,7 @@ const MenuCard = memo(function MenuCard({ item }) {
 
             <ul className="list-disc pl-4 text-white text-[16px] font-medium grid grid-cols-2 gap-x-2 gap-y-1.5 text-left mt-3 w-full">
               {item.lunch.name.map((food, idx) => (
-                <li key={idx} className="leading-tight whitespace-pre-wrap">{food}</li>
+                <li key={idx} className={`leading-tight whitespace-pre-wrap ${food.includes("Biryani") || item.thaliType === "Budget Meal" ? "col-span-2" : ""}`}>{food}</li>
               ))}
             </ul>
           </div>
@@ -269,14 +271,14 @@ const MenuCard = memo(function MenuCard({ item }) {
           />
 
           <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
-          <div className="relative z-10 p-5 flex flex-col justify-between h-[375px]">
+          <div className="relative z-10 pt-1.5 px-5 pb-5 flex flex-col justify-between h-[375px]">
             <div>
-              <div className="text-center pb-2 border-b border-white/20 w-full">
+              <div className="text-center pb-1 border-b border-white/20 w-full">
                 <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
                   Food Standards
                 </h3>
               </div>
-              <ul className="space-y-2.5 text-left w-full pt-3">
+              <ul className="space-y-2.5 text-left w-full pt-3.5">
                 {item.standards.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-2.5">
                     <div className="mt-0.5 w-4.5 h-4.5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
@@ -298,11 +300,11 @@ const MenuCard = memo(function MenuCard({ item }) {
 
   if (item.day === "Note" && Array.isArray(item.note)) {
     return (
-      <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] w-[350px] h-auto min-h-[375px] flex flex-col">
+      <div className="group transition-all duration-700 ease-out opacity-100 translate-y-0 min-w-[350px] w-[350px] h-[375px] flex flex-col">
         <div
           ref={cardRef}
           tabIndex={0}
-          className="group relative h-full min-h-[375px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card"
+          className="group relative h-[375px] rounded-3xl bg-black/35 backdrop-blur-md border border-white/20 hover:border-primary/40 shadow-[0_4px_30px_rgba(252,128,25,0.06),inset_0_1px_1px_rgba(252,128,25,0.08)] hover:shadow-2xl transition-all duration-200 overflow-hidden focus:outline-none menu-card"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           onFocus={handleFocus}
@@ -323,16 +325,19 @@ const MenuCard = memo(function MenuCard({ item }) {
           />
 
           <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
-          <div className="relative z-10 p-6 flex flex-col justify-between h-full min-h-[375px]">
+          <div className="relative z-10 pt-0.5 px-6 pb-6 flex flex-col justify-between h-[375px]">
             <div>
-              <div className="text-center pb-2 border-b border-white/20 w-full">
+              <div className="text-center pb-1 border-b border-white/20 w-full">
                 <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
                   Note
                 </h3>
               </div>
-              <ul className="list-disc text-white/90 text-[16px] pl-6 space-y-2 text-left w-full pt-3">
+              <ul className="text-white/90 text-[13.5px] sm:text-[14px] space-y-1.5 text-left w-full pt-3.5">
                 {item.note.map((point, idx) => (
-                  <li key={idx} className={point.includes("Extra chapaties") ? "text-primary font-bold" : ""}>{point}</li>
+                  <li key={idx} className={`flex items-start gap-1.5 ${point.includes("Extra chapaties") ? "text-primary font-bold" : ""}`}>
+                    <span className="text-primary mt-1.5 shrink-0 text-xs">✦</span>
+                    <span>{point}</span>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -373,24 +378,27 @@ const MenuCard = memo(function MenuCard({ item }) {
 
           <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
           
-          <div className="relative z-10 p-5 flex flex-col h-[375px]">
-            <div className="text-center pb-2 border-b border-white/20 w-full flex-shrink-0">
+          <div className="relative z-10 pt-1.5 px-5 pb-5 flex flex-col h-[375px]">
+            <div className="text-center pb-1 border-b border-white/20 w-full flex-shrink-0">
               <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
                 {item.day}
               </h3>
             </div>
 
-            <div className="flex items-center gap-2 mt-3 flex-shrink-0">
-              <div className="bg-orange-500/20 backdrop-blur-sm p-1.5 rounded-lg border border-white/10 flex-shrink-0">
-                <Moon className="w-5 h-5 text-orange-400" />
-              </div>
-              <span className="font-semibold text-white text-base">{item.offText}</span>
-            </div>
-
-            <div className="flex-1 flex flex-col justify-center items-center text-center space-y-2 w-full my-auto pb-2">
-              <p className="text-white/90 text-[16px] font-normal leading-relaxed">Cheat day for you, Rest day for us</p>
-              <p className="text-white/70 text-sm font-normal leading-relaxed">No deliveries are made on this day</p>
-            </div>
+            <ul className="space-y-2 text-white/90 text-[14.5px] sm:text-[15.5px] text-left w-full pt-3">
+              {[
+                "Cheat day for you, Rest day for us",
+                "Sundays off",
+                "Major Festive Days are off",
+                "Monthly subscription pricing already excludes Sundays & major festive holidays.",
+                "No deliveries are made on this day"
+              ].map((point, idx) => (
+                <li key={idx} className="flex items-start gap-1.5 leading-snug">
+                  <span className="text-primary mt-1 shrink-0 text-xs">✦</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-3xl" />
         </div>
@@ -425,14 +433,14 @@ const MenuCard = memo(function MenuCard({ item }) {
 
         <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
 
-        <div className="relative z-10 p-6 flex flex-col justify-between h-[450px]">
-          <div className="text-center pb-2 border-b border-white/20">
+        <div className="relative z-10 pt-2 px-6 pb-6 flex flex-col justify-between h-[450px]">
+          <div className="text-center pb-1 border-b border-white/20">
             <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
               {item.day}
             </h3>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 pt-2">
+          <div className="grid grid-cols-2 gap-4 pt-1">
             {item.lunch && (
               <MealSection
                 type="Lunch"
@@ -509,7 +517,7 @@ export function Menu() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-start gap-6 sm:gap-8 max-w-[1600px] mx-auto">
+        <div className="flex flex-wrap justify-center items-stretch gap-6 sm:gap-8 max-w-[1600px] mx-auto">
           {menuCardsJSX}
         </div>
       </div>

@@ -252,7 +252,7 @@ export function Header() {
                 href="/assets/pdf.pdf" 
                 label="PDF" 
                 download 
-                downloadName="pdf.pdf" 
+                downloadName="Ghar ka Swad by Sanskriti Raj.pdf" 
                 variant="nav"
                 onMouseEnter={handleRightMouseEnter}
               />
