@@ -127,7 +127,6 @@ export function Hero() {
         <div className="relative max-w-7xl mx-auto flex flex-col justify-between min-h-[calc(100vh-8rem)] transition-all duration-700 ease-out opacity-100 translate-y-0">
           
           <div className="relative z-10 text-center space-y-4 pt-2 sm:pt-4 flex flex-col items-center">
-            {/* "Bihar ki Sanskriti" heading at the very top */}
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-none transition-all duration-700 ease-out opacity-100 translate-y-0 mb-1">
                 <span className="text-white drop-shadow-lg">
                   Ghar ka Swad

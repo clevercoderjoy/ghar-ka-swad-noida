@@ -37,6 +37,11 @@ export function BroucherPage() {
             backdrop-filter: none !important;
             background-color: rgba(18, 12, 6, 0.97) !important;
           }
+          /* Remove drop shadows that cause black box rendering bugs in print */
+          .drop-shadow-md, .drop-shadow-lg, [class*="drop-shadow-"] {
+            filter: none !important;
+            text-shadow: none !important;
+          }
           /* Prevent page breaks inside cards */
           .rounded-xl, .rounded-3xl, .rounded-lg, .menu-card {
             page-break-inside: avoid !important;
@@ -70,8 +75,8 @@ export function BroucherPage() {
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight leading-none">
             <span className="text-white drop-shadow-lg">Ghar ka Swad</span>
           </h2>
-          <div className="flex items-center justify-center" style={{ width: 140, height: 140 }}>
-            <img src="/logo.svg.svg" alt="घर का स्वाद Logo" width={140} height={140} className="rounded-full" decoding="async" />
+          <div className="flex items-center justify-center overflow-hidden rounded-full border border-white/10" style={{ width: 140, height: 140 }}>
+            <img src="/logo.svg.svg" alt="घर का स्वाद Logo" width={140} height={140} className="w-full h-full object-cover" decoding="async" />
           </div>
           <p className="text-base font-bold italic text-white drop-shadow-md leading-none">
             by
