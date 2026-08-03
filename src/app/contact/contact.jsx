@@ -21,7 +21,7 @@ const contactInfo = [
   {
     icon: FaWhatsapp,
     title: "Whatsapp",
-    detail: "घर का स्वाद",
+    detail: "Ghar ka Swad",
     action: "https://wa.me/+919266844741"
   },
   {
