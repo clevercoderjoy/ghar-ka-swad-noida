@@ -114,8 +114,8 @@ export function Hero() {
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/45 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 pointer-events-none" />
       </div>
 
       <div className="absolute inset-0 z-5 bg-white/0.5 backdrop-blur-[1px] border-0 shadow-2xl">

@@ -154,8 +154,8 @@ export function WhyChooseUs() {
         decoding="async"
       />
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/65 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent" />
       </div>
 

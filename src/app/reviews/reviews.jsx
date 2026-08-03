@@ -164,8 +164,8 @@ export function Reviews() {
         loading="lazy"
         decoding="async"
       />
-      <div className="absolute inset-0 z-0 bg-black/55 backdrop-blur-[2px]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 pointer-events-none z-0" />
+      <div className="absolute inset-0 z-0 bg-black/40 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/25 to-black/55 pointer-events-none z-0" />
 
       <div className="w-full max-w-[1536px] px-4 md:px-8 relative z-10 mx-auto">
         {/* Header */}

@@ -395,7 +395,7 @@ export function BroucherPage() {
                   </div>
                   <div className="flex flex-col text-left justify-center">
                     <span className="text-base sm:text-lg text-white/80 font-bold">Support Hours</span>
-                    <span className="text-xl sm:text-2xl font-black text-white">9 AM - 9 PM Daily</span>
+                    <span className="text-xl sm:text-2xl font-black text-white">8 AM - 9 PM</span>
                   </div>
                 </div>
 
@@ -406,7 +406,7 @@ export function BroucherPage() {
                   </div>
                   <div className="flex flex-col text-left justify-center">
                     <span className="text-base sm:text-lg text-white/80 font-bold">Delivery Hours</span>
-                    <span className="text-xl sm:text-2xl font-black text-white">9 AM - 9 PM Daily</span>
+                    <span className="text-xl sm:text-2xl font-black text-white">12 PM - 8 PM</span>
                   </div>
                 </div>
               </div>

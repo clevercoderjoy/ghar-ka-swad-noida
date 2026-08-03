@@ -15,7 +15,7 @@ const contactInfo = [
   {
     icon: Headphones,
     title: "Support Hours",
-    detail: "9 AM - 9 PM Daily",
+    detail: "8 AM - 9 PM",
     action: null
   },
   {
@@ -27,7 +27,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Delivery Hours",
-    detail: "9 AM - 9 PM Daily",
+    detail: "12 PM - 8 PM",
     action: null
   }
 ];
@@ -313,8 +313,8 @@ export function Contact() {
           loading="lazy"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/35 to-black/65 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent dark:from-white/10 dark:via-transparent dark:to-transparent" />
       </div>
 

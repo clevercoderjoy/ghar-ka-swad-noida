@@ -501,8 +501,8 @@ export function Menu() {
       />
 
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/55 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/45 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 blur-xl opacity-30 animate-pulse" />
       </div>
