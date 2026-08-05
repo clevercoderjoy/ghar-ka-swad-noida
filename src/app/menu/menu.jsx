@@ -75,14 +75,16 @@ const menuItems = [
     lunch: { 
       name: [
         "Dal of the Day + Steamed Rice or 4 Chapaties",
-        "Seasonal Curry or Seasonal Veggie"
+        "Seasonal Curry or Seasonal Veggie",
+        "Fresh Salad"
       ], 
       img: "/assets/img21.svg" 
     },
     dinner: { 
       name: [
         "Dal of the Day + Steamed Rice or 4 Chapaties",
-        "Seasonal Curry or Seasonal Veggie"
+        "Seasonal Curry or Seasonal Veggie",
+        "Fresh Salad"
       ], 
       img: "/assets/img21.svg" 
     },
@@ -92,21 +94,23 @@ const menuItems = [
     thaliType: "Special",
     lunch: { 
       name: [
-        "Traditional Rajma Chawal",
-        "Punjabi Chole Chawal",
-        "Creamy Kadhi Chawal",
-        "Royal Paneer Curry",
-        "Signature Veg Biryani"
+        "Rajma Chawal",
+        "Chole Chawal",
+        "Kadhi Chawal",
+        "Paneer Curry",
+        "Veg Biryani",
+        "Dessert"
       ], 
       img: "/assets/img20.svg" 
     },
     dinner: { 
       name: [
-        "Traditional Rajma Chawal",
-        "Punjabi Chole Chawal",
-        "Creamy Kadhi Chawal",
-        "Royal Paneer Curry",
-        "Signature Veg Biryani"
+        "Rajma Chawal",
+        "Chole Chawal",
+        "Kadhi Chawal",
+        "Paneer Curry",
+        "Veg Biryani",
+        "Dessert"
       ], 
       img: "/assets/img20.svg" 
     },
@@ -212,7 +216,7 @@ const MenuCard = memo(function MenuCard({ item }) {
           />
           <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-200" />
           
-          <div className="relative z-10 pt-2 px-6 pb-5 space-y-3 flex flex-col h-full items-center">
+          <div className="relative z-10 pt-2 px-4.5 sm:px-5 pb-5 space-y-3 flex flex-col h-full items-center">
             <div className="text-center pb-2 border-b border-white/20 w-full">
               <h3 className="font-bold text-2xl tracking-wide text-[#FC8019] drop-shadow-md">
                 {item.day}
@@ -226,7 +230,7 @@ const MenuCard = memo(function MenuCard({ item }) {
               <span className="font-semibold text-white text-base">{item.thaliType || "Premium Meal"}</span>
             </div>
 
-            <div className="relative w-full h-[230px] flex-shrink-0 rounded-xl overflow-hidden border border-white/20 shadow-lg mt-2 mx-auto bg-[#FFEBD2]">
+            <div className="relative w-full h-[220px] flex-shrink-0 rounded-xl overflow-hidden border border-white/20 shadow-lg mt-2 mx-auto bg-[#FFEBD2]">
               <img
                 src={item.lunch.img}
                 alt={item.thaliType || "Premium Meal"}
@@ -237,9 +241,9 @@ const MenuCard = memo(function MenuCard({ item }) {
               />
             </div>
 
-            <ul className="list-disc pl-4 text-white text-[16px] font-medium grid grid-cols-2 gap-x-2 gap-y-1.5 text-left mt-3 w-full">
+            <ul className={`list-disc pl-4 text-white font-medium ${item.thaliType === "Budget Meal" ? "flex flex-col space-y-2 text-[14.5px] sm:text-[15.5px]" : "grid grid-cols-2 gap-x-2 gap-y-2 text-[15px] sm:text-[16px]"} text-left mt-3 w-full`}>
               {item.lunch.name.map((food, idx) => (
-                <li key={idx} className={`leading-tight whitespace-pre-wrap ${food.includes("Biryani") || item.thaliType === "Budget Meal" ? "col-span-2" : ""}`}>{food}</li>
+                <li key={idx} className="leading-snug whitespace-normal break-words">{food}</li>
               ))}
             </ul>
           </div>

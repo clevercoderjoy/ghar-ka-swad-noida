@@ -91,7 +91,10 @@ const PackageCard = memo(function PackageCard({ pkg }) {
             <div className="space-y-1">
               <div className="flex flex-col items-center justify-center">
                 {pkg.price && (
-                  <span className="text-3xl font-bold text-primary text-center">{pkg.price}</span>
+                  <span className="text-3xl font-bold text-primary text-center mb-1">{pkg.price}</span>
+                )}
+                {pkg.subPrice && (
+                  <span className="text-[15px] sm:text-[17px] font-bold text-white/90 text-center mt-0.5 mb-1.5">{pkg.subPrice}</span>
                 )}
                 {pkg.originalPrice && (
                   <div className="flex flex-row items-center gap-2 mt-0.5">
@@ -100,7 +103,7 @@ const PackageCard = memo(function PackageCard({ pkg }) {
                   </div>
                 )}
               </div>
-              <p className="text-sm text-white/70 text-center leading-relaxed">{pkg.description}</p>
+              <p className="text-xs sm:text-[13.5px] text-white/70 text-center leading-relaxed whitespace-nowrap">{pkg.description}</p>
             </div>
           </div>
 
@@ -162,7 +165,8 @@ const packages = [
   },
   {
     name: "Premium Single",
-    price: "₹3200/-",
+    price: "₹110 / Meal",
+    subPrice: "(₹3,300 / 30 Days)",
     originalPrice: null,
     description: "1 premium meal, lunch or dinner for 30 days.",
     features: [
@@ -177,7 +181,8 @@ const packages = [
   },
   {
     name: "Premium Double",
-    price: "₹6200/-",
+    price: "₹105 / Meal",
+    subPrice: "(₹6,300 / 30 Days)",
     originalPrice: null,
     description: "2 meals, lunch and dinner for 30 days.",
     features: [
@@ -207,7 +212,8 @@ const packages = [
   },
   {
     name: "Budget Single",
-    price: "₹2,900/-",
+    price: "₹100 / Meal",
+    subPrice: "(₹3,000 / 30 Days)",
     originalPrice: null,
     description: "1 budget meal, lunch or dinner for 30 days.",
     features: [
@@ -222,7 +228,8 @@ const packages = [
   },
   {
     name: "Budget Double",
-    price: "₹5,600/-",
+    price: "₹95 / Meal",
+    subPrice: "(₹5,700 / 30 Days)",
     originalPrice: null,
     description: "2 budget meals, lunch and dinner for 30 days.",
     features: [

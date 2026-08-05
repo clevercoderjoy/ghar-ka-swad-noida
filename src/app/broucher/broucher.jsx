@@ -23,7 +23,7 @@ const notes = [
 
 export function BroucherPage() {
   return (
-    <main className="relative min-h-screen w-full flex flex-col items-center justify-start py-4 px-1 bg-background text-foreground overflow-x-hidden">
+    <main className="relative min-h-screen w-full flex flex-col items-center justify-start pt-1 pb-4 px-1 bg-background text-foreground overflow-x-hidden">
       <style dangerouslySetInnerHTML={{__html: `
         @media print {
           body, html, main {
@@ -71,7 +71,7 @@ export function BroucherPage() {
       <div className="relative z-10 w-full flex flex-col items-center">
 
         {/* Logo and Brand */}
-        <div className="flex flex-col items-center mb-4 mt-2 gap-3">
+        <div className="flex flex-col items-center mb-3 mt-0 gap-2.5">
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight leading-none">
             <span className="text-white drop-shadow-lg">Ghar ka Swad</span>
           </h2>
@@ -108,8 +108,8 @@ export function BroucherPage() {
           {/* ROW 1: Why, Ratings, Food Standards, Note (4 compact cards) */}
 
           {/* Why घर का स्वाद */}
-          <div className="col-span-1 md:col-span-4 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
-            <h2 className="text-2xl sm:text-[27px] font-extrabold mb-2.5 text-white text-center">Why <span className="text-primary">घर का स्वाद</span> ?</h2>
+          <div className="col-span-1 md:col-span-4 bg-black/15 rounded-xl pt-1.5 px-4 pb-3.5 sm:pt-2 sm:px-4 sm:pb-3.5 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-2xl sm:text-[27px] font-extrabold mb-1.5 text-white text-center">Why <span className="text-primary">घर का स्वाद</span> ?</h2>
             <ul className="space-y-1 flex-1 flex flex-col justify-between pt-0.5">
               {[
                 "Freshly prepared daily with premium ingredients",
@@ -130,8 +130,8 @@ export function BroucherPage() {
           </div>
 
           {/* Food Standards */}
-          <div className="col-span-1 md:col-span-4 bg-black/15 rounded-xl p-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
-            <h2 className="text-2xl sm:text-[27px] font-extrabold mb-2 text-primary text-center">Food Standards</h2>
+          <div className="col-span-1 md:col-span-4 bg-black/15 rounded-xl pt-1.5 px-4 pb-3.5 sm:pt-2 sm:px-4 sm:pb-3.5 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-2xl sm:text-[27px] font-extrabold mb-1.5 text-primary text-center">Food Standards</h2>
             <ul className="space-y-1 flex-1 flex flex-col justify-between pt-0.5">
               {[
                 "Clean & hygienic kitchen & utensils",
@@ -152,8 +152,8 @@ export function BroucherPage() {
           </div>
 
           {/* Note */}
-          <div className="col-span-1 md:col-span-4 bg-black/15 rounded-xl pt-2 px-4 pb-4 backdrop-blur-md border border-white/20 flex flex-col justify-start">
-            <h2 className="text-[26px] sm:text-[32px] font-extrabold mb-1 text-primary text-center">Note</h2>
+          <div className="col-span-1 md:col-span-4 bg-black/15 rounded-xl pt-0.5 px-4 pb-3.5 sm:pt-1 sm:px-4 sm:pb-3.5 backdrop-blur-md border border-white/20 flex flex-col justify-start">
+            <h2 className="text-[26px] sm:text-[32px] font-extrabold mb-0.5 text-primary text-center">Note</h2>
             <ul className="space-y-1.5 text-lg sm:text-[20px] text-white pt-0.5 font-medium leading-snug">
               {notes.map((note, idx) => (
                 <li key={idx} className="flex items-start gap-1.5 justify-start text-left">
@@ -173,26 +173,26 @@ export function BroucherPage() {
           </div>
 
           {/* Ratings & Trust */}
-          <div className="col-span-1 md:col-span-7 bg-black/15 rounded-xl py-2 px-4 backdrop-blur-md border border-white/20 flex flex-col items-center text-center justify-between">
-            <h2 className="text-xl sm:text-2xl font-extrabold mb-2.5 text-primary text-center">The trust we've earned</h2>
-            <div className="flex flex-row flex-wrap justify-between items-center gap-4 w-full flex-1">
-              <div className="flex-1 min-w-[120px] pb-1.5 flex flex-col items-center justify-center">
+          <div className="col-span-1 md:col-span-7 bg-black/15 rounded-xl pt-1 px-4 pb-1.5 sm:pt-1.5 sm:px-4 sm:pb-2 backdrop-blur-md border border-white/20 flex flex-col items-center text-center justify-between">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-1 text-primary text-center">The trust we've earned</h2>
+            <div className="flex flex-row flex-wrap justify-between items-center gap-3 w-full flex-1">
+              <div className="flex-1 min-w-[120px] pb-0 flex flex-col items-center justify-center">
                 <span className="text-2xl sm:text-[28px] font-black text-primary block leading-none">20,000 +</span>
                 <span className="text-[14.5px] sm:text-base text-white/95 font-bold leading-tight mt-1">Delicious Meals Delivered</span>
               </div>
-              <div className="flex-1 min-w-[120px] pb-1.5 flex flex-col items-center justify-center">
+              <div className="flex-1 min-w-[120px] pb-0 flex flex-col items-center justify-center">
                 <span className="text-2xl sm:text-[28px] font-black text-primary block leading-none">1,000 +</span>
                 <span className="text-[14.5px] sm:text-base text-white/95 font-bold leading-tight mt-1">Delighted Customers</span>
               </div>
-              <div className="flex-1 min-w-[120px] pb-1.5 flex flex-col items-center justify-center">
+              <div className="flex-1 min-w-[120px] pb-0 flex flex-col items-center justify-center">
                 <span className="text-2xl sm:text-[28px] font-black text-primary block leading-none">100 +</span>
                 <span className="text-[14.5px] sm:text-base text-white/95 font-bold leading-tight mt-1">Currently Active Subscribers</span>
               </div>
-              <div className="flex-1 min-w-[120px] pb-1.5 flex flex-col items-center justify-center">
+              <div className="flex-1 min-w-[120px] pb-0 flex flex-col items-center justify-center">
                 <span className="text-2xl sm:text-[28px] font-black text-primary block leading-none">2.5 +</span>
                 <span className="text-[14.5px] sm:text-base text-white/95 font-bold leading-tight mt-1">Years of Trust Service</span>
               </div>
-              <div className="flex-1 min-w-[120px] pb-1.5 flex flex-col items-center justify-center">
+              <div className="flex-1 min-w-[120px] pb-0 flex flex-col items-center justify-center">
                 <span className="text-2xl sm:text-[28px] font-black text-primary block leading-none">4.8 ★★★★</span>
                 <span className="text-[14.5px] sm:text-base text-white/95 font-bold leading-tight mt-1">Google Verified Ratings</span>
               </div>
@@ -200,9 +200,9 @@ export function BroucherPage() {
           </div>
 
           {/* Non Serviceable Days */}
-          <div className="col-span-1 md:col-span-5 bg-black/15 rounded-xl py-2 px-4 backdrop-blur-md border border-white/20 flex flex-col justify-between">
-            <h2 className="text-xl sm:text-2xl font-extrabold mb-1 text-primary text-center">Non Serviceable Days</h2>
-            <ul className="space-y-1.5 text-white/90 text-[16px] sm:text-[17.5px] text-left w-full pt-0.5 font-medium">
+          <div className="col-span-1 md:col-span-5 bg-black/15 rounded-xl pt-1 px-4 pb-1.5 sm:pt-1.5 sm:px-4 sm:pb-2 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-0.5 text-primary text-center">Non Serviceable Days</h2>
+            <ul className="space-y-1 text-white/90 text-[15.5px] sm:text-[17px] text-left w-full pt-0.5 font-medium">
               {[
                 "Cheat day for you, Rest day for us",
                 "Sundays off",
@@ -225,83 +225,91 @@ export function BroucherPage() {
             <h2 className="text-2xl sm:text-3xl font-extrabold mb-1.5 text-primary text-center">Menu</h2>
             <div className="grid grid-cols-1 md:grid-cols-[3fr_2.3fr_2.7fr] gap-3 flex-1 items-stretch">
               {/* Premium Meal */}
-              <div className="flex flex-col bg-black/10 rounded-xl pt-2 px-3 pb-3 sm:pt-2.5 sm:px-3.5 sm:pb-3.5 border border-white/10 hover:border-primary/30 transition-colors h-[180px]">
-                <div className="text-center mb-1">
-                  <span className="text-[19px] sm:text-[21px] font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1">Monday to Saturday</span>
-                  <h3 className="text-[21px] sm:text-[23px] font-black text-white mt-0.5">Premium Meal</h3>
+              <div className="flex flex-col bg-black/10 rounded-xl pt-2 px-3 pb-3 sm:pt-2.5 sm:px-3.5 sm:pb-3.5 border border-white/10 hover:border-primary/30 transition-colors min-h-[195px] h-full justify-between">
+                <div className="text-center mb-0.5">
+                  <span className="text-[22px] sm:text-[24px] font-black text-[#FC8019] block pb-0.5 border-b border-white/10 mb-0.5">Monday to Saturday</span>
+                  <h3 className="text-[22.5px] sm:text-[25px] font-black text-white mt-0.5">Premium Meal</h3>
                 </div>
-                <div className="grid grid-cols-2 gap-y-2 gap-x-2 text-[13.5px] sm:text-[15.5px] text-white pt-0.5 font-extrabold text-left justify-between w-full">
+                <div className="grid grid-cols-2 gap-y-2.5 gap-x-2 text-[15px] sm:text-[17px] text-white my-auto font-extrabold text-left justify-between w-full">
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Dal of the Day</span>
                   </div>
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Steamed Rice</span>
                   </div>
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>4 Chapaties</span>
                   </div>
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                    <span>Fresh Salad</span>
+                  </div>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Seasonal Curry</span>
                   </div>
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Seasonal Veggie</span>
-                  </div>
-                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
-                    <span>Fresh Salad</span>
                   </div>
                 </div>
               </div>
 
               {/* Budget Meal */}
-              <div className="flex flex-col bg-black/10 rounded-xl pt-2 px-3 pb-3 sm:pt-2.5 sm:px-3.5 sm:pb-3.5 border border-white/10 hover:border-primary/30 transition-colors h-[180px]">
-                <div className="text-center mb-1">
-                  <span className="text-[19px] sm:text-[21px] font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1">Monday to Saturday</span>
-                  <h3 className="text-[21px] sm:text-[23px] font-black text-white mt-0.5">Budget Meal</h3>
+              <div className="flex flex-col bg-black/10 rounded-xl pt-2 px-3 pb-3 sm:pt-2.5 sm:px-3.5 sm:pb-3.5 border border-white/10 hover:border-primary/30 transition-colors min-h-[195px] h-full justify-between">
+                <div className="text-center mb-0.5">
+                  <span className="text-[22px] sm:text-[24px] font-black text-[#FC8019] block pb-0.5 border-b border-white/10 mb-0.5">Monday to Saturday</span>
+                  <h3 className="text-[22.5px] sm:text-[25px] font-black text-white mt-0.5">Budget Meal</h3>
                 </div>
-                <div className="flex flex-col gap-y-2 text-[14px] sm:text-[16px] text-white pt-0.5 font-extrabold pl-1.5 w-full">
+                <div className="flex flex-col gap-y-2.5 text-[15.5px] sm:text-[17.5px] text-white my-auto font-extrabold pl-1 w-full">
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Dal of the Day + Rice / 4 Roti</span>
                   </div>
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Seasonal Curry / Veggie</span>
+                  </div>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                    <span>Fresh Salad</span>
                   </div>
                 </div>
               </div>
 
               {/* Monday Night Blues */}
-              <div className="flex flex-col bg-black/10 rounded-xl pt-2 px-3 pb-3 sm:pt-2.5 sm:px-3.5 sm:pb-3.5 border border-white/10 hover:border-primary/30 transition-colors h-[180px]">
-                <div className="text-center mb-1">
-                  <span className="text-[19px] sm:text-[21px] font-black text-[#FC8019] block pb-1 border-b border-white/10 mb-1">Monday Night Blues</span>
-                  <h3 className="text-[21px] sm:text-[23px] font-black text-white mt-0.5">Special</h3>
+              <div className="flex flex-col bg-black/10 rounded-xl pt-2 px-3 pb-3 sm:pt-2.5 sm:px-3.5 sm:pb-3.5 border border-white/10 hover:border-primary/30 transition-colors min-h-[195px] h-full justify-between">
+                <div className="text-center mb-0.5">
+                  <span className="text-[22px] sm:text-[24px] font-black text-[#FC8019] block pb-0.5 border-b border-white/10 mb-0.5">Monday Night Blues</span>
+                  <h3 className="text-[22.5px] sm:text-[25px] font-black text-white mt-0.5">Special</h3>
                 </div>
-                <div className="grid grid-cols-2 gap-y-2 gap-x-2 text-[13.5px] sm:text-[15.5px] text-white pt-0.5 font-extrabold text-left justify-between w-full">
+                <div className="grid grid-cols-2 gap-y-2.5 gap-x-2 text-[15px] sm:text-[17px] text-white my-auto font-extrabold text-left justify-between w-full">
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Rajma Chawal</span>
                   </div>
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Chole Chawal</span>
                   </div>
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Kadhi Chawal</span>
                   </div>
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Paneer Curry</span>
                   </div>
                   <div className="flex items-start gap-1 justify-start text-left leading-snug">
-                    <span className="text-primary text-xs shrink-0 mt-0.5">✦</span>
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
                     <span>Veg Biryani</span>
+                  </div>
+                  <div className="flex items-start gap-1 justify-start text-left leading-snug">
+                    <span className="text-primary text-xs shrink-0 mt-1">✦</span>
+                    <span>Dessert</span>
                   </div>
                 </div>
               </div>
@@ -309,59 +317,75 @@ export function BroucherPage() {
           </div>
 
           {/* Packages */}
-          <div className="col-span-1 md:col-span-5 bg-black/15 rounded-xl pt-1.5 px-4 pb-2.5 backdrop-blur-md border border-white/20 flex flex-col justify-between">
-            <h2 className="text-xl sm:text-2xl font-extrabold mb-1.5 text-primary text-center">Packages</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 flex-1 items-stretch">
+          <div className="col-span-1 md:col-span-5 bg-black/15 rounded-xl pt-1.5 px-4 pb-3.5 backdrop-blur-md border border-white/20 flex flex-col justify-between">
+            <h2 className="text-xl sm:text-2xl font-extrabold mb-1 text-primary text-center">Packages</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 flex-1 items-stretch">
               {/* Premium Meal */}
-              <div className="flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-sm sm:text-base font-black text-white">1 Premium Meal</span>
-                <span className="text-base sm:text-lg font-black text-primary my-0">₹200/-</span>
-                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">(Lunch/Dinner)</span>
+              <div className="flex flex-col bg-black/10 rounded-lg py-2 px-2 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between min-h-[110px]">
+                <span className="text-[15px] sm:text-[17px] font-black text-white leading-tight">1 Premium Meal</span>
+                <div className="flex flex-col justify-center items-center gap-1.5 my-auto">
+                  <span className="text-[17.5px] sm:text-[19.5px] font-black text-primary leading-tight">₹200/-</span>
+                  <span className="text-[12px] sm:text-[13.5px] text-white/90 font-extrabold leading-tight">(Lunch/Dinner)</span>
+                </div>
               </div>
 
               {/* Premium Single */}
-              <div className="flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-sm sm:text-base font-black text-white">Premium Single</span>
-                <span className="text-base sm:text-lg font-black text-primary my-0">₹3,200/-</span>
-                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">1 Meal Daily / 30 Days</span>
+              <div className="flex flex-col bg-black/10 rounded-lg py-2 px-2 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between min-h-[110px]">
+                <span className="text-[15px] sm:text-[17px] font-black text-white leading-tight">Premium Single</span>
+                <div className="flex flex-col justify-center items-center gap-1 my-auto">
+                  <span className="text-[17.5px] sm:text-[19.5px] font-black text-primary leading-tight">₹110 / Meal</span>
+                  <span className="text-[13.5px] sm:text-[15px] text-white font-extrabold leading-tight">(₹3,300 / 30 Days)</span>
+                  <span className="text-[12px] sm:text-[13.5px] text-white/90 font-extrabold leading-tight">1 Meal Daily / 30 Days</span>
+                </div>
               </div>
 
               {/* Premium Double */}
-              <div className="relative flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-primary/40 hover:border-primary transition-colors text-center justify-between bg-primary/10 pt-1.5">
+              <div className="relative flex flex-col bg-black/10 rounded-lg py-2 px-2 border border-primary/40 hover:border-primary transition-colors text-center justify-between bg-primary/10 pt-2.5 min-h-[110px]">
                 <div className="absolute -top-2 -right-1 bg-primary text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow-md uppercase tracking-wider border border-white/20 whitespace-nowrap z-10 flex items-center justify-center text-center">
                   Most Popular
                 </div>
-                <span className="text-sm sm:text-base font-black text-white">Premium Double</span>
-                <span className="text-base sm:text-lg font-black text-primary my-0">₹6,200/-</span>
-                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">2 Meals Daily / 30 Days</span>
+                <span className="text-[15px] sm:text-[17px] font-black text-white leading-tight">Premium Double</span>
+                <div className="flex flex-col justify-center items-center gap-1 my-auto">
+                  <span className="text-[17.5px] sm:text-[19.5px] font-black text-primary leading-tight">₹105 / Meal</span>
+                  <span className="text-[13.5px] sm:text-[15px] text-white font-extrabold leading-tight">(₹6,300 / 30 Days)</span>
+                  <span className="text-[12px] sm:text-[13.5px] text-white/90 font-extrabold leading-tight">2 Meals Daily / 30 Days</span>
+                </div>
               </div>
 
               {/* Budget Meal */}
-              <div className="flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-sm sm:text-base font-black text-white">1 Budget Meal</span>
-                <span className="text-base sm:text-lg font-black text-primary my-0">₹150/-</span>
-                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">(Lunch/Dinner)</span>
+              <div className="flex flex-col bg-black/10 rounded-lg py-2 px-2 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between min-h-[110px]">
+                <span className="text-[15px] sm:text-[17px] font-black text-white leading-tight">1 Budget Meal</span>
+                <div className="flex flex-col justify-center items-center gap-1.5 my-auto">
+                  <span className="text-[17.5px] sm:text-[19.5px] font-black text-primary leading-tight">₹150/-</span>
+                  <span className="text-[12px] sm:text-[13.5px] text-white/90 font-extrabold leading-tight">(Lunch/Dinner)</span>
+                </div>
               </div>
 
               {/* Budget Single */}
-              <div className="flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-sm sm:text-base font-black text-white">Budget Single</span>
-                <span className="text-base sm:text-lg font-black text-primary my-0">₹2,900/-</span>
-                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">1 Meal Daily / 30 Days</span>
+              <div className="flex flex-col bg-black/10 rounded-lg py-2 px-2 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between min-h-[110px]">
+                <span className="text-[15px] sm:text-[17px] font-black text-white leading-tight">Budget Single</span>
+                <div className="flex flex-col justify-center items-center gap-1 my-auto">
+                  <span className="text-[17.5px] sm:text-[19.5px] font-black text-primary leading-tight">₹100 / Meal</span>
+                  <span className="text-[13.5px] sm:text-[15px] text-white font-extrabold leading-tight">(₹3,000 / 30 Days)</span>
+                  <span className="text-[12px] sm:text-[13.5px] text-white/90 font-extrabold leading-tight">1 Meal Daily / 30 Days</span>
+                </div>
               </div>
 
               {/* Budget Double */}
-              <div className="flex flex-col bg-black/10 rounded-lg py-1 px-1.5 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between">
-                <span className="text-sm sm:text-base font-black text-white">Budget Double</span>
-                <span className="text-base sm:text-lg font-black text-primary my-0">₹5,600/-</span>
-                <span className="text-[11.5px] sm:text-[13px] text-white font-extrabold leading-tight">2 Meals Daily / 30 Days</span>
+              <div className="flex flex-col bg-black/10 rounded-lg py-2 px-2 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between min-h-[110px]">
+                <span className="text-[15px] sm:text-[16.5px] font-black text-white leading-tight">Budget Double</span>
+                <div className="flex flex-col justify-center items-center gap-1 my-auto">
+                  <span className="text-[17.5px] sm:text-[19.5px] font-black text-primary leading-tight">₹95 / Meal</span>
+                  <span className="text-[13.5px] sm:text-[15px] text-white font-extrabold leading-tight">(₹5,700 / 30 Days)</span>
+                  <span className="text-[12px] sm:text-[13.5px] text-white/90 font-extrabold leading-tight">2 Meals Daily / 30 Days</span>
+                </div>
               </div>
             </div>
           </div>
 
           {/* ROW 3: Get In Touch full width */}
-          <div className="col-span-1 md:col-span-12 bg-black/15 rounded-xl py-3 px-4 backdrop-blur-md border border-white/20 flex flex-col">
-            <h2 className="text-2xl sm:text-3xl font-extrabold mb-3 text-primary text-center">Get In Touch</h2>
+          <div className="col-span-1 md:col-span-12 bg-black/15 rounded-xl pt-1.5 px-4 pb-2.5 backdrop-blur-md border border-white/20 flex flex-col">
+            <h2 className="text-2xl sm:text-3xl font-extrabold mb-1.5 text-primary text-center">Get In Touch</h2>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch flex-1">
               
               {/* Left Side: 4 Contact Info Cards (2x2 grid) */}
