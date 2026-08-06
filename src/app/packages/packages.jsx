@@ -150,7 +150,7 @@ const PackageCard = memo(function PackageCard({ pkg }) {
 const packages = [
   {
     name: "1 Premium Meal",
-    price: "₹200/- Meal",
+    price: "₹199/- Meal",
     originalPrice: null,
     description: "1-time premium meal, lunch or dinner",
     features: [
@@ -197,7 +197,7 @@ const packages = [
   },
   {
     name: "1 Budget Meal",
-    price: "₹150/- Meal",
+    price: "₹149/- Meal",
     originalPrice: null,
     description: "1-time budget meal, lunch or dinner",
     features: [

@@ -138,10 +138,11 @@ const menuItems = [
     note: [
       "Proudly serving Darbhanga, now open to Noida.",
       "Menu may change based on availability of food items.",
-      "Advance payment is required for all subscription plans.",
-      "Special requests can be accommodated with prior notice. (Chargable)",
-      "Food cancellation after it goes out for delivery is fully chargable.",
-      "Extra chapaties ₹8/Piece"
+      "All Payments Must Be Made in Advance.",
+      "Special Requests Accepted with Prior Notice (chargable).",
+      "Orders Cancelled After Dispatch Are Fully Chargeable",
+      "Extra chapaties ₹8/Piece",
+      "Authentic Bihari Thekua, Namak Para & Gujiya Available on Special Order"
     ]
   },
 ];
@@ -336,10 +337,10 @@ const MenuCard = memo(function MenuCard({ item }) {
                   Note
                 </h3>
               </div>
-              <ul className="text-white/90 text-[13.5px] sm:text-[14px] space-y-1.5 text-left w-full pt-3.5">
+              <ul className="text-white/90 text-[14px] sm:text-[14.5px] space-y-1.5 text-left w-full pt-1.5">
                 {item.note.map((point, idx) => (
-                  <li key={idx} className={`flex items-start gap-1.5 ${point.includes("Extra chapaties") ? "text-primary font-bold" : ""}`}>
-                    <span className="text-primary mt-1.5 shrink-0 text-xs">✦</span>
+                  <li key={idx} className={`flex items-start gap-1.5 leading-snug ${point.includes("Extra chapaties") || point.includes("Authentic Bihari") ? "text-primary font-bold" : ""}`}>
+                    <span className="text-primary mt-1 shrink-0 text-xs">✦</span>
                     <span>{point}</span>
                   </li>
                 ))}

@@ -15,10 +15,11 @@ const vegMenu = [
 const notes = [
   "Proudly serving Darbhanga, now open to Noida.",
   "Menu may change based on availability of food items.",
-  "Advance payment is required for all subscription plans.",
-  "Special requests can be accommodated with prior notice. (Chargable)",
-  "Food cancellation after it goes out for delivery is fully chargable.",
+  "All Payments Must Be Made in Advance.",
+  "Special Requests Accepted with Prior Notice (chargable).",
+  "Orders Cancelled After Dispatch Are Fully Chargeable",
   "Extra chapaties ₹8/Piece",
+  "Authentic Bihari Thekua, Namak Para & Gujiya Available on Special Order"
 ];
 
 export function BroucherPage() {
@@ -152,13 +153,13 @@ export function BroucherPage() {
           </div>
 
           {/* Note */}
-          <div className="col-span-1 md:col-span-4 bg-black/15 rounded-xl pt-0.5 px-4 pb-3.5 sm:pt-1 sm:px-4 sm:pb-3.5 backdrop-blur-md border border-white/20 flex flex-col justify-start">
-            <h2 className="text-[26px] sm:text-[32px] font-extrabold mb-0.5 text-primary text-center">Note</h2>
-            <ul className="space-y-1.5 text-lg sm:text-[20px] text-white pt-0.5 font-medium leading-snug">
+          <div className="col-span-1 md:col-span-4 bg-black/15 rounded-xl pt-0.5 px-3.5 pb-2 sm:pt-1 sm:px-3.5 sm:pb-2.5 backdrop-blur-md border border-white/20 flex flex-col justify-start">
+            <h2 className="text-[25px] sm:text-[30px] font-extrabold mb-0.5 text-primary text-center">Note</h2>
+            <ul className="space-y-1.5 text-[17.5px] sm:text-[19px] text-white pt-0.5 font-medium leading-snug">
               {notes.map((note, idx) => (
                 <li key={idx} className="flex items-start gap-1.5 justify-start text-left">
                   <span className="text-primary mt-1 shrink-0">✦</span>
-                  <span className={note.includes("Extra chapaties") ? "text-primary font-bold" : ""}>
+                  <span className={note.includes("Extra chapaties") || note.includes("Authentic Bihari") ? "text-primary font-bold" : ""}>
                     {note.includes("Darbhanga") ? (
                       <>
                         Proudly serving <span className="text-[#FC8019] font-bold">Darbhanga</span>, now open to <span className="text-[#FC8019] font-bold">Noida</span>.
@@ -324,7 +325,7 @@ export function BroucherPage() {
               <div className="flex flex-col bg-black/10 rounded-lg py-2 px-2 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between min-h-[110px]">
                 <span className="text-[15px] sm:text-[17px] font-black text-white leading-tight">1 Premium Meal</span>
                 <div className="flex flex-col justify-center items-center gap-1.5 my-auto">
-                  <span className="text-[17.5px] sm:text-[19.5px] font-black text-primary leading-tight">₹200/-</span>
+                  <span className="text-[17.5px] sm:text-[19.5px] font-black text-primary leading-tight">₹199/-</span>
                   <span className="text-[12px] sm:text-[13.5px] text-white/90 font-extrabold leading-tight">(Lunch/Dinner)</span>
                 </div>
               </div>
@@ -356,7 +357,7 @@ export function BroucherPage() {
               <div className="flex flex-col bg-black/10 rounded-lg py-2 px-2 border border-white/10 hover:border-primary/30 transition-colors text-center justify-between min-h-[110px]">
                 <span className="text-[15px] sm:text-[17px] font-black text-white leading-tight">1 Budget Meal</span>
                 <div className="flex flex-col justify-center items-center gap-1.5 my-auto">
-                  <span className="text-[17.5px] sm:text-[19.5px] font-black text-primary leading-tight">₹150/-</span>
+                  <span className="text-[17.5px] sm:text-[19.5px] font-black text-primary leading-tight">₹149/-</span>
                   <span className="text-[12px] sm:text-[13.5px] text-white/90 font-extrabold leading-tight">(Lunch/Dinner)</span>
                 </div>
               </div>
